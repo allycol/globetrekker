@@ -1,0 +1,146 @@
+.promos {
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+
+
+  .large-promo, .small-promo {
+    position: relative;
+
+
+    a {
+      position: absolute;
+      top: 0; bottom: 0; left: 0; right: 0;
+      background-color: rgba(#000, 0.3);
+
+
+      -webkit-transition: background 500ms ease;
+      -moz-transition: background 500ms ease;
+      -ms-transition: background 500ms ease;
+      -o-transition: background 500ms ease;
+      transition: background 500ms ease;
+
+      &:hover {
+        background-color: rgba(#000, 0.1);
+      }
+
+      .promo-copy {
+        position: absolute;
+        display: block;
+         width: 100%;
+        text-align: center;
+
+        span {
+          display: block;
+        }
+
+      }
+
+    }
+
+  }
+
+  .large-promo {
+    @include large-home-promo;
+  }
+
+  .small-promo {
+    @include small-home-promo;
+  }
+
+  .three-equal {
+
+    .other-promo {
+      padding: $space-huge + 0.5rem 0;
+      font-size: $sub-title;
+      text-align: center;
+      color: #fff;
+
+      &.promo-1 {background-color: $promo-1-color;}
+      &.promo-2 {background-color: $promo-2-color;}
+      &.promo-3 {background-color: $promo-3-color;}
+
+      span {
+        display: inline-block;
+      }
+
+      .link-button {
+        display: block;
+        margin-top: $space-large;
+
+        .button {
+          @include button;
+          font-size: $body;
+        }
+
+      }
+    }
+
+  }
+
+}
+
+
+
+@include with-layout($promos) {
+
+  @include breakpoint($medium) {
+
+    .promos {
+
+      @include container;
+
+      .large-promo {
+        @include span(12);
+      }
+
+      .small-promo {
+        @include span(6);
+      }
+
+      .three-equal {
+        @include break();
+
+        .other-promo {
+          // This only works because there are no gutters
+          @include span(4 of 12);
+        }
+      }
+
+    }
+
+  }
+
+  @include breakpoint($large) {
+
+    .promos {
+
+      .large-promo {
+        @include span(8 of 12);
+      }
+
+      .small-promo {
+        @include span(4 last);
+      }
+
+      @include with-layout(rtl) {
+
+        .reverse {
+          .large-promo {
+            @include span(8 of 12);
+          }
+          .small-promo {
+            @include span(4 last);
+          }
+        }
+
+      }
+
+    }
+
+  }
+}

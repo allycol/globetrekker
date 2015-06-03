@@ -1,0 +1,13 @@
+.filters {
+  @include span(3 of 12);
+  background-color: green;
+}
+
+.listings-page {
+  @include span(9 last);
+  background-color: grey;
+
+  .item {
+    @include gallery(3 of 12);
+  }
+}

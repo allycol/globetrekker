@@ -1,0 +1,20 @@
+{
+  "name": "project",
+  "version": "0.0.1",
+  "description": "Susy starter that makes LibSass with Gulp",
+  "authors": [
+    "Ally C"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "susy": "~2.2.3",
+    "breakpoint-sass": "~2.5.0"
+  }
+}

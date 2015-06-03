@@ -1,0 +1,284 @@
+html {
+  font-size: $base;
+}
+
+body {
+  @include border-box-sizing;
+}
+
+body {
+  background-color: $background;
+}
+
+h1 {
+  font-size: $main-title;
+}
+h2 {
+  font-size: $sub-title;
+}
+h3 {
+  font-size: $bigger;
+}
+p {
+  font-size: $body;
+}
+a {
+  text-decoration: none;
+}
+
+.frame {
+  @include container;
+  padding-right: 10px;
+  padding-left: 10px;
+
+  @include breakpoint($huge+20) {
+    padding: 0;
+  }
+}
+
+/* HEADER */
+
+header {
+    border-top: 12px solid $header-strip;
+
+  .phone {
+    display: none;
+    padding-top: $space-massive;
+    padding-bottom: $space-larger;
+
+    @include breakpoint($medium) {
+      display: block;
+      @include span(4 of 12);
+      span {
+        display: block;
+      }
+    }
+
+    .number {
+      font-size: $sub-title;
+      margin-bottom: $space-tiny;
+    }
+    .times {
+      font-size: $smaller;
+    }
+  }
+
+  .off-canvas-button {
+    display: block;
+    padding-top: $space-large;
+    padding-bottom: $space-large;
+    font-size: $body;
+
+    @include span(4 of 12);
+    @include breakpoint($medium) {
+      display: none;
+    }
+
+    .menu-label {
+      height: 36px;
+      width: 4rem;
+      padding-top: 10px;
+      display: block;
+    }
+
+    .burger {
+      position: relative;
+      display: block;
+      height: 36px;
+      width: 36px;
+      float: left;
+      margin-right: $space-tiny;
+
+      span {
+        position: absolute;
+        display: block;
+        height: 4px; width: 25px;
+        background-color: #000;
+        left: 5px;
+      }
+      span:nth-child(1) {top: 8px;}
+      span:nth-child(2) {top: 16px;}
+      span:nth-child(3) {top: 24px; }
+    }
+  }
+
+  .logo {
+    @include span(4 at 5 of 12);
+    text-align: center;
+    padding-top: $space-large;
+
+    //@include gutters(3em inside);
+  }
+
+  .account-nav {
+    @include span(4 last);
+    font-size: $body;
+    padding-top: $space-large;
+    padding-bottom: $space-large;
+
+    ul {
+      margin: 0; padding: 0;
+      list-style: none;
+    }
+    ul li {
+      text-align: center;
+      a {
+        display: block;
+      }
+      &.search {
+        display: none;
+      }
+      &.signin {
+        display: none;
+      }
+      &.basket {
+        @include span(isolate 6 last);
+        position: relative;
+
+        .bag-qty {
+          display: block;
+          position: absolute; right: 20px; top: 0px;
+          height: 16px; width: 16px;
+          line-height: 16px;
+          border-radius: 8px;
+          background-color: $dark;
+          font-size: $smaller;
+          color: #fff;
+          &.empty {
+            display: none;
+          }
+        }
+      }
+    }
+
+    ul li span.icon {
+      @include icon;
+      background-color: $light;
+      margin: 0 auto $space-tiny auto;
+    }
+
+    .search-form {
+      @include span(isolate 9 at 4);
+      position: relative;
+      display: none;
+      input {
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
+        &:focus {
+          outline: 0;
+
+        }
+
+      }
+    }
+  }
+
+  @include breakpoint($medium) {
+    .logo {
+      padding-top: $space-massive;
+    }
+    .account-nav {
+      padding-top: $space-massive;
+      padding-bottom: $space-larger;
+      ul li {
+        &.search {
+          display: block;
+          @include span(isolate 3 at 4);
+        }
+        &.signin {
+          display: block;
+          @include span(isolate 3 at 7);
+        }
+        &.basket {
+          @include span(isolate 3 at 10);
+        }
+      }
+    }
+  }
+
+  .nav-frame {
+    @include container;
+  }
+
+  nav {
+    @include break();
+
+    display: none;
+    @include breakpoint($medium) {
+      display: block;
+    }
+
+    text-align: center;
+    padding: $space-tiny 0;
+    border-top: 1px solid #d9d9d9;
+
+    ul {
+      margin: 0; padding: 0;
+    }
+
+    li {
+      list-style: none;
+      display: inline-block;
+      padding: 0 0px;
+      font-size: $body;
+      @include breakpoint($custom-nav-break) {
+        font-size: $bigger;
+        padding: 0 10px;
+      }
+    }
+
+    a {
+      display: block;
+      padding: 10px 10px;
+    }
+  }
+}
+
+.other-products {
+  padding-top: $space-huge;
+  padding-bottom: $space-huge;
+  h2 {
+    text-align: center;
+    margin: 0 0 $space-larger 0
+  }
+  @include with-layout(10) {
+    ul {
+      margin: 0; padding: 0;
+      font-size: $bigger;
+    }
+    li {
+      @include gallery(2);
+      list-style: none;
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+footer {
+  background-color: #eee;
+  padding: $space-massive 0;
+  text-align: center;
+
+  section {
+
+    @include breakpoint($medium) {
+      @include gallery(4);
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      font-size: $body;
+      line-height: $base;
+
+      a {}
+    }
+  }
+  .copy {
+    font-size: $smaller;
+  }
+}

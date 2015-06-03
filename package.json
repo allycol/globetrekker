@@ -1,0 +1,20 @@
+{
+  "name": "project",
+  "version": "0.0.1",
+  "description": "Susy starter that uses LibSass with Gulp",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ALly C",
+  "license": "ISC",
+  "dependencies": {
+    "normalize.css": "^3.0.3"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-sass": "^2.0.1",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^1.2.0"
+  }
+}
