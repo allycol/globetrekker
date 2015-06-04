@@ -93,13 +93,33 @@ include("config.inc.php"); //include config file
   <section>
       <div class="frame other-products">
         <h2>Top sellers</h2>
-        <ul>
-          <li><a href="#"><img src="http://placehold.it/190">Photon ceiling fixtures <span>&pound;26.95</span></a></li>
-          <li><a href="#"><img src="http://placehold.it/190">Latitude lampshade <span>&pound;26.95</span></a></li>
-          <li><a href="#"><img src="http://placehold.it/190">Texture lamp base <span>&pound;26.95</span></a></li>
-          <li><a href="#"><img src="http://placehold.it/190">Section wall fixture <span>&pound;26.95</span></a></li>
-          <li><a href="#"><img src="http://placehold.it/190">Flow wall fixture lamp <span>&pound;26.95</span></a></li>
-        </ul>
+        <!-- Slider main container -->
+        <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide"><a href="#"><img src="http://placehold.it/190">Photon ceiling fixtures <span>&pound;26.95</span></a></div>
+                <div class="swiper-slide"><a href="#"><img src="http://placehold.it/190">Latitude lampshade <span>&pound;26.95</span></a></div>
+                <div class="swiper-slide"><a href="#"><img src="http://placehold.it/190">Texture lamp base <span>&pound;26.95</span></a></div>
+                <div class="swiper-slide"><a href="#"><img src="http://placehold.it/190">Section wall fixture <span>&pound;26.95</span></a></div>
+                <div class="swiper-slide"><a href="#"><img src="http://placehold.it/190">Flow wall fixture lamp <span>&pound;26.95</span></a></div>
+                <div class="swiper-slide"><a href="#"><img src="http://placehold.it/190">Photon ceiling fixtures <span>&pound;26.95</span></a></div>
+                <div class="swiper-slide"><a href="#"><img src="http://placehold.it/190">Latitude lampshade <span>&pound;26.95</span></a></div>
+                <div class="swiper-slide"><a href="#"><img src="http://placehold.it/190">Texture lamp base <span>&pound;26.95</span></a></div>
+                <div class="swiper-slide"><a href="#"><img src="http://placehold.it/190">Section wall fixture <span>&pound;26.95</span></a></div>
+                <div class="swiper-slide"><a href="#"><img src="http://placehold.it/190">Flow wall fixture lamp <span>&pound;26.95</span></a></div>
+            </div>
+            <!-- If we need pagination -->
+            <!-- <div class="swiper-pagination"></div> -->
+
+
+
+            <!-- If we need scrollbar -->
+            <!-- <div class="swiper-scrollbar"></div> -->
+        </div>
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
       </div>
   </section>
 
@@ -121,7 +141,6 @@ include("config.inc.php"); //include config file
 </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="build/js/plugins.js"></script>
-  <script src="build/js/main.js"></script>
+  <script src="build/js/app.js"></script>
 </body>
 </html>

@@ -123,7 +123,8 @@ header {
     ul li {
       text-align: center;
       a {
-        display: block;
+        display: inline-block;
+        position: relative;
       }
       &.search {
         display: none;
@@ -134,10 +135,9 @@ header {
       &.basket {
         @include span(isolate 6 last);
         position: relative;
-
         .bag-qty {
           display: block;
-          position: absolute; right: 20px; top: 0px;
+          position: absolute; right: -8px; top: 0px;
           height: 16px; width: 16px;
           line-height: 16px;
           border-radius: 8px;
@@ -219,13 +219,24 @@ header {
 
     li {
       list-style: none;
+      position: relative;
       display: inline-block;
       padding: 0 0px;
       font-size: $body;
+
       @include breakpoint($custom-nav-break) {
         font-size: $bigger;
         padding: 0 10px;
       }
+      .subMenu {
+        position: absolute;
+        z-index: 9999;
+        left: 0; bottom: 0;
+        display: none;
+        background-color: #fff;
+        border: 1px solid #000;
+      }
+
     }
 
     a {
@@ -238,24 +249,25 @@ header {
 .other-products {
   padding-top: $space-huge;
   padding-bottom: $space-huge;
+  position: relative;
   h2 {
     text-align: center;
     margin: 0 0 $space-larger 0
   }
-  @include with-layout(10) {
-    ul {
-      margin: 0; padding: 0;
-      font-size: $bigger;
-    }
-    li {
-      @include gallery(2);
-      list-style: none;
-    }
-    img {
-      width: 100%;
-      height: auto;
-    }
-  }
+  // @include with-layout(10) {
+  //   ul {
+  //     margin: 0; padding: 0;
+  //     font-size: $bigger;
+  //   }
+  //   li {
+  //     @include gallery(2);
+  //     list-style: none;
+  //   }
+  //   img {
+  //     width: 100%;
+  //     height: auto;
+  //   }
+  // }
 }
 
 footer {

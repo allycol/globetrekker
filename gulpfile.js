@@ -1,11 +1,15 @@
 var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     sass = require('gulp-sass'),
+    //rename = require('gulp-rename')
+    concat = require('gulp-concat')
     sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('scripts', function(){
-  gulp.src('assets/js/*.js')
+  gulp.src(['assets/js/plugins.js','assets/js/main.js'])
+  .pipe(concat('app.js'))
   .pipe(uglify())
+  //.pipe(rename('app.js'))
   .pipe(gulp.dest('build/js'));
 });
 

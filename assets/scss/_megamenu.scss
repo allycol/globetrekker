@@ -1,0 +1,34 @@
+/* Nav bar */
+// #nav {
+//   padding-bottom: 45px;
+//   position: relative;
+//   z-index: 50;
+// }
+//
+// #nav ul {
+//   background: #396f8f;
+// }
+//
+//
+// #nav ul li {float: left; list-style: none; background: url(../images11/navSep.png) right repeat-y scroll; padding-right: 2px;}
+// #nav ul li:first-child {border-left: none;}
+// #nav ul li a {display: block; position: relative; z-index: 20; background: #396f8f url(../images11/navBg.png) top repeat-x scroll; padding: 15px 30px 15px 12px; font-size: 1.3em; color: #e3f4fe; text-decoration: none; font-weight: bold;}
+// #nav ul li:first-child a {-webkit-border-radius: 10px 0 0 10px;-moz-border-radius: 10px 0 0 10px;border-radius: 10px 0 0 10px;}
+// #nav ul li a span {height: 10px; width: 16px; display: none; background: url(../images11/navPointer.png); position: absolute; bottom: -10px; left: 50%; margin-left: -8px;}
+// 	.ie6 #nav ul li a span {visibility: hidden;}
+// #nav ul li.active a span {display: block;}
+// #nav ul li a:hover, #nav ul li a:focus {}
+// #nav ul li.active a {background-position: 0 -56px; background-color: #454c4c; }
+//
+// /* Reset design effects after first nav bar */
+// #nav ul ul, #nav #breadcrumb {background-color: transparent !important; background-image: none !important; height: auto !important; padding-left: 0; -webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;-webkit-border-radius: 0;-moz-border-radius: 0;border-radius: 0;}
+// #nav ul ul li, #nav #breadcrumb li {background-image: none; padding-right: 0;}
+// #nav ul ul li a, #nav #breadcrumb a {-webkit-border-radius: 0;-moz-border-radius: 0;border-radius: 0; background-image: none; background-color: transparent; padding: 0;}
+
+/* 2nd tier */
+#nav .subMenu {position: absolute; left: 0; bottom: 14px; display: none;}
+#nav .active .subMenu li {border: none; padding: 3px 10px; }
+#nav .active .subMenu li a {background: transparent; padding: 0; font-size: 1.2em; color: #2b485a; font-weight: bold; position: relative; z-index: 20;-webkit-border-radius: 0;-moz-border-radius: 0;border-radius: 0;}
+#nav .subMenu li a:hover, #nav .subMenu li a:focus {background-color: transparent; color: #333;}
+
+#nav .active .subMenu a.notSelected {color: #a6acaf;}

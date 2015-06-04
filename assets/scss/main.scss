@@ -1,14 +1,21 @@
 @import "../../bower_components/susy/sass/susy";
 @import "../../bower_components/breakpoint-sass/stylesheets/breakpoint";
 
+// Base
 @import "normalize";
 @import "themeperfect";
 
+// Frame
 @import "grid";
-@import "mmenu";
-@import "minibasket";
 @import "frame";
-@import "homebanners";
-@import "product";
 
+// Components
+@import "mmenu";
+//@import "megamenu";
+@import "minibasket";
+@import "homebanners";
+@import "swiper";
+
+// Page specific
+@import "product";
 //@import "listings";

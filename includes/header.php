@@ -21,6 +21,7 @@
           <!-- <a href="#"><span class="icon"></span> Basket</a> -->
           <a href="#" class="cart-box" id="cart-info" title="View Cart">
             <span class="icon"></span>
+            <span class="txt">
             Bag
             	<?php
             		if(count($_SESSION["products"]) > 0){
@@ -30,8 +31,8 @@
             			echo '<span class="bag-qty empty">0</span>';
             		}
             	?>
+            <span>
           </a>
-
           <div class="shopping-cart-box">
               <div id="shopping-cart-results">
               </div>
@@ -44,18 +45,7 @@
       </div>
     </div>
   </div>
-  <nav>
-    <div class="nav-frame">
-    <ul>
-      <li><a href="product.php">Interior</a></li>
-      <li><a href="#">Plaster</a></li>
-      <li><a href="#">Bathroom</a></li>
-      <li><a href="#">Bases &amp; Shades</a></li>
-      <li><a href="#">Interior</a></li>
-      <li><a href="#">Plaster</a></li>
-      <li><a href="#">Bathroom</a></li>
-      <li><a href="#">Bases &amp; Shades</a></li>
-    </ul>
-  </div>
-  </nav>
+
+  <?php include("includes/mega-menu.php"); ?>
+
 </header>
