@@ -14,9 +14,9 @@ Outdoorkit.megamenu = function() {
 
 	$topLevelItem.find('a:first').append('<span />');
 
-	function lone_item() {
-		$thisItem.find('.ddMenuItem').show();
-	}
+	// function lone_item() {
+	// 	$thisItem.find('.ddMenuItem').show();
+	// }
 
 	function hoz_open() {
 		$topLevelItem.removeClass('active').find('.subMenu').hide();
@@ -32,6 +32,8 @@ Outdoorkit.megamenu = function() {
 
   var hoz_config = {
 		over: hoz_open,
+    sensitivity: 2,
+    interval: 100,
 		timeout: 500,
 		out: hoz_close
 	};

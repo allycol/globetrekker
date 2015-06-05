@@ -197,10 +197,6 @@ header {
     }
   }
 
-  .nav-frame {
-    @include container;
-  }
-
   nav {
     @include break();
 
@@ -209,17 +205,18 @@ header {
       display: block;
     }
 
+    position: relative;
     text-align: center;
     padding: $space-tiny 0;
-    border-top: 1px solid #d9d9d9;
+    border-top: 1px solid $line-colour;
 
     ul {
-      margin: 0; padding: 0;
+      @include container;
+      margin: 0 auto; padding: 0;
     }
 
     li {
       list-style: none;
-      position: relative;
       display: inline-block;
       padding: 0 0px;
       font-size: $body;
@@ -231,10 +228,15 @@ header {
       .subMenu {
         position: absolute;
         z-index: 9999;
-        left: 0; bottom: 0;
+        left: 0;
+        width: 100%;
+        text-align: left;
+        padding: $space-larger;
+        min-height: 300px;
         display: none;
         background-color: #fff;
-        border: 1px solid #000;
+        border-bottom: 1px solid $line-colour;
+        // border: 1px solid #000;
       }
 
     }
