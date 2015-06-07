@@ -43,6 +43,11 @@ $bigger: 0.75rem; /* 18px */
 $body: 0.65rem; /* 15.6px */
 $smaller: 0.5rem; /* 12px */
 
+@mixin header1 {
+  font-size: $main-title;
+  font-weight: normal;
+}
+
 
 /* Icons */
 
@@ -54,12 +59,14 @@ $smaller: 0.5rem; /* 12px */
 /* Buttons */
 
 @mixin button {
+  font-size: $body;
   text-transform: uppercase;
   text-align: center;
   letter-spacing: 0.08rem;
   color: rgba(#fff, 0.6);
   padding: 10px 35px;
   background-color: #666;
+  border: none;
   -webkit-transition: all 500ms ease;
   -moz-transition: all 500ms ease;
   -ms-transition: all 500ms ease;

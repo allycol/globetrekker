@@ -20,7 +20,7 @@ include("config.inc.php"); //include config file
 
   <?php include("includes/header.php"); ?>
 
-  <div class="promos">
+  <section class="promos">
 
     <div class="large-promo">
       <img src="http://placehold.it/1000x740/f4f4f4">
@@ -88,13 +88,13 @@ include("config.inc.php"); //include config file
 
     </div>
 
-  </div>
+  </section>
 
   <section>
       <div class="frame other-products">
-        <h2>Top sellers</h2>
+        <h2>Latest items in stock</h2>
         <!-- Slider main container -->
-        <div class="swiper-container">
+        <div class="product-swiper swiper-container">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
@@ -118,8 +118,8 @@ include("config.inc.php"); //include config file
             <!-- <div class="swiper-scrollbar"></div> -->
         </div>
         <!-- If we need navigation buttons -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev others-prev"></div>
+        <div class="swiper-button-next others-next"></div>
       </div>
   </section>
 

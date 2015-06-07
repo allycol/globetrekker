@@ -82,8 +82,8 @@ Outdoorkit.search = function() {
   });
 };
 
-Outdoorkit.sideswiper = function() {
-  var mySwiper = new Swiper ('.swiper-container', {
+Outdoorkit.productSwiper = function() {
+  var productSwiper = new Swiper ('.product-swiper', {
 
     // direction: 'vertical',
     // loop: true,
@@ -92,17 +92,48 @@ Outdoorkit.sideswiper = function() {
     // pagination: '.swiper-pagination',
     //
     // // Navigation arrows
-    nextButton: '.swiper-button-next',
-    prevButton: '.swiper-button-prev',
+    nextButton: '.others-next',
+    prevButton: '.others-prev',
 
     centeredSlides: true,
     slidesPerView: 'auto',
-    initialSlide: 3
+    initialSlide: 2
     //spaceBetween: 20
     //
     // // And if we need scrollbar
     // scrollbar: '.swiper-scrollbar',
-  })
+  });
+};
+
+Outdoorkit.gallerySwiper = function() {
+
+  var galleryLrg = new Swiper ('.product-gallery-lrg', {
+    slidesPerView: 1,
+    //initialSlide: 2,
+    effect: 'fade',
+    nextButton: '.product-next',
+    prevButton: '.product-prev'
+  });
+
+  var galleryThmbs = new Swiper ('.product-gallery-thmbs', {
+    slidesPerView: 'auto',
+    centeredSlides: true,
+    touchRatio: 0.2,
+    //initialSlide: 2,
+    slideToClickedSlide: true
+  });
+
+  galleryLrg.params.control = galleryThmbs;
+  galleryThmbs.params.control = galleryLrg;
+
+};
+
+
+Outdoorkit.bannerSwiper = function() {
+  var bannerSwiper = new Swiper ('.banner-swiper', {
+    pagination: '.swiper-pagination',
+    paginationClickable: true
+  });
 };
 
 Outdoorkit.bag = function() {
@@ -111,12 +142,12 @@ Outdoorkit.bag = function() {
   });
 
   //Add Item to Cart
-  $(".item-box button").click(function(e){ //user click "add to cart" button
+  $(".add-to-bag button").click(function(e){ //user click "add to cart" button
     e.stopPropagation();
     e.preventDefault();
     var button_content = $(this); //this triggered button
-    var iqty = $(this).parent().children("select.p-qty").val(); //get quantity
-    var icode = $(this).parent().children("input.p-code").val(); //get product code
+    var iqty = $("select.p-qty").val(); //get quantity
+    var icode = $("input.p-code").val(); //get product code
     //button_content.html('Adding...'); //Loading button text
 
     //button_content.attr('disabled','disabled'); //disable button before Ajax request
@@ -194,7 +225,9 @@ Outdoorkit.init = function() {
     Outdoorkit.mobimenu();
     Outdoorkit.megamenu();
     Outdoorkit.search();
-    Outdoorkit.sideswiper();
+    Outdoorkit.productSwiper();
+    Outdoorkit.gallerySwiper();
+    Outdoorkit.bannerSwiper();
     Outdoorkit.bag();
 };
 
