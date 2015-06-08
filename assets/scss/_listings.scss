@@ -1,13 +1,61 @@
-.filters {
-  @include span(3 of 12);
-  background-color: green;
+.banner {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.product-listings {
+
+  @include layout($listings);
+  @include container;
+  @include pad(2%);
+
+  position: relative;
+  background-color: $light;
+  padding-top: $space-larger;
+  padding-bottom: $space-huge;
+
+
+
+  .filters {
+    background-color: #fff;
+    font-size: $body;
+    margin-bottom: $space-large;
+  }
+
+  .listings-page {
+
+    .item {
+      padding-bottom: $space-large;
+      @include gallery(6 of 12);
+      @include breakpoint($medium) {
+        @include gallery(4 of 12);
+      }
+      @include breakpoint($large) {
+        @include gallery(3 of 12);
+      }
+      @include breakpoint($huge) {
+        @include gallery(2 of 12);
+      }
+      font-size: $bigger;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
 }
 
-.listings-page {
-  @include span(9 last);
-  background-color: grey;
 
-  .item {
-    @include gallery(3 of 12);
+@include breakpoint($large) {
+
+  .filters {
+    @include span(2 of 12);
   }
+
+  .listings-page {
+    @include span(10 last);
+
+  }
+
 }

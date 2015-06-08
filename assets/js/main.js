@@ -136,7 +136,14 @@ Outdoorkit.bannerSwiper = function() {
   });
 };
 
+Outdoorkit.filters = function() {
+  $(".filters").stick_in_parent({
+    offset_top: 20
+  });
+};
+
 Outdoorkit.bag = function() {
+
   $(".shopping-cart-box").bind('click', function(e) {
     e.stopPropagation();
   });
@@ -228,6 +235,7 @@ Outdoorkit.init = function() {
     Outdoorkit.productSwiper();
     Outdoorkit.gallerySwiper();
     Outdoorkit.bannerSwiper();
+    Outdoorkit.filters();
     Outdoorkit.bag();
 };
 

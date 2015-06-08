@@ -272,10 +272,38 @@ header {
   // }
 }
 
+.breadcrumb {
+  display: none;
+}
+
+@include breakpoint($medium) {
+
+  .breadcrumb {
+    display: block;
+    margin: 0 0 $space-large 0;
+    padding: 0;
+    list-style: none;
+    font-size: $smaller;
+    li {
+      display: inline-block;
+      &:before {
+        content: "";
+        display: block;
+        width: $smaller; height: $smaller;
+        float: left;
+        margin: 0 $space-tiny;
+        background-color: #ddd;
+      }
+    }
+  }
+
+}
+
 footer {
-  background-color: #eee;
+  background-color: $dark;
   padding: $space-massive 0;
   text-align: center;
+  color: #fff;
 
   section {
 
@@ -289,7 +317,9 @@ footer {
       font-size: $body;
       line-height: $base;
 
-      a {}
+      a {
+        color: #fff;
+      }
     }
   }
   .copy {
