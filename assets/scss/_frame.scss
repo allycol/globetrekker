@@ -12,6 +12,7 @@ body {
 
 h1 {
   @include header1;
+  margin: 1rem 0;
 }
 h2 {
   font-size: $sub-title;
@@ -297,6 +298,36 @@ header {
     }
   }
 
+}
+
+.pagination {
+  display: inline-block;
+  margin: 0 0 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: $body;
+  li {
+    display: inline;
+    // &:before {
+    //   content: "";
+    //   display: block;
+    //   width: $smaller; height: $smaller;
+    //   float: left;
+    //   margin: 0 $space-tiny;
+    //   background-color: #ddd;
+    // }
+    a {
+      display: block;
+      position: relative;
+      float: left;
+      padding: 6px 12px;
+      margin-left: -1px;
+      border: 1px solid $line-colour;
+      &:hover, &:focus {
+        background-color: #eee;
+      }
+    }
+  }
 }
 
 footer {
