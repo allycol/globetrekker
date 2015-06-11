@@ -6,7 +6,7 @@ include("config.inc.php"); //include config file
 <html>
 
 <head>
-  <title>Product</title>
+  <title>Product page</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <link href="build/css/main.css" rel="stylesheet" type="text/css" />
 </head>
@@ -22,6 +22,7 @@ include("config.inc.php"); //include config file
 
 
 		<section class="product-details">
+
 			<div class="frame">
 
         <ul class="breadcrumb">
@@ -101,10 +102,10 @@ include("config.inc.php"); //include config file
     <section>
       <div class="banner-swiper swiper-container">
         <div class="swiper-wrapper">
-          <div class="swiper-slide"><img src="http://placehold.it/2000x800"></div>
-          <div class="swiper-slide"><img src="http://placehold.it/2000x800"></div>
-          <div class="swiper-slide"><img src="http://placehold.it/2000x800"></div>
-          <div class="swiper-slide"><img src="http://placehold.it/2000x800"></div>
+          <div class="swiper-slide"><img src="http://placehold.it/2000x600"></div>
+          <div class="swiper-slide"><img src="http://placehold.it/2000x600"></div>
+          <div class="swiper-slide"><img src="http://placehold.it/2000x600"></div>
+          <div class="swiper-slide"><img src="http://placehold.it/2000x600"></div>
         </div>
         <!-- If we need pagination -->
         <div class="swiper-pagination"></div>

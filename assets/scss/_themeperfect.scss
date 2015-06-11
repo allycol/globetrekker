@@ -3,7 +3,7 @@
 $medium: 768px;
 $large: 960px;
 $fullwidth: 1032px;
-$huge: 1532px;
+$huge: 1536px;
 
 $custom-nav-break: 1015px;
 
@@ -39,14 +39,22 @@ $promo-3-color: #999;
 $base: 24px;
 
 $main-title: 1.5rem; /* 36px */
+$main-title-mobile: 1.25rem; /* 36px */
 $sub-title: 1rem; /* 24px */
 $bigger: 0.75rem; /* 18px */
 $body: 0.65rem; /* 15.6px */
 $smaller: 0.5rem; /* 12px */
 
 @mixin header1 {
-  font-size: $main-title;
+  font-size: $main-title-mobile;
   font-weight: normal;
+  text-align: center;
+  @include breakpoint($medium) {
+    font-size: $main-title;
+  }
+  @include breakpoint($large) {
+    text-align: left;
+  }
 }
 
 
@@ -54,7 +62,8 @@ $smaller: 0.5rem; /* 12px */
 
 @mixin icon {
   display: block;
-  height: 24px; width: 24px;
+  height: 32px; width: 32px;
+  background-color: #eee;
 }
 
 /* Buttons */

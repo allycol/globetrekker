@@ -15,14 +15,13 @@
     </div>
     <div class="account-nav">
       <ul>
-        <li class="search"><a href="#"><span class="icon"></span> Search</a></li>
-        <li class="signin"><a href="#"><span class="icon"></span> Sign in</a></li>
+        <li class="search"><a href="#"><span class="icon"></span> <span class="label">Search</span></a></li>
+        <li class="signin"><a href="#"><span class="icon"></span> <span class="label">Sign in</span></a></li>
         <li class="basket">
-          <!-- <a href="#"><span class="icon"></span> Basket</a> -->
           <a href="#" class="cart-box" id="cart-info" title="View Cart">
             <span class="icon"></span>
             <span class="txt">
-            Bag
+              <span class="label">Bag</span>
             	<?php
             		if(count($_SESSION["products"]) > 0){
                 //if(isset($_SESSION["products"])){

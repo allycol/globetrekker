@@ -4,6 +4,9 @@ Outdoorkit.mobimenu = function() {
   $("#off-canvas-menu").mmenu({
 
   });
+  $("#filters-canvas-menu").mmenu({
+
+  });
 };
 
 
@@ -139,6 +142,9 @@ Outdoorkit.bannerSwiper = function() {
 Outdoorkit.filters = function() {
   $(".filters").stick_in_parent({
     offset_top: 20
+  });
+  $(".filters-button").bind("click", function(){
+    $(this).next(".filters").slideToggle();
   });
 };
 

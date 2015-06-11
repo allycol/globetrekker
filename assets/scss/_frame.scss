@@ -14,6 +14,7 @@ h1 {
   @include header1;
   margin: 1rem 0;
 }
+
 h2 {
   font-size: $sub-title;
 }
@@ -40,14 +41,14 @@ a {
 /* HEADER */
 
 header {
-    border-top: 12px solid $header-strip;
+    border-top: 10px solid $header-strip;
 
   .phone {
     display: none;
     padding-top: $space-massive;
     padding-bottom: $space-larger;
 
-    @include breakpoint($medium) {
+    @include breakpoint($large) {
       display: block;
       @include span(4 of 12);
       span {
@@ -71,7 +72,7 @@ header {
     font-size: $body;
 
     @include span(4 of 12);
-    @include breakpoint($medium) {
+    @include breakpoint($large) {
       display: none;
     }
 
@@ -83,23 +84,24 @@ header {
     }
 
     .burger {
-      position: relative;
-      display: block;
-      height: 36px;
-      width: 36px;
+      @include icon;
       float: left;
       margin-right: $space-tiny;
+      // position: relative;
+      // display: block;
+      // height: 36px;
+      // width: 36px;
 
-      span {
-        position: absolute;
-        display: block;
-        height: 4px; width: 25px;
-        background-color: #000;
-        left: 5px;
-      }
-      span:nth-child(1) {top: 8px;}
-      span:nth-child(2) {top: 16px;}
-      span:nth-child(3) {top: 24px; }
+      // span {
+      //   position: absolute;
+      //   display: block;
+      //   height: 4px; width: 25px;
+      //   background-color: #000;
+      //   left: 5px;
+      // }
+      // span:nth-child(1) {top: 8px;}
+      // span:nth-child(2) {top: 16px;}
+      // span:nth-child(3) {top: 24px; }
     }
   }
 
@@ -107,9 +109,8 @@ header {
     @include span(4 at 5 of 12);
     text-align: center;
     padding-top: $space-large;
-
-    //@include gutters(3em inside);
   }
+
 
   .account-nav {
     @include span(4 last);
@@ -122,10 +123,11 @@ header {
       list-style: none;
     }
     ul li {
-      text-align: center;
-      a {
+      text-align: right;
+      position: relative;
+      .label {
         display: inline-block;
-        position: relative;
+        padding-top: 10px;
       }
       &.search {
         display: none;
@@ -134,8 +136,12 @@ header {
         display: none;
       }
       &.basket {
-        @include span(isolate 6 last);
+        @include span(isolate 12 last);
         position: relative;
+        .icon {
+          float: right;
+          margin-left: $space-tiny;
+        }
         .bag-qty {
           display: block;
           position: absolute; right: -8px; top: 0px;
@@ -145,6 +151,7 @@ header {
           background-color: $dark;
           font-size: $smaller;
           color: #fff;
+          text-align: center;
           &.empty {
             display: none;
           }
@@ -155,7 +162,7 @@ header {
     ul li span.icon {
       @include icon;
       background-color: $light;
-      margin: 0 auto $space-tiny auto;
+      margin: 0 auto;
     }
 
     .search-form {
@@ -179,10 +186,27 @@ header {
     .logo {
       padding-top: $space-massive;
     }
+    .off-canvas-button {
+      padding-top: $space-massive;
+    }
     .account-nav {
       padding-top: $space-massive;
+    }
+  }
+
+  @include breakpoint($large) {
+
+    .account-nav {
       padding-bottom: $space-larger;
       ul li {
+        text-align: center;
+        a {
+          display: inline-block;
+          position: relative;
+        }
+        .label {
+          padding-top: $space-tiny;
+        }
         &.search {
           display: block;
           @include span(isolate 3 at 4);
@@ -193,6 +217,10 @@ header {
         }
         &.basket {
           @include span(isolate 3 at 10);
+          .icon {
+            float: none;
+            margin-left: 0;
+          }
         }
       }
     }
@@ -202,7 +230,7 @@ header {
     @include break();
 
     display: none;
-    @include breakpoint($medium) {
+    @include breakpoint($large) {
       display: block;
     }
 
@@ -277,7 +305,7 @@ header {
   display: none;
 }
 
-@include breakpoint($medium) {
+@include breakpoint($large) {
 
   .breadcrumb {
     display: block;
