@@ -1,5 +1,6 @@
 /* Breakpoints */
 
+$small: 640px;
 $medium: 768px;
 $large: 960px;
 $fullwidth: 1032px;
@@ -51,9 +52,10 @@ $smaller: 0.5rem; /* 12px */
   text-align: center;
   @include breakpoint($medium) {
     font-size: $main-title;
+    text-align: left;
   }
   @include breakpoint($large) {
-    text-align: left;
+
   }
 }
 
@@ -66,6 +68,34 @@ $smaller: 0.5rem; /* 12px */
   background-color: #eee;
 }
 
+/* Form elements */
+
+@mixin textinput {
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  &:focus {
+    outline: 0;
+  }
+}
+
+@mixin dropdown {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  font-size: $body;
+  padding: $space-medium $space-larger $space-medium $space-small;
+  border: 1px solid $dark;
+  position: relative;
+  &:focus {
+    outline: 0;
+  }
+}
+
 /* Buttons */
 
 @mixin button {
@@ -74,9 +104,9 @@ $smaller: 0.5rem; /* 12px */
   text-align: center;
   letter-spacing: 0.08rem;
   color: rgba(#fff, 0.6);
-  padding: 10px 35px;
+  padding: $space-medium $space-larger;
   background-color: #666;
-  border: none;
+  border: 1px solid #666;
   -webkit-transition: all 500ms ease;
   -moz-transition: all 500ms ease;
   -ms-transition: all 500ms ease;
@@ -107,12 +137,21 @@ $small-promo-second: $small-promo-first/2;
 @mixin large-home-promo {
   .promo-copy {
     top: 50%;
-    margin-top: -$large-promo-first;
+    margin-top: -$large-promo-first/2;
     .first {
-      font-size: $large-promo-first;
+      font-size: $large-promo-first/2;
     }
     .second {
-      font-size: $large-promo-second;
+      font-size: $large-promo-second/2;
+    }
+    @include breakpoint($small) {
+      margin-top: -$large-promo-first;
+      .first {
+        font-size: $large-promo-first;
+      }
+      .second {
+        font-size: $large-promo-second;
+      }
     }
   }
 }
@@ -121,10 +160,18 @@ $small-promo-second: $small-promo-first/2;
   .promo-copy {
     bottom: 10%;
     .first {
-      font-size: $small-promo-first;
+      font-size: $small-promo-first/1.5;
     }
     .second {
-      font-size: $small-promo-second;
+      font-size: $small-promo-second/1.5;
+    }
+    @include breakpoint($small) {
+      .first {
+        font-size: $small-promo-first;
+      }
+      .second {
+        font-size: $small-promo-second;
+      }
     }
   }
 }

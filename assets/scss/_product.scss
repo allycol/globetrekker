@@ -2,9 +2,10 @@
 
   position: relative;
   background-color: $light;
-  padding: $space-larger 0 $space-huge 0;
+  padding: $space-larger 0 $space-larger 0;
 
   .product-gallery {
+    margin-bottom: $space-larger;
     img {
       display: block;
     }
@@ -24,18 +25,38 @@
       border-bottom: 1px solid $dark;
 
       .add-qty {
-        @include span(4);
+        text-align: center;
+        margin-bottom: $space-larger;
         label {
           font-size: $body;
           display: inline-block;
-          margin-right: $space-tiny;
+          margin-right: $space-medium;
+        }
+        .dropdown {
+          display: inline-block;
+          background-color: #fff;
+          position: relative;
+          &:after {
+            content: "";
+            position: absolute; top: 50%; right: 10px;
+            @include icon;
+            width: 16px; height: 16px;
+            margin-top: -8px;
+            z-index: 1;
+          }
+        }
+        select {
+          @include dropdown;
+          background-color: transparent;
+          z-index: 2;
         }
       }
 
       .add-button {
-        @include span(8 last);
         button {
           @include button;
+          display: block;
+          width: 100%;
         }
       }
 
@@ -75,6 +96,21 @@
     .product-info {
       @include span(6 last);
       @include prefix(5%);
+      .add-to-bag {
+        .add-qty {
+          @include span(4);
+          text-align: left;
+          margin-bottom: 0;
+        }
+        .add-button {
+          @include span(8 last);
+          text-align: left;
+          button {
+            display: inline-block;
+            width: auto;
+          }
+        }
+      }
     }
 
   }

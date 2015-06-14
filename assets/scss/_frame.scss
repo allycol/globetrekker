@@ -109,6 +109,11 @@ header {
     @include span(4 at 5 of 12);
     text-align: center;
     padding-top: $space-large;
+    padding-bottom: $space-small;
+    img {
+      margin: auto;
+      max-width: 6rem;
+    }
   }
 
 
@@ -170,14 +175,7 @@ header {
       position: relative;
       display: none;
       input {
-        padding: 10px;
-        width: 100%;
-        box-sizing: border-box;
-        &:focus {
-          outline: 0;
-
-        }
-
+        @include textinput;
       }
     }
   }
@@ -278,8 +276,8 @@ header {
 }
 
 .other-products {
-  padding-top: $space-huge;
-  padding-bottom: $space-huge;
+  padding-top: $space-larger;
+  padding-bottom: $space-larger;
   position: relative;
   h2 {
     text-align: center;
@@ -324,6 +322,11 @@ header {
         background-color: #ddd;
       }
     }
+  }
+
+  .other-products {
+    padding-top: $space-huge;
+    padding-bottom: $space-huge;
   }
 
 }

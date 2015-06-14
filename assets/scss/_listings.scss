@@ -2,7 +2,7 @@
   width: 100%;
   height: auto;
   display: none;
-  @include breakpoint($large) {
+  @include breakpoint($medium) {
     display: block;
   }
   //display: none;
@@ -34,6 +34,7 @@
 
   h1 {
     margin-top: 0;
+    text-align: center;
   }
 
   .product-count {
@@ -106,6 +107,7 @@
     padding-bottom: $space-huge;
     h1 {
       @include span(6 of 12);
+      text-align: left;
     }
     .product-count {
       @include span(6 last);

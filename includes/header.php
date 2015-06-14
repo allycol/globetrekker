@@ -11,7 +11,12 @@
       </a>
     </div>
     <div class="logo">
-      <a href="index.php">Site logo</a>
+      <a href="index.php">
+        <picture>
+          <source type="image/svg+xml" srcset="images/fake-logo.svg" />
+          <img src="images/fake-logo.png" alt="Logo" />
+        </picture>
+      </a>
     </div>
     <div class="account-nav">
       <ul>
