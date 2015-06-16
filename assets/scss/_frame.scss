@@ -10,6 +10,8 @@ body {
   background-color: $background;
 }
 
+/* Typography */
+
 h1 {
   @include header1;
   margin: 1rem 0;
@@ -27,6 +29,15 @@ p {
 a {
   text-decoration: none;
 }
+
+/* forms */
+
+.dropdown {
+  @include dropdown;
+}
+
+
+
 
 .frame {
   @include container;

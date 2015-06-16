@@ -1,4 +1,4 @@
-/* Breakpoints */
+// Breakpoints
 
 $small: 640px;
 $medium: 768px;
@@ -8,7 +8,7 @@ $huge: 1536px;
 
 $custom-nav-break: 1015px;
 
-/* Spacing */
+// Spacing
 
 $space-tiny: 0.25rem;/* 6px */
 $space-small: 0.5rem;/* 12px */
@@ -19,7 +19,7 @@ $space-massive: 2rem; /* 48px */
 $space-huge: 3rem; /* 72px */
 
 
-/* Base colours */
+// Base colours
 
 $background: #fff;
 
@@ -35,16 +35,16 @@ $promo-2-color: #333;
 $promo-3-color: #999;
 
 
-/* General typography */
+// General typography
 
 $base: 24px;
 
-$main-title: 1.5rem; /* 36px */
-$main-title-mobile: 1.25rem; /* 36px */
-$sub-title: 1rem; /* 24px */
-$bigger: 0.75rem; /* 18px */
-$body: 0.65rem; /* 15.6px */
-$smaller: 0.5rem; /* 12px */
+$main-title: 1.5rem; // 36px
+$main-title-mobile: 1.25rem; // 30px
+$sub-title: 1rem; // 24px
+$bigger: 0.75rem; // 18px
+$body: 0.65rem; // 15.6px
+$smaller: 0.5rem; // 12px
 
 @mixin header1 {
   font-size: $main-title-mobile;
@@ -60,7 +60,7 @@ $smaller: 0.5rem; /* 12px */
 }
 
 
-/* Icons */
+// Icons
 
 @mixin icon {
   display: block;
@@ -68,7 +68,7 @@ $smaller: 0.5rem; /* 12px */
   background-color: #eee;
 }
 
-/* Form elements */
+// Form elements
 
 @mixin textinput {
   padding: 10px;
@@ -80,23 +80,39 @@ $smaller: 0.5rem; /* 12px */
 }
 
 @mixin dropdown {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  -o-border-radius: 0;
-  border-radius: 0;
-  font-size: $body;
-  padding: $space-medium $space-larger $space-medium $space-small;
-  border: 1px solid $dark;
+  display: inline-block;
+  background-color: #fff;
   position: relative;
-  &:focus {
-    outline: 0;
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0;
+    font-size: $body;
+    padding: $space-medium $space-larger $space-medium $space-small;
+    border: 1px solid $dark;
+    position: relative;
+    min-width: 3rem;
+    background-color: transparent;
+    z-index: 2;
+    &:focus {
+      outline: 0;
+    }
+  }
+  &:after {
+    content: "";
+    position: absolute; top: 50%; right: 10px;
+    @include icon;
+    width: 16px; height: 16px;
+    margin-top: -8px;
+    z-index: 1;
   }
 }
 
-/* Buttons */
+// Buttons 
 
 @mixin button {
   font-size: $body;
@@ -104,7 +120,7 @@ $smaller: 0.5rem; /* 12px */
   text-align: center;
   letter-spacing: 0.08rem;
   color: rgba(#fff, 0.6);
-  padding: $space-medium $space-larger;
+  padding: $space-medium $space-large;
   background-color: #666;
   border: 1px solid #666;
   -webkit-transition: all 500ms ease;
@@ -126,7 +142,7 @@ $smaller: 0.5rem; /* 12px */
   }
 }
 
-/* Home page banners typography */
+// Home page banners typography
 
 $large-promo-first: 3.75rem;
 $large-promo-second: $large-promo-first/2;
