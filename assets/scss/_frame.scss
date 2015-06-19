@@ -52,12 +52,11 @@ a {
 /* HEADER */
 
 header {
+
     border-top: 10px solid $header-strip;
 
   .phone {
     display: none;
-    padding-top: $space-massive;
-    padding-bottom: $space-larger;
 
     @include breakpoint($large) {
       display: block;
@@ -132,7 +131,7 @@ header {
     @include span(4 last);
     font-size: $body;
     padding-top: $space-large;
-    padding-bottom: $space-large;
+    //padding-bottom: $space-large;
 
     ul {
       margin: 0; padding: 0;
@@ -192,13 +191,7 @@ header {
   }
 
   @include breakpoint($medium) {
-    .logo {
-      padding-top: $space-massive;
-    }
-    .off-canvas-button {
-      padding-top: $space-massive;
-    }
-    .account-nav {
+    .logo, .phone, .off-canvas-button, .account-nav {
       padding-top: $space-massive;
     }
   }
@@ -206,7 +199,7 @@ header {
   @include breakpoint($large) {
 
     .account-nav {
-      padding-bottom: $space-larger;
+      //padding-bottom: $space-larger;
       ul li {
         text-align: center;
         a {

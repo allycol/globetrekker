@@ -3,11 +3,41 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     minifyCss = require('gulp-minify-css'),
     iconfont = require('gulp-iconfont'),
-    iconfontCss = require('gulp-iconfont-css'),
-    rename = require('gulp-rename'),
+    //lodash = require('lodash'),
     consolidate = require('gulp-consolidate'),
+    rename = require('gulp-rename'),
     concat = require('gulp-concat'),
     sourcemaps = require('gulp-sourcemaps');
+    
+
+var fontName = 'icofont';
+
+gulp.task('iconfont', function(){
+
+  gulp.src(['assets/icons/*.svg'])
+
+  .pipe(iconfont({
+    fontName: fontName,
+    normalize: true,
+    fontHeight: 1001
+  }))
+
+  .on('codepoints', function(codepoints) {
+    console.log("pants again and again");
+    // gulp.src('assets/icons/template/_icon.template.scss')
+    // .pipe(consolidate('lodash', {
+    //   glyphs: codepoints,
+    //   fontName: fontName,
+    //   fontPath: '../fonts/', // set path to font (from your CSS file if relative)
+    //   className: 'icon' // set class name in your CSS
+    // }))
+    // .pipe(rename("ahhhh.scss"))
+    // .pipe(gulp.dest('/')); // set path to export your CSS
+  })
+  .pipe(gulp.dest('build/fonts'));
+  console.log("pants is here"); // set path to export your fonts
+});
+
 
 gulp.task('scripts', function(){
   gulp.src(['assets/js/plugins.js','assets/js/main.js'])
@@ -26,26 +56,11 @@ gulp.task('styles', function(){
   .pipe(minifyCss())
   .pipe(sourcemaps.write())
   .pipe(gulp.dest('build/css'));
+  console.log("pants");
 });
 
-var fontName = 'Icons';
-gulp.task('iconfont', function(){
 
-  gulp.src(['assets/icons/*.svg'])
-    .pipe(iconfontCss({
-      fontName: "icofont",
-      //path: 'assets/scss/_icons.scss',
-      targetPath: '../scss/_icons.scss',
-      fontPath: '../fonts/'
-    }))
-    .pipe(iconfont({
-      fontName: "icofont",
-      normalize: true,
-      fontHeight: 1001
-     }))
-    .pipe(gulp.dest('assets/fonts')).pipe(gulp.dest('build/fonts'));
 
-});
 
 gulp.task('watch', function() {
   gulp.watch('assets/scss/*.scss', ['styles']);
@@ -53,4 +68,4 @@ gulp.task('watch', function() {
   gulp.watch('assets/icons/*.svg', ['iconfont']);
 });
 
-gulp.task('default', ['scripts', 'styles', 'watch', 'iconfont']);
+gulp.task('default', ['iconfont', 'scripts', 'styles', 'watch']);
