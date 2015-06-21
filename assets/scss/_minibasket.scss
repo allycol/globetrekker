@@ -9,6 +9,8 @@
 	//border: 1px solid $line-colour;
 	padding: $space-medium;
 	margin-top: 10px;
+	-webkit-box-shadow: 0 2px 3px 0 rgba(0,0,0,0.5);
+box-shadow: 0 2px 3px 0 rgba(0,0,0,0.5);
 	> a {
 		color: $dark;
 		text-decoration:none;
@@ -51,9 +53,9 @@
 		text-decoration:none;
 	}
 	.cart-products-total{
-		font-weight: bold;
-		text-align: right;
+		text-align: center;
 		padding: $space-small;
+		font-size: $bigger;
 	}
 	h3{
 		margin: 0 0 $space-medium 0;
@@ -64,7 +66,7 @@
 		top: $space-tiny; left: $space-tiny;
 	}
 	.button {
-		@include button;
+		@include addtocartbutton;
 		display: block;
 	}
 }

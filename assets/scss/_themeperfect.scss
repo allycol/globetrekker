@@ -30,14 +30,30 @@ $line-colour: #d9d9d9;
 $light: #f4f4f4;
 $dark: #000;
 
-$promo-1-color: #666;
-$promo-2-color: #333;
-$promo-3-color: #999;
+$brand-yellow: #f3bd19;
+$brand-red: #ef4f22;
+$brand-orange: #e88b23;
+
+$promo-1-color: $dark;
+$promo-2-color: $brand-red;
+$promo-3-color: $light;
 
 
 // General typography
 
-$base: 24px;
+@font-face {
+    font-family: 'brandfont';
+    src: url('../fonts/knubi.eot');
+    src: url('../fonts/knubi.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/knubi.woff2') format('woff2'),
+         url('../fonts/knubi.woff') format('woff'),
+         url('../fonts/knubi.ttf') format('truetype'),
+         url('../fonts/knubi.svg#knubiregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$base: 24px; // This effects the size of EVERYTHING - Change with caution!
 
 $main-title: 1.5rem; // 36px
 $main-title-mobile: 1.25rem; // 30px
@@ -46,10 +62,26 @@ $bigger: 0.75rem; // 18px
 $body: 0.65rem; // 15.6px
 $smaller: 0.5rem; // 12px
 
+$bodyfont: "brandfont", Helvetica, Ariel, Sans-serif;
+$brand1: $bodyfont;
+
+@mixin bodycopy {
+  font-family: $bodyfont;
+  font-size: $body;
+}
+
+@mixin linkbase {
+  color: $dark;
+  text-decoration: none;
+}
+
+// H1
 @mixin header1 {
+  font-family: $brand1;
   font-size: $main-title-mobile;
   font-weight: normal;
   text-align: center;
+  margin: 1rem 0;
   @include breakpoint($medium) {
     font-size: $main-title;
     text-align: left;
@@ -59,14 +91,35 @@ $smaller: 0.5rem; // 12px
   }
 }
 
-
-// Icons
-
-@mixin icon {
-  display: block;
-  height: 32px; width: 32px;
-  background-color: #eee;
+// H2
+@mixin header2 {
+  font-family: $brand1;
+  font-size: $sub-title;
+  font-weight: normal;
 }
+
+// LOGO PLACEMENT
+
+@mixin logo {
+  //padding-top: $space-large;
+  padding-bottom: $space-large;
+  margin-top: -10px;
+  img {
+    margin: auto;
+    max-width: 3rem;
+  }
+  @include breakpoint($medium) {
+    img {
+      max-width: 4.6rem;
+    }
+  }
+}
+
+
+// Home promos
+
+
+
 
 // Form elements
 
@@ -92,37 +145,36 @@ $smaller: 0.5rem; // 12px
     -o-border-radius: 0;
     border-radius: 0;
     font-size: $body;
-    padding: $space-medium $space-larger $space-medium $space-small;
+    padding: $space-small $space-larger $space-small $space-small;
     border: 1px solid $dark;
     position: relative;
-    min-width: 3rem;
+    min-width: 4rem;
     background-color: transparent;
     z-index: 2;
     &:focus {
       outline: 0;
     }
   }
-  &:after {
-    content: "";
-    position: absolute; top: 50%; right: 10px;
-    @include icon;
-    width: 16px; height: 16px;
-    margin-top: -8px;
+  span {
+    position: absolute; top: 10px; bottom: 10px; right: 11px;
     z-index: 1;
+    border-left: 1px solid $dark;
+    padding-left: 10px;
+    padding-top: 6px;
   }
 }
 
-// Buttons 
+// Buttons
 
 @mixin button {
   font-size: $body;
   text-transform: uppercase;
   text-align: center;
   letter-spacing: 0.08rem;
-  color: rgba(#fff, 0.6);
-  padding: $space-medium $space-large;
-  background-color: #666;
-  border: 1px solid #666;
+  color: rgba(#fff, 0.8);
+  padding: $space-small $space-larger;
+  background-color: rgba($dark, 0.8);
+  border: none;
   -webkit-transition: all 500ms ease;
   -moz-transition: all 500ms ease;
   -ms-transition: all 500ms ease;
@@ -134,11 +186,20 @@ $smaller: 0.5rem; // 12px
     border-style: solid;
     border-color: rgba(#fff, 0.6);
     &:hover {
+      background-color: transparent;
       border-color: rgba(#fff, 1);
     }
   }
   &:hover {
     color: rgba(#fff, 1);
+    background-color: rgba($brand-orange, 1);
+  }
+}
+
+@mixin addtocartbutton {
+  background-color: rgba($brand-orange, 0.8);
+  &:hover {
+    background-color: rgba($brand-orange, 1);
   }
 }
 

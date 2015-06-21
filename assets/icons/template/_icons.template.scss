@@ -1,0 +1,39 @@
+$icon-size: 32px;
+
+@font-face {
+  font-family: "<%= fontName %>";
+  src: url('<%= fontPath %><%= fontName %>.eot');
+  src: url('<%= fontPath %><%= fontName %>.eot?#iefix') format('eot'),
+    url('<%= fontPath %><%= fontName %>.woff') format('woff'),
+    url('<%= fontPath %><%= fontName %>.ttf') format('truetype'),
+    url('<%= fontPath %><%= fontName %>.svg#<%= fontName %>') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.<%= className %> {
+  display: block;
+}
+
+.<%= className %>:before {
+  display: inline-block;
+  font-family: "<%= fontName %>";
+  //font-size: $icon-size;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+
+}
+
+.<%= className %>-xs {font-size:$icon-size*0.5;}
+.<%= className %>-s {font-size:$icon-size*0.75;}
+.<%= className %>-m {font-size:$icon-size;}
+.<%= className %>-l {font-size:$icon-size*1.5;}
+.<%= className %>-xl {font-size:$icon-size*2;}
+.<%= className %>-xxl {font-size:$icon-size*3;}
+
+<% _.each(glyphs, function(glyph) { %>.<%= className %>-<%= glyph.name %>:before { content: "\<%= glyph.codepoint.toString(16).toUpperCase() %>" }
+<% }); %>

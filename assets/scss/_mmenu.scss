@@ -166,26 +166,32 @@ li.mm-vertical.mm-opened > .mm-panel {
     .mm-listview > .off-canvas-search {
       position: relative;
     }
-    .mm-listview > li > input {
+    .mm-listview > li > input[type="search"] {
       background-color: #000;
       border: none;
       padding: 20px;
-      width: 100%;
+      width: 6.5rem;
+      display: inline-block;
+      //float: left;
+    }
+    .mm-listview > li > input[type="submit"] {
+      background-color: #000;
+      border: none;
+      padding: 20px;
+      width: 50px;
+      border-left: 1px solid rgba(255,255,255,.2);
+      //float: right;
     }
     .mm-listview > li > input:focus {
       outline: 0;
       background-color: #eee;
       color: #000;
     }
-    .mm-listview > .off-canvas-search > .icon {
-      @include icon;
-      background-color: rgba(#fff, 0.2);
+    .mm-listview > li > span.ico {
       position: absolute;
-      right: 12px; top: 12px;
+      top: 18px; right: 18px;
     }
-
-    .mm-listview > li > a,
-    .mm-listview > li > span {
+    .mm-listview > li > a {
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;

@@ -81,11 +81,12 @@ include("config.inc.php"); //include config file
       							echo '<option value="4">4</option>';
       							echo '<option value="5">5</option>';
       							echo '</select>';
+                    echo '<span class="ico ico-xs ico-chevron-down"></span>';
                   echo '</div>';
                 echo '</div>';
                 echo '<div class="add-button">';
     							echo '<input class="p-code" type="hidden" value="'.$row["product_code"].'">';
-    							echo '<button type="submit">Add to Cart</button>';
+    							echo '<button class="button" type="submit">Add to Cart</button>';
                 echo '</div>';
   						echo '</div>';
 
@@ -122,24 +123,17 @@ include("config.inc.php"); //include config file
               <!-- Additional required wrapper -->
               <div class="swiper-wrapper">
                   <!-- Slides -->
-                  <div class="swiper-slide"><a href="#"><img src="http://placehold.it/190">Photon ceiling fixtures <span>&pound;26.95</span></a></div>
-                  <div class="swiper-slide"><a href="#"><img src="http://placehold.it/190">Latitude lampshade <span>&pound;26.95</span></a></div>
-                  <div class="swiper-slide"><a href="#"><img src="http://placehold.it/190">Texture lamp base <span>&pound;26.95</span></a></div>
-                  <div class="swiper-slide"><a href="#"><img src="http://placehold.it/190">Section wall fixture <span>&pound;26.95</span></a></div>
-                  <div class="swiper-slide"><a href="#"><img src="http://placehold.it/190">Flow wall fixture lamp <span>&pound;26.95</span></a></div>
-                  <div class="swiper-slide"><a href="#"><img src="http://placehold.it/190">Photon ceiling fixtures <span>&pound;26.95</span></a></div>
-                  <div class="swiper-slide"><a href="#"><img src="http://placehold.it/190">Latitude lampshade <span>&pound;26.95</span></a></div>
-                  <div class="swiper-slide"><a href="#"><img src="http://placehold.it/190">Texture lamp base <span>&pound;26.95</span></a></div>
-                  <div class="swiper-slide"><a href="#"><img src="http://placehold.it/190">Section wall fixture <span>&pound;26.95</span></a></div>
-                  <div class="swiper-slide"><a href="#"><img src="http://placehold.it/190">Flow wall fixture lamp <span>&pound;26.95</span></a></div>
+                  <div class="swiper-slide"><a href="#"><img src="http://placehold.it/190">Photon ceiling fixtures <span class="price">&pound;26.95</span></a></div>
+                  <div class="swiper-slide"><a href="#"><img src="http://placehold.it/190">Latitude lampshade <span class="price">&pound;26.95</span></a></div>
+                  <div class="swiper-slide"><a href="#"><img src="http://placehold.it/190">Texture lamp base <span class="price">&pound;26.95</span></a></div>
+                  <div class="swiper-slide"><a href="#"><img src="http://placehold.it/190">Section wall fixture <span class="price">&pound;26.95</span></a></div>
+                  <div class="swiper-slide"><a href="#"><img src="http://placehold.it/190">Flow wall fixture lamp <span class="price">&pound;26.95</span></a></div>
+                  <div class="swiper-slide"><a href="#"><img src="http://placehold.it/190">Photon ceiling fixtures <span class="price">&pound;26.95</span></a></div>
+                  <div class="swiper-slide"><a href="#"><img src="http://placehold.it/190">Latitude lampshade <span class="price">&pound;26.95</span></a></div>
+                  <div class="swiper-slide"><a href="#"><img src="http://placehold.it/190">Texture lamp base <span class="price">&pound;26.95</span></a></div>
+                  <div class="swiper-slide"><a href="#"><img src="http://placehold.it/190">Section wall fixture <span class="price">&pound;26.95</span></a></div>
+                  <div class="swiper-slide"><a href="#"><img src="http://placehold.it/190">Flow wall fixture lamp <span class="price">&pound;26.95</span></a></div>
               </div>
-              <!-- If we need pagination -->
-              <!-- <div class="swiper-pagination"></div> -->
-
-
-
-              <!-- If we need scrollbar -->
-              <!-- <div class="swiper-scrollbar"></div> -->
           </div>
           <!-- If we need navigation buttons -->
           <div class="swiper-button-prev others-prev"></div>

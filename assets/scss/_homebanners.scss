@@ -64,9 +64,13 @@
       text-align: center;
       color: #fff;
 
+      // TODO: Lets put these in the theme
       &.promo-1 {background-color: $promo-1-color;}
       &.promo-2 {background-color: $promo-2-color;}
-      &.promo-3 {background-color: $promo-3-color;}
+      &.promo-3 {
+        background-color: $promo-3-color;
+        a {color: $dark;}
+      }
 
       a {
         display: block;

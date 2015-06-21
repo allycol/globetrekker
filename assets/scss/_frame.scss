@@ -8,26 +8,27 @@ body {
 
 body {
   background-color: $background;
+  @include bodycopy;
 }
 
-/* Typography */
+// Typography
 
 h1 {
   @include header1;
-  margin: 1rem 0;
 }
 
 h2 {
-  font-size: $sub-title;
+  @include header2;
 }
+
 h3 {
   font-size: $bigger;
 }
 p {
-  font-size: $body;
+
 }
 a {
-  text-decoration: none;
+  @include linkbase;
 }
 
 /* forms */
@@ -36,8 +37,11 @@ a {
   @include dropdown;
 }
 
+.button {
+  @include button;
+}
 
-
+// Container
 
 .frame {
   @include container;
@@ -66,19 +70,25 @@ header {
       }
     }
 
+    .ico {
+      float: left;
+      margin-top: 3px;
+    }
     .number {
       font-size: $sub-title;
       margin-bottom: $space-tiny;
+      margin-left: 28px;
     }
     .times {
       font-size: $smaller;
+      margin-left: 28px;
     }
   }
 
   .off-canvas-button {
     display: block;
-    padding-top: $space-large;
-    padding-bottom: $space-large;
+    padding-top: $space-large + 0.3rem;
+    //padding-bottom: $space-large;
     font-size: $body;
 
     @include span(4 of 12);
@@ -89,48 +99,27 @@ header {
     .menu-label {
       height: 36px;
       width: 4rem;
-      padding-top: 10px;
+      padding-top: 5px;
       display: block;
     }
 
     .burger {
-      @include icon;
       float: left;
       margin-right: $space-tiny;
-      // position: relative;
-      // display: block;
-      // height: 36px;
-      // width: 36px;
-
-      // span {
-      //   position: absolute;
-      //   display: block;
-      //   height: 4px; width: 25px;
-      //   background-color: #000;
-      //   left: 5px;
-      // }
-      // span:nth-child(1) {top: 8px;}
-      // span:nth-child(2) {top: 16px;}
-      // span:nth-child(3) {top: 24px; }
     }
   }
 
   .logo {
     @include span(4 at 5 of 12);
     text-align: center;
-    padding-top: $space-large;
-    padding-bottom: $space-small;
-    img {
-      margin: auto;
-      max-width: 6rem;
-    }
+    @include logo;
   }
 
 
   .account-nav {
     @include span(4 last);
     font-size: $body;
-    padding-top: $space-large;
+    padding-top: $space-large + 0.3rem;
     //padding-bottom: $space-large;
 
     ul {
@@ -142,7 +131,7 @@ header {
       position: relative;
       .label {
         display: inline-block;
-        padding-top: 10px;
+        padding-top: 4px;
       }
       &.search {
         display: none;
@@ -153,7 +142,7 @@ header {
       &.basket {
         @include span(isolate 12 last);
         position: relative;
-        .icon {
+        .ico {
           float: right;
           margin-left: $space-tiny;
         }
@@ -163,7 +152,7 @@ header {
           height: 16px; width: 16px;
           line-height: 16px;
           border-radius: 8px;
-          background-color: $dark;
+          background-color: $brand-orange;
           font-size: $smaller;
           color: #fff;
           text-align: center;
@@ -172,12 +161,6 @@ header {
           }
         }
       }
-    }
-
-    ul li span.icon {
-      @include icon;
-      background-color: $light;
-      margin: 0 auto;
     }
 
     .search-form {
@@ -191,8 +174,8 @@ header {
   }
 
   @include breakpoint($medium) {
-    .logo, .phone, .off-canvas-button, .account-nav {
-      padding-top: $space-massive;
+    .phone, .off-canvas-button, .account-nav {
+      padding-top: $space-massive - 0.2rem;
     }
   }
 
@@ -207,7 +190,7 @@ header {
           position: relative;
         }
         .label {
-          padding-top: $space-tiny;
+          //padding-top: $space-tiny;
         }
         &.search {
           display: block;
@@ -219,7 +202,7 @@ header {
         }
         &.basket {
           @include span(isolate 3 at 10);
-          .icon {
+          .ico {
             float: none;
             margin-left: 0;
           }
@@ -249,12 +232,11 @@ header {
     li {
       list-style: none;
       display: inline-block;
-      padding: 0 0px;
-      font-size: $body;
+      padding: 0 10px;
+      font-size: $bigger;
 
       @include breakpoint($custom-nav-break) {
-        font-size: $bigger;
-        padding: 0 10px;
+        padding: 0 14px;
       }
       .subMenu {
         position: absolute;
@@ -331,6 +313,11 @@ header {
   .other-products {
     padding-top: $space-huge;
     padding-bottom: $space-huge;
+
+    img {
+      display: block;
+      margin-bottom: $space-small;
+    }
   }
 
 }

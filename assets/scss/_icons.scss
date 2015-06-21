@@ -1,0 +1,46 @@
+$icon-size: 32px;
+
+@font-face {
+  font-family: "icofont";
+  src: url('../fonts/icofont.eot');
+  src: url('../fonts/icofont.eot?#iefix') format('eot'),
+    url('../fonts/icofont.woff') format('woff'),
+    url('../fonts/icofont.ttf') format('truetype'),
+    url('../fonts/icofont.svg#icofont') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.ico {
+  display: block;
+}
+
+.ico:before {
+  display: inline-block;
+  font-family: "icofont";
+  //font-size: $icon-size;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+
+}
+
+.ico-xs {font-size:$icon-size*0.5;}
+.ico-s {font-size:$icon-size*0.75;}
+.ico-m {font-size:$icon-size;}
+.ico-l {font-size:$icon-size*1.5;}
+.ico-xl {font-size:$icon-size*2;}
+.ico-xxl {font-size:$icon-size*3;}
+
+.ico-bag:before { content: "\E001" }
+.ico-burger:before { content: "\E002" }
+.ico-chevron-down:before { content: "\E003" }
+.ico-chevron-left:before { content: "\E004" }
+.ico-chevron-right:before { content: "\E005" }
+.ico-chevron-up:before { content: "\E006" }
+.ico-magnify:before { content: "\E007" }
+.ico-phone:before { content: "\E008" }
+.ico-profile:before { content: "\E009" }

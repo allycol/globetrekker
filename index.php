@@ -29,7 +29,7 @@ include("config.inc.php"); //include config file
       </picture>
       <a href="#">
         <span class="promo-copy">
-          <span class="first">Comerstone</span><span class="second">Is a funny name</span>
+          <span class="first">Comerstone</span><span class="second">is a funny name</span>
         </span>
       </a>
     </div>
@@ -37,7 +37,7 @@ include("config.inc.php"); //include config file
       <img src="http://placehold.it/500x370/eeeeee">
       <a href="#">
         <span class="promo-copy">
-          <span class="first">Quadrate</span><span class="second">Is this one</span>
+          <span class="first">Quadrate</span><span class="second">is this one</span>
         </span>
       </a>
     </div>
@@ -45,7 +45,7 @@ include("config.inc.php"); //include config file
       <img src="http://placehold.it/500x370/dedede">
       <a href="#">
         <span class="promo-copy">
-          <span class="first">Swing</span><span class="second">Is this one</span>
+          <span class="first">Swing</span><span class="second">is this one</span>
         </span>
       </a>
     </div>
@@ -58,7 +58,7 @@ include("config.inc.php"); //include config file
         <a href="#"><span class="first">End of lines items. Last in stock.</span><span class="second"></span><span class="link-button"><span class="button bordered">Sale</span></span></a>
       </div>
       <div class="other-promo promo-3">
-        <a href="#"><span class="first">Buy direct from the importer and SAVE.</span><span class="second"></span><span class="link-button"><span class="button bordered">About</span></span></a>
+        <a href="#"><span class="first">Buy direct from the importer &amp; SAVE.</span><span class="second"></span><span class="link-button"><span class="button bordered">About</span></span></a>
       </div>
     </div>
 
@@ -101,16 +101,16 @@ include("config.inc.php"); //include config file
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
-                <div class="swiper-slide"><a href="#"><img src="http://placehold.it/300">Photon ceiling fixtures <span>&pound;26.95</span></a></div>
-                <div class="swiper-slide"><a href="#"><img src="http://placehold.it/300">Latitude lampshade <span>&pound;26.95</span></a></div>
-                <div class="swiper-slide"><a href="#"><img src="http://placehold.it/300">Texture lamp base <span>&pound;26.95</span></a></div>
-                <div class="swiper-slide"><a href="#"><img src="http://placehold.it/300">Section wall fixture <span>&pound;26.95</span></a></div>
-                <div class="swiper-slide"><a href="#"><img src="http://placehold.it/300">Flow wall fixture lamp <span>&pound;26.95</span></a></div>
-                <div class="swiper-slide"><a href="#"><img src="http://placehold.it/300">Photon ceiling fixtures <span>&pound;26.95</span></a></div>
-                <div class="swiper-slide"><a href="#"><img src="http://placehold.it/300">Latitude lampshade <span>&pound;26.95</span></a></div>
-                <div class="swiper-slide"><a href="#"><img src="http://placehold.it/300">Texture lamp base <span>&pound;26.95</span></a></div>
-                <div class="swiper-slide"><a href="#"><img src="http://placehold.it/300">Section wall fixture <span>&pound;26.95</span></a></div>
-                <div class="swiper-slide"><a href="#"><img src="http://placehold.it/300">Flow wall fixture lamp <span>&pound;26.95</span></a></div>
+                <div class="swiper-slide"><a href="#"><img src="http://placehold.it/300">Photon ceiling fixtures <span class="price">&pound;26.95</span></a></div>
+                <div class="swiper-slide"><a href="#"><img src="http://placehold.it/300">Latitude lampshade <span class="price">&pound;26.95</span></a></div>
+                <div class="swiper-slide"><a href="#"><img src="http://placehold.it/300">Texture lamp base <span class="price">&pound;26.95</span></a></div>
+                <div class="swiper-slide"><a href="#"><img src="http://placehold.it/300">Section wall fixture <span class="price">&pound;26.95</span></a></div>
+                <div class="swiper-slide"><a href="#"><img src="http://placehold.it/300">Flow wall fixture lamp <span class="price">&pound;26.95</span></a></div>
+                <div class="swiper-slide"><a href="#"><img src="http://placehold.it/300">Photon ceiling fixtures <span class="price">&pound;26.95</span></a></div>
+                <div class="swiper-slide"><a href="#"><img src="http://placehold.it/300">Latitude lampshade <span class="price">&pound;26.95</span></a></div>
+                <div class="swiper-slide"><a href="#"><img src="http://placehold.it/300">Texture lamp base <span class="price">&pound;26.95</span></a></div>
+                <div class="swiper-slide"><a href="#"><img src="http://placehold.it/300">Section wall fixture <span class="price">&pound;26.95</span></a></div>
+                <div class="swiper-slide"><a href="#"><img src="http://placehold.it/300">Flow wall fixture lamp <span class="price">&pound;26.95</span></a></div>
             </div>
             <!-- If we need pagination -->
             <!-- <div class="swiper-pagination"></div> -->
