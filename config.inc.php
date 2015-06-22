@@ -4,6 +4,11 @@ $db_password        = 'Kasabian1'; //MySql database password
 $db_name            = 'ajax_cart_test'; //MySql database name
 $db_host            = 'localhost'; //MySql hostname or IP
 
+// $db_username        = 'designpl_allycol'; //MySql database username
+// $db_password        = 'Kasabian1'; //MySql database password
+// $db_name            = 'designpl_perfect'; //MySql database name
+// $db_host            = 'localhost'; //MySql hostname or IP
+
 $currency			= '&pound;'; //currency symbol
 $shipping_cost		= 1.50; //shipping cost
 $taxes				= array( //List your Taxes percent here.
