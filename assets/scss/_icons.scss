@@ -12,7 +12,7 @@ $icon-size: 32px;
 }
 
 .ico {
-  display: block;
+  display: inline-block;
 }
 
 .ico:before {
@@ -24,8 +24,6 @@ $icon-size: 32px;
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-
 }
 
 .ico-xs {font-size:$icon-size*0.5;}
@@ -41,6 +39,8 @@ $icon-size: 32px;
 .ico-chevron-left:before { content: "\E004" }
 .ico-chevron-right:before { content: "\E005" }
 .ico-chevron-up:before { content: "\E006" }
-.ico-magnify:before { content: "\E007" }
-.ico-phone:before { content: "\E008" }
-.ico-profile:before { content: "\E009" }
+.ico-facebook:before { content: "\E007" }
+.ico-magnify:before { content: "\E008" }
+.ico-phone:before { content: "\E009" }
+.ico-profile:before { content: "\E00A" }
+.ico-star:before { content: "\E00B" }

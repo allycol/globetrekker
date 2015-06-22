@@ -136,6 +136,9 @@ header {
       &.search {
         display: none;
       }
+      .ico {
+        display: block;
+      }
       &.signin {
         display: none;
       }
@@ -269,6 +272,10 @@ header {
     text-align: center;
     margin: 0 0 $space-larger 0
   }
+  img {
+    display: block;
+    margin-bottom: $space-small;
+  }
   // @include with-layout(10) {
   //   ul {
   //     margin: 0; padding: 0;
@@ -311,13 +318,8 @@ header {
   }
 
   .other-products {
-    padding-top: $space-huge;
+    padding-top: $space-massive;
     padding-bottom: $space-huge;
-
-    img {
-      display: block;
-      margin-bottom: $space-small;
-    }
   }
 
 }

@@ -115,6 +115,31 @@ include("config.inc.php"); //include config file
       </div>
     </section>
 
+    <section class="product-reviews">
+      <div class="frame">
+        <h2>Customer reviews</h2>
+        <div class="review-list">
+          <div class="review">
+            <p>Brilliant 2nd layer and very comfortable, warm and light. Also a great top to throw on and go into town as quite fashionable. Rab's quality seems to be present in all aspects, I just hope it is robust enough to last.</p>
+            <div class="rating"><span class="ico ico-facebook ico-xs"></span><span class="from">Daniel Searle, England</span></div>
+          </div>
+          <div class="review">
+            <p>Being a very happy Nuptse (1) owner for the past five years, I thought it was time to update to an Nuptse '2', and after a search, found 'Outdoorkit' to be best price. Ordered on a Friday, and it arrived on the Monday, so, more than happy with the service from Outdoorkit. Ten out of ten! However, not so happy with The North Face company. This Nuptse 2 Jacket, unlike the Nuptse 1 has no hood in collar, and more importantly, no inside pockets at all for your phone or personal music player...... What a cheap way of saving money! Next time I will do my homework better. Still a great, warm jacket though, and predict it will get plenty of use from myself for years to come.</p>
+            <div class="rating"><span class="ico ico-facebook ico-xs"></span><span class="from">Daniel Searle, England</span></div>
+          </div>
+          <div class="review">
+            <p>Ordered a North Face Nuptse 2 Jacket at 10.30am on 7/12/2011 and received at around 9.45am the next morning. Great jacket, reliable delivery, from a trustworthy company.</p>
+            <div class="rating"><span class="ico ico-facebook ico-xs"></span><span class="from">Daniel Searle, England</span></div>
+          </div>
+          <div class="review">
+            <p>I ordered this two days ago and received my coat today, the delivery is great. The packaging of the product is safe and well packed. I am really satisfied with my order and recommend shopping with Outdoorkit. This coat is warm, I'm just wearing a t-shirt with this on top in winter.</p>
+            <div class="rating"><span class="ico ico-facebook ico-xs"></span><span class="from">Daniel Searle, England</span></div>
+          </div>
+        </div>
+        <a href="#" class="button bordered">Read more reviews</a>
+      </div>
+    </section>
+
     <section>
         <div class="frame other-products">
           <h2>You might also like</h2>

@@ -80,11 +80,9 @@ $brand1: $bodyfont;
   font-family: $brand1;
   font-size: $main-title-mobile;
   font-weight: normal;
-  text-align: center;
   margin: 1rem 0;
   @include breakpoint($medium) {
     font-size: $main-title;
-    text-align: left;
   }
   @include breakpoint($large) {
 
@@ -167,6 +165,7 @@ $brand1: $bodyfont;
 // Buttons
 
 @mixin button {
+  display: inline-block;
   font-size: $body;
   text-transform: uppercase;
   text-align: center;
@@ -175,19 +174,21 @@ $brand1: $bodyfont;
   padding: $space-small $space-larger;
   background-color: rgba($dark, 0.8);
   border: none;
-  -webkit-transition: all 500ms ease;
-  -moz-transition: all 500ms ease;
-  -ms-transition: all 500ms ease;
-  -o-transition: all 500ms ease;
-  transition: all 500ms ease;
+  -webkit-transition: all 200ms ease;
+  -moz-transition: all 200ms ease;
+  -ms-transition: all 200ms ease;
+  -o-transition: all 200ms ease;
+  transition: all 200ms ease;
   &.bordered {
+    color: rgba($dark, 0.4);
     background-color: transparent;
     border-width: 2px;
     border-style: solid;
-    border-color: rgba(#fff, 0.6);
+    border-color: rgba($dark, 0.4);
     &:hover {
+      color: rgba($dark, 1);
       background-color: transparent;
-      border-color: rgba(#fff, 1);
+      border-color: rgba($dark, 1);
     }
   }
   &:hover {

@@ -64,32 +64,56 @@
       text-align: center;
       color: #fff;
 
-      // TODO: Lets put these in the theme
-      &.promo-1 {background-color: $promo-1-color;}
-      &.promo-2 {background-color: $promo-2-color;}
-      &.promo-3 {
-        background-color: $promo-3-color;
-        a {color: $dark;}
-      }
-
       a {
+        -webkit-transition: background 300ms ease;
+        -moz-transition: background 300ms ease;
+        -ms-transition: background 300ms ease;
+        -o-transition: background 300ms ease;
+        transition: background 300ms ease;
         display: block;
         padding: $space-huge $space-medium;
       }
 
-      span {
-        display: inline-block;
+      // TODO: Lets put these in the theme
+      &.promo-1 {
+        a {background-color: $promo-1-color;}
+      }
+      &.promo-2 {
+        a {
+          background-color: $promo-2-color;
+          &:hover {
+            //background-color: $brand-yellow;
+          }
+        }
+      }
+      &.promo-1, &.promo-2 {
+        .button {
+          &.bordered {
+            color: rgba(#fff, 1) !important;
+            border-color: rgba(#fff, 1) !important;
+            &:hover {
+              color: rgba(#fff, 1) !important;
+              border-color: rgba(#fff, 1) !important;
+            }
+          }
+        }
+      }
+      &.promo-3 {
+        a {
+          background-color: $promo-3-color;
+          color: $dark;
+        }
+        .button {
+          &.bordered {
+            color: rgba(#000, 1) !important;
+            border-color: rgba(#000, 1) !important;
+          }
+        }
       }
 
       .link-button {
         display: block;
         margin-top: $space-large;
-
-        .button {
-          @include button;
-          padding: $space-small $space-larger;
-        }
-
       }
     }
 
