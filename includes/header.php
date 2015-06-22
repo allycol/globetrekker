@@ -15,7 +15,7 @@
       <a href="index.php">
         <picture>
           <source type="image/svg+xml" srcset="images/perfect-logo.svg" />
-          <img src="images/fake-logo.png" alt="Logo" />
+          <img src="images/perfect-logo.png" alt="Perfect Lights" />
         </picture>
       </a>
     </div>

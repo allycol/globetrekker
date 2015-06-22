@@ -12,7 +12,7 @@ Outdoorkit.mobimenu = function() {
 
 Outdoorkit.megamenu = function() {
 
-  var $topLevelItem = $('header nav ul > li');
+  var $topLevelItem = $('header nav > ul > li');
 	//var $subLevelItem = $('.subMenu > li');
 
 	$topLevelItem.find('a:first').append('<span />');

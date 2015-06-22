@@ -6,6 +6,7 @@ include("config.inc.php"); //include config file
 <html>
 
 <head>
+  <meta content="width=device-width, initial-scale=1.0, minimum-scale=.5, maximum-scale=1.0, user-scalable=yes" name="viewport" />
   <title>Listings page</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <link href="build/css/main.css" rel="stylesheet" type="text/css" />

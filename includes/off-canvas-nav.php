@@ -4,22 +4,22 @@
       <li><a href="/">Home</a></li>
       <li><a href="/about/">Interior</a>
          <ul>
-            <li><a href="#">Sub category</a></li>
-            <li><a href="#">Sub category</a></li>
+            <li><a href="listings.php">Listings page</a></li>
+            <li><a href="product.php">Product page</a></li>
             <li><a href="#/">Sub category</a></li>
          </ul>
       </li>
       <li><a href="#">Plaster</a>
         <ul>
-           <li><a href="#">Sub category</a></li>
-           <li><a href="#">Sub category</a></li>
+          <li><a href="listings.php">Listings page</a></li>
+          <li><a href="product.php">Product page</a></li>
            <li><a href="#/">Sub category</a></li>
         </ul>
       </li>
       <li><a href="#">Bathroom</a>
         <ul>
-           <li><a href="#">Sub category</a></li>
-           <li><a href="#">Sub category</a></li>
+          <li><a href="listings.php">Listings page</a></li>
+          <li><a href="product.php">Product page</a></li>
            <li><a href="#/">Sub category</a></li>
         </ul>
       </li>

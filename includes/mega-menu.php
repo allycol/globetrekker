@@ -2,7 +2,13 @@
   <ul>
     <li><a href="product.php">Interior</a>
       <div class="subMenu">
-        <div class="frame">Interior mega menu content</div>
+        <div class="frame">
+          <ul>
+             <li><a href="listings.php">Listings page</a></li>
+             <li><a href="product.php">Product page</a></li>
+             <li><a href="#/">Sub category</a></li>
+          </ul>
+        </div>
       </div>
     </li>
     <li><a href="#">Plaster</a>
