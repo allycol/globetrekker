@@ -70,9 +70,9 @@
   }
   .review {
     padding-bottom: $space-large;
-    //text-align: left;
+    text-align: left;
     .rating {
-      text-align: center;
+      //text-align: center;
     }
     .from {
       font-size: $smaller;
@@ -137,9 +137,9 @@
     padding-top: $space-massive;
     padding-bottom: $space-massive;
     .review {
-      //@include gallery(4);
-      @include break;
-      @include span(isolate 8 at 3 of 12);
+      @include gallery(6);
+      //@include break;
+      //@include span(isolate 8 at 3 of 12);
     }
   }
 
