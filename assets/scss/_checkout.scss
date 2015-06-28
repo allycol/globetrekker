@@ -1,0 +1,23 @@
+.bag-item {
+  @include container;
+  border-bottom: 1px solid $line-colour;
+  padding: $space-large 0;
+
+  .pic {
+    @include span(3);
+  }
+  .txt {
+    @include span(6);
+    h2 {
+      margin-top: 0;
+    }
+  }
+  .functions {
+    @include span(3 last);
+    text-align: right;
+    .price {
+      @include header2;
+      margin-top: 0;
+    }
+  }
+}

@@ -1,6 +1,10 @@
 <nav id="off-canvas-menu" style="display: none;">
    <ul>
-      <li class="off-canvas-search"><input type="search" placeholder="Search" name="search-field" /><input class="" type="submit" value=""><span class="ico ico-s ico-magnify"></span></li>
+      <li class="off-canvas-search">
+        <input type="search" placeholder="Search" class="search-field" name="search-field" />
+        <input type="submit" value="">
+        <span class="ico ico-xs ico-magnify"></span>
+      </li>
       <li><a href="/">Home</a></li>
       <li><a href="/about/">Interior</a>
          <ul>

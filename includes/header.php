@@ -2,7 +2,7 @@
   <div class="frame">
     <div class="phone">
       <span class="ico ico-s ico-phone"></span>
-      <span class="number">01252 844102</span>
+      <span class="number">01582 879 879</span>
       <span class="times">8.30am-5.30pm Monday-Friday</span>
     </div>
     <div class="off-canvas-button">
@@ -21,8 +21,6 @@
     </div>
     <div class="account-nav">
       <ul>
-        <li class="search"><a href="#"><span class="ico ico-s ico-magnify"></span> <span class="label">Search</span></a></li>
-        <li class="signin"><a href="#"><span class="ico ico-s ico-profile"></span> <span class="label">Sign in</span></a></li>
         <li class="basket">
           <a href="#" class="cart-box" id="cart-info" title="View Cart">
             <span class="ico ico-s ico-bag"></span>
@@ -42,11 +40,15 @@
               <div id="shopping-cart-results">
               </div>
           </div>
-
         </li>
+        <!-- <li class="signin"><a href="#"><span class="ico ico-s ico-profile"></span> <span class="label">Sign in</span></a></li> -->
+        <li class="account"><a href="#"><span class="ico ico-s ico-profile"></span> <span class="label">My account</span></a><br></li>
+        <li class="search"><a href="#"><span class="ico ico-s ico-magnify"></span> <span class="label">Search</span></a></li>
       </ul>
       <div class="search-form">
-        <input type="search" placeholder="Looking for something?" name="search-field" />
+        <input type="search" placeholder="Looking for something?" class="search-field" name="search-field" />
+        <input type="submit" value="">
+        <span class="ico ico-xs ico-magnify"></span>
       </div>
     </div>
   </div>

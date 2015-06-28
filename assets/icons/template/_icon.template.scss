@@ -8,7 +8,7 @@ $icon-size: 32px;
 		url('<%= fontPath %><%= fontName %>.svg#<%= fontName %>') format('svg');
 }
 
-.<%= className %>{
+@mixin iconbase {
 	font-family: "<%= fontName %>";
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
@@ -21,7 +21,12 @@ $icon-size: 32px;
 	font-size:32px;
 	line-height:1em;
 	display:inline-block;
+}
 
+.<%= className %> {
+
+	@include iconbase;
+	&.<%= className %>-tiny {font-size:$icon-size*0.25;}
 	&.<%= className %>-xs {font-size:$icon-size*0.5;}
 	&.<%= className %>-s {font-size:$icon-size*0.75;}
 	&.<%= className %>-m {font-size:$icon-size;}

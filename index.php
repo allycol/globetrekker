@@ -94,8 +94,8 @@ include("config.inc.php"); //include config file
 
   </section>
 
-  <section>
-      <div class="frame other-products">
+  <section class="other-products">
+      <div class="frame">
         <h2>Latest items in stock</h2>
         <!-- Slider main container -->
         <div class="product-swiper swiper-container">
@@ -126,19 +126,6 @@ include("config.inc.php"); //include config file
         <div class="swiper-button-next others-next"></div>
       </div>
   </section>
-
-  <!-- <div class="frame">
-    <div class="filters">
-      filters
-    </div>
-    <div class="listings-page">
-      <div class="item">Item</div>
-      <div class="item">Item</div>
-      <div class="item">Item</div>
-      <div class="item">Item</div>
-      <div class="item">Item</div>
-    </div>
-  </div> -->
 
   <?php include("includes/footer.php"); ?>
 

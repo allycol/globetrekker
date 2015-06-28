@@ -94,6 +94,14 @@ $brand1: $bodyfont;
   font-family: $brand1;
   font-size: $sub-title;
   font-weight: normal;
+  margin-top: $space-larger;
+}
+
+@mixin header3 {
+  font-family: $brand1;
+  font-size: $bigger;
+  font-weight: normal;
+  margin-bottom: $space-small;
 }
 
 // LOGO PLACEMENT
@@ -121,12 +129,22 @@ $brand1: $bodyfont;
 
 // Form elements
 
+@mixin fieldset {
+  background-color: #fff;
+  border: 1px solid $line-colour;
+  border-radius: 5px;
+  margin: $space-larger 0;
+}
+
 @mixin textinput {
   padding: 10px;
   width: 100%;
   box-sizing: border-box;
+  border-radius: 0;
+  border: 1px solid $line-colour;
   &:focus {
     outline: 0;
+    border: 1px solid #000;
   }
 }
 
@@ -193,7 +211,7 @@ $brand1: $bodyfont;
   }
   &:hover {
     color: rgba(#fff, 1);
-    background-color: rgba($brand-orange, 1);
+    background-color: rgba($dark, 1);
   }
 }
 

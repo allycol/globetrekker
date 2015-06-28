@@ -79,33 +79,107 @@ Outdoorkit.search = function() {
     e.stopPropagation();
     $('.account-nav ul').hide();
     $('.search-form').fadeIn(function(){
-      $(this).find('input').focus();
+      $(this).find('.search-field').focus();
     });
 
   });
+
+  $('.off-canvas-search').find(".search-field").bind('focusin', function(){
+    $(this).parent().addClass('focussed');
+  }).bind('focusout', function(){
+    $(this).parent().removeClass('focussed');
+  });
+
 };
 
-Outdoorkit.productSwiper = function() {
-  var productSwiper = new Swiper ('.product-swiper', {
 
-    // direction: 'vertical',
-    // loop: true,
-    //
-    // // If we need pagination
-    // pagination: '.swiper-pagination',
-    //
-    // // Navigation arrows
-    nextButton: '.others-next',
-    prevButton: '.others-prev',
 
-    centeredSlides: true,
-    slidesPerView: 'auto',
-    initialSlide: 2
-    //spaceBetween: 20
-    //
-    // // And if we need scrollbar
-    // scrollbar: '.swiper-scrollbar',
-  });
+Outdoorkit.productSwipers = function() {
+
+  var vieweditemcount = $('.viewed-swiper').find('.swiper-slide').length;
+  var otheritemcount = $('.product-swiper').find('.swiper-slide').length;
+
+  var screenwidth = $(window).width();
+
+  var mobile = screenwidth < 768;
+  var tablet = screenwidth >= 768 && screenwidth < 960;
+  var desktop = screenwidth >= 960;
+
+
+  // Viewed products Swiper
+
+  if(mobile && (vieweditemcount > 3)) {
+    var swipeposition = 2;
+    var centering = true;
+    viewedSwiper(swipeposition, centering);
+  }
+
+  if(tablet && (vieweditemcount > 6)) {
+    var swipeposition = 3;
+    var centering = true;
+    viewedSwiper(swipeposition, centering);
+  }
+
+  else if(desktop && (vieweditemcount > 8)) {
+    var swipeposition = 0;
+    var centering = false;
+    viewedSwiper(swipeposition, centering);
+    $('.viewed-next').show();
+    $('.viewed-prev').show();
+  }
+
+  function viewedSwiper(swipeposition, centering) {
+    var viewedSwiper = new Swiper ('.viewed-swiper', {
+      nextButton: '.viewed-next',
+      prevButton: '.viewed-prev',
+      centeredSlides: centering,
+      slidesPerView: 'auto',
+      initialSlide: swipeposition
+    });
+  }
+
+  // Other products Swiper
+
+  if(mobile && (otheritemcount > 2)) {
+    var swipeposition = 1;
+    var centering = true;
+    otherSwiper(swipeposition, centering);
+  }
+
+  if(tablet && (otheritemcount > 4)) {
+    var swipeposition = 2;
+    var centering = true;
+    otherSwiper(swipeposition, centering);
+  }
+
+  else if(desktop && (otheritemcount > 5)) {
+    var swipeposition = 0;
+    var centering = false;
+    otherSwiper(swipeposition, centering);
+    $('.others-next').show();
+    $('.others-prev').show();
+  }
+
+  function otherSwiper(swipeposition, centering) {
+    var otherSwiper = new Swiper ('.product-swiper', {
+      // direction: 'vertical',
+      // loop: true,
+      //
+      // // If we need pagination
+      // pagination: '.swiper-pagination',
+      //
+      // // Navigation arrows
+      nextButton: '.others-next',
+      prevButton: '.others-prev',
+      centeredSlides: centering,
+      slidesPerView: 'auto',
+      initialSlide: swipeposition
+      //spaceBetween: 20
+      // // And if we need scrollbar
+      // scrollbar: '.swiper-scrollbar',
+    });
+  }
+
 };
 
 Outdoorkit.gallerySwiper = function() {
@@ -238,7 +312,7 @@ Outdoorkit.init = function() {
     Outdoorkit.mobimenu();
     Outdoorkit.megamenu();
     Outdoorkit.search();
-    Outdoorkit.productSwiper();
+    Outdoorkit.productSwipers();
     Outdoorkit.gallerySwiper();
     Outdoorkit.bannerSwiper();
     Outdoorkit.filters();

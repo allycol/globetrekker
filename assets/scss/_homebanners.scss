@@ -58,6 +58,8 @@
 
   .three-equal {
 
+    @include break;
+
     .other-promo {
 
       font-size: $sub-title;
@@ -71,7 +73,7 @@
         -o-transition: background 300ms ease;
         transition: background 300ms ease;
         display: block;
-        padding: $space-huge $space-medium;
+        padding: $space-massive $space-medium;
       }
 
       // TODO: Lets put these in the theme
@@ -125,6 +127,7 @@
 
 @include with-layout($promos) {
 
+
   @include breakpoint($medium) {
 
     .promos {
@@ -137,18 +140,6 @@
 
       .small-promo {
         @include span(6);
-      }
-
-      .three-equal {
-        @include container;
-
-        .other-promo {
-          // This only works because there are no gutters
-          @include gallery(4 of 12);
-          a {
-            padding: $space-huge + 0.5rem $space-medium;
-          }
-        }
       }
 
     }
@@ -178,6 +169,18 @@
           }
         }
 
+      }
+
+      .three-equal {
+        @include container;
+
+        .other-promo {
+          // This only works because there are no gutters
+          @include gallery(4 of 12);
+          a {
+            padding: $space-huge + 0.5rem $space-medium;
+          }
+        }
       }
 
     }

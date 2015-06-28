@@ -41,7 +41,7 @@ include("config.inc.php"); //include config file
         <div class="product-count">
           <ul class="pagination">
             <li class="prev"><a href="">Prev</a></li>
-            <li><a href="">1</a></li>
+            <li><a href="" class="active">1</a></li>
             <li><a href="">2</a></li>
             <li><a href="">3</a></li>
             <li><a href="">4</a></li>
@@ -133,7 +133,7 @@ include("config.inc.php"); //include config file
       <div class="product-count">
       <ul class="pagination">
         <li class="prev"><a href="">Prev</a></li>
-        <li><a href="">1</a></li>
+        <li><a href="" class="active">1</a></li>
         <li><a href="">2</a></li>
         <li><a href="">3</a></li>
         <li><a href="">4</a></li>

@@ -3,7 +3,7 @@
   position: relative;
   background-color: $light;
   padding-top: $space-larger;
-  padding-bottom: $space-small;
+  padding-bottom: $space-larger;
 
   .product-gallery {
     margin-bottom: $space-larger;
@@ -23,16 +23,17 @@
     }
     .add-to-bag {
       @include container;
-      padding: $space-larger 0;
+      padding: $space-large 0;
+      margin-bottom: $space-large;
       border-bottom: 1px solid $dark;
 
       .add-qty {
         text-align: center;
         margin-bottom: $space-larger;
         label {
+          display: block;
           font-size: $body;
-          display: inline-block;
-          margin-right: $space-medium;
+          margin-bottom: $space-small;
         }
       }
 
@@ -72,7 +73,12 @@
     padding-bottom: $space-large;
     text-align: left;
     .rating {
-      //text-align: center;
+      .ico {
+        color: $brand-orange;
+        &:before{
+          vertical-align: middle;
+        }
+      }
     }
     .from {
       font-size: $smaller;
@@ -87,25 +93,6 @@
 
   .product-details {
 
-    .breadcrumb {
-      display: block;
-      margin: 0 0 $space-large 0;
-      padding: 0;
-      list-style: none;
-      font-size: $smaller;
-      li {
-        display: inline-block;
-        &:before {
-          content: "";
-          display: block;
-          width: $smaller; height: $smaller;
-          float: left;
-          margin: 0 $space-tiny;
-          background-color: #ddd;
-        }
-      }
-    }
-
     .product-gallery {
       @include span(6);
     }
@@ -116,16 +103,11 @@
       @include prefix(5%);
       .add-to-bag {
         .add-qty {
-          @include span(5);
           text-align: left;
-          margin-bottom: 0;
-        }
-        .add-button {
-          @include span(7 last);
-          text-align: left;
-          button {
+          label {
             display: inline-block;
-            width: auto;
+            margin-right: $space-medium;
+            margin-bottom: 0;
           }
         }
       }
@@ -143,4 +125,25 @@
     }
   }
 
+}
+
+@include breakpoint($large) {
+  .product-details {
+    .product-info {
+      .add-to-bag {
+        .add-qty {
+          @include span(5);
+          margin-bottom: 0;
+        }
+        .add-button {
+          @include span(7 last);
+          text-align: left;
+          button {
+            display: inline-block;
+            width: auto;
+          }
+        }
+      }
+    }
+  }
 }

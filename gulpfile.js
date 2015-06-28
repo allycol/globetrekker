@@ -19,7 +19,7 @@ gulp.task('iconfont', function(){
       fontHeight: 1001
     }))
     .on('codepoints', function(codepoints, options) {
-      gulp.src('assets/icons/template/_icons.template.scss')
+      gulp.src('assets/icons/template/_icon.template.scss')
       .pipe(consolidate('lodash', {
           glyphs: codepoints,
           fontName: 'icofont',

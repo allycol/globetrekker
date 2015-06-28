@@ -1,44 +1,258 @@
 $icon-size: 32px;
-
 @font-face {
-  font-family: "icofont";
-  src: url('../fonts/icofont.eot');
-  src: url('../fonts/icofont.eot?#iefix') format('eot'),
-    url('../fonts/icofont.woff') format('woff'),
-    url('../fonts/icofont.ttf') format('truetype'),
-    url('../fonts/icofont.svg#icofont') format('svg');
-  font-weight: normal;
-  font-style: normal;
+	font-family: "icofont";
+	src: url('../fonts/icofont.eot');
+	src: url('../fonts/icofont.eot?#iefix') format('eot'),
+		url('../fonts/icofont.woff') format('woff'),
+		url('../fonts/icofont.ttf') format('truetype'),
+		url('../fonts/icofont.svg#icofont') format('svg');
+}
+
+@mixin iconbase {
+	font-family: "icofont";
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	// speak: none; // only necessary if not using the private unicode range (firstGlyph option)
+	text-decoration: none;
+	text-transform: none;
+	font-size:32px;
+	line-height:1em;
+	display:inline-block;
 }
 
 .ico {
-  display: inline-block;
+
+	@include iconbase;
+	&.ico-tiny {font-size:$icon-size*0.25;}
+	&.ico-xs {font-size:$icon-size*0.5;}
+	&.ico-s {font-size:$icon-size*0.75;}
+	&.ico-m {font-size:$icon-size;}
+	&.ico-l {font-size:$icon-size*1.5;}
+	&.ico-xl {font-size:$icon-size*2;}
+	&.ico-xxl {font-size:$icon-size*3;}
 }
 
-.ico:before {
-  display: inline-block;
-  font-family: "icofont";
-  //font-size: $icon-size;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+%icon {
+
 }
 
-.ico-xs {font-size:$icon-size*0.5;}
-.ico-s {font-size:$icon-size*0.75;}
-.ico-m {font-size:$icon-size;}
-.ico-l {font-size:$icon-size*1.5;}
-.ico-xl {font-size:$icon-size*2;}
-.ico-xxl {font-size:$icon-size*3;}
+@function icon-char($filename) {
+	$char: "";
 
-.ico-bag:before { content: "\E001" }
-.ico-burger:before { content: "\E002" }
-.ico-chevron-down:before { content: "\E003" }
-.ico-chevron-left:before { content: "\E004" }
-.ico-chevron-right:before { content: "\E005" }
-.ico-chevron-up:before { content: "\E006" }
-.ico-magnify:before { content: "\E007" }
-.ico-phone:before { content: "\E008" }
-.ico-profile:before { content: "\E009" }
+	@if $filename == bag {
+		$char: "\E001";
+	}
+	@if $filename == burger {
+		$char: "\E002";
+	}
+	@if $filename == chevron-down {
+		$char: "\E003";
+	}
+	@if $filename == chevron-left {
+		$char: "\E004";
+	}
+	@if $filename == chevron-right {
+		$char: "\E005";
+	}
+	@if $filename == chevron-up {
+		$char: "\E006";
+	}
+	@if $filename == facebook {
+		$char: "\E007";
+	}
+	@if $filename == instagram {
+		$char: "\E008";
+	}
+	@if $filename == magnify {
+		$char: "\E009";
+	}
+	@if $filename == pdf {
+		$char: "\E00A";
+	}
+	@if $filename == phone {
+		$char: "\E00B";
+	}
+	@if $filename == pinterest {
+		$char: "\E00C";
+	}
+	@if $filename == profile {
+		$char: "\E00D";
+	}
+	@if $filename == rating-five {
+		$char: "\E00E";
+	}
+	@if $filename == rating-four {
+		$char: "\E00F";
+	}
+	@if $filename == rating-one {
+		$char: "\E010";
+	}
+	@if $filename == rating-three {
+		$char: "\E011";
+	}
+	@if $filename == rating-two {
+		$char: "\E012";
+	}
+	@if $filename == star {
+		$char: "\E013";
+	}
+	@if $filename == twitter {
+		$char: "\E014";
+	}
+
+	@return $char;
+}
+
+@mixin icon($filename, $insert: before) {
+	&:#{$insert} {
+		@extend %icon;
+		content: icon-char($filename);
+	}
+}
+
+
+	@mixin icon-bag{
+		content: icon-char(bag);
+	}
+
+	@mixin icon-burger{
+		content: icon-char(burger);
+	}
+
+	@mixin icon-chevron-down{
+		content: icon-char(chevron-down);
+	}
+
+	@mixin icon-chevron-left{
+		content: icon-char(chevron-left);
+	}
+
+	@mixin icon-chevron-right{
+		content: icon-char(chevron-right);
+	}
+
+	@mixin icon-chevron-up{
+		content: icon-char(chevron-up);
+	}
+
+	@mixin icon-facebook{
+		content: icon-char(facebook);
+	}
+
+	@mixin icon-instagram{
+		content: icon-char(instagram);
+	}
+
+	@mixin icon-magnify{
+		content: icon-char(magnify);
+	}
+
+	@mixin icon-pdf{
+		content: icon-char(pdf);
+	}
+
+	@mixin icon-phone{
+		content: icon-char(phone);
+	}
+
+	@mixin icon-pinterest{
+		content: icon-char(pinterest);
+	}
+
+	@mixin icon-profile{
+		content: icon-char(profile);
+	}
+
+	@mixin icon-rating-five{
+		content: icon-char(rating-five);
+	}
+
+	@mixin icon-rating-four{
+		content: icon-char(rating-four);
+	}
+
+	@mixin icon-rating-one{
+		content: icon-char(rating-one);
+	}
+
+	@mixin icon-rating-three{
+		content: icon-char(rating-three);
+	}
+
+	@mixin icon-rating-two{
+		content: icon-char(rating-two);
+	}
+
+	@mixin icon-star{
+		content: icon-char(star);
+	}
+
+	@mixin icon-twitter{
+		content: icon-char(twitter);
+	}
+
+
+
+.ico-bag {
+	@include icon(bag);
+}
+.ico-burger {
+	@include icon(burger);
+}
+.ico-chevron-down {
+	@include icon(chevron-down);
+}
+.ico-chevron-left {
+	@include icon(chevron-left);
+}
+.ico-chevron-right {
+	@include icon(chevron-right);
+}
+.ico-chevron-up {
+	@include icon(chevron-up);
+}
+.ico-facebook {
+	@include icon(facebook);
+}
+.ico-instagram {
+	@include icon(instagram);
+}
+.ico-magnify {
+	@include icon(magnify);
+}
+.ico-pdf {
+	@include icon(pdf);
+}
+.ico-phone {
+	@include icon(phone);
+}
+.ico-pinterest {
+	@include icon(pinterest);
+}
+.ico-profile {
+	@include icon(profile);
+}
+.ico-rating-five {
+	@include icon(rating-five);
+}
+.ico-rating-four {
+	@include icon(rating-four);
+}
+.ico-rating-one {
+	@include icon(rating-one);
+}
+.ico-rating-three {
+	@include icon(rating-three);
+}
+.ico-rating-two {
+	@include icon(rating-two);
+}
+.ico-star {
+	@include icon(star);
+}
+.ico-twitter {
+	@include icon(twitter);
+}
