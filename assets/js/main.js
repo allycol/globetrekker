@@ -2,11 +2,42 @@ var Outdoorkit = Outdoorkit || {};
 
 Outdoorkit.mobimenu = function() {
   $("#off-canvas-menu").mmenu({
-
+    extensions	: ["theme-black"]
   });
-  $("#filters-canvas-menu").mmenu({
-
+  $("#off-canvas-filters").mmenu({
+    //offCanvas	: false,
+    "offCanvas": {
+      "position": "right",
+       "zposition": "next"
+    },
+    navbar		: {
+			title		: "Filter items"
+		},
+		navbars		: true,
+    extensions	: ["theme-black", "fullscreen"]
   });
+
+  // $(function() {$("#menu").mmenu({
+	// 	offCanvas	: false,
+	// 	extensions	: ["theme-black"],
+	// 	navbar		: {
+	// 		title		: "Demo app"
+	// 	},
+	// 	navbars		: true,
+	// 	searchfield	: {
+	// 		add			: true,
+	// 		addTo		: "#panel-categories",
+	// 		placeholder	: "Search categories"
+	// 	}}).on( 'click',
+	// 		'a[href^="#/"]',
+	// 		function() {
+	// 		  alert( "Thank you for clicking, but that's a demo link." );
+	// 			return false;
+	// 		}
+	// 	);
+  // });
+
+
 };
 
 

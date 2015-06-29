@@ -6,56 +6,56 @@
         <span class="ico ico-xs ico-magnify"></span>
       </li>
       <li><a href="/">Home</a></li>
-      <li><a href="/about/">Interior</a>
+      <li><span>Interior</span>
          <ul>
             <li><a href="listings.php">Listings page</a></li>
             <li><a href="product.php">Product page</a></li>
             <li><a href="#/">Sub category</a></li>
          </ul>
       </li>
-      <li><a href="#">Plaster</a>
+      <li><span>Plaster</span>
         <ul>
           <li><a href="listings.php">Listings page</a></li>
           <li><a href="product.php">Product page</a></li>
            <li><a href="#/">Sub category</a></li>
         </ul>
       </li>
-      <li><a href="#">Bathroom</a>
+      <li><span>Bathroom</span>
         <ul>
           <li><a href="listings.php">Listings page</a></li>
           <li><a href="product.php">Product page</a></li>
            <li><a href="#/">Sub category</a></li>
         </ul>
       </li>
-      <li><a href="#">Bases &amp; Shades</a>
+      <li><span>Bases &amp; Shades</span>
         <ul>
            <li><a href="#">Sub category</a></li>
            <li><a href="#">Sub category</a></li>
            <li><a href="#/">Sub category</a></li>
         </ul>
       </li>
-      <li><a href="#">Interior</a>
+      <li><span>Interior</span>
         <ul>
            <li><a href="#">Sub category</a></li>
            <li><a href="#">Sub category</a></li>
            <li><a href="#/">Sub category</a></li>
         </ul>
       </li>
-      <li><a href="#">Plaster</a>
+      <li><span>Plaster</span>
         <ul>
            <li><a href="#">Sub category</a></li>
            <li><a href="#">Sub category</a></li>
            <li><a href="#/">Sub category</a></li>
         </ul>
       </li>
-      <li><a href="#">Bathroom</a>
+      <li><span>Bathroom</span>
         <ul>
            <li><a href="#">Sub category</a></li>
            <li><a href="#">Sub category</a></li>
            <li><a href="#/">Sub category</a></li>
         </ul>
       </li>
-      <li><a href="#">Bases &amp; Shades</a>
+      <li><span>Bases &amp; Shades</span>
         <ul>
            <li><a href="#">Sub category</a></li>
            <li><a href="#">Sub category</a></li>

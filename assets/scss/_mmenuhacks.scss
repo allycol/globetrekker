@@ -1,0 +1,56 @@
+/* Ally's custom styles */
+.mm-listview>li>a, .mm-listview>li>span {
+  padding: 15px 10px 15px 20px;
+}
+.mm-listview>li>span .button {
+  // width: 50%;
+  background-color: rgba($light, 0.2);
+}
+.mm-listview > li> span .button {
+  //@include addtocartbutton;
+  display: block;
+  width: 100%;
+  background-color: rgba($brand-orange, 1);
+}
+.mm-menu.mm-theme-black .mm-listview>li:last-child:after {
+  display: none;
+}
+.mm-listview > .off-canvas-search:not(.mm-divider):after {
+  left:0;
+}
+.mm-listview > .off-canvas-search {
+  position: relative;
+}
+.mm-listview > .off-canvas-search > input[type="search"] {
+  background-color: #000;
+  border: none;
+  padding: 20px;
+}
+.mm-listview > .off-canvas-search > input[type="submit"] {
+  background-color: transparent;
+  border: none;
+  padding: 20px;
+  width: 50px;
+  position: absolute;
+  top: 0px; right: 0px;
+  z-index: 2;
+  border-radius: 0;
+}
+.mm-listview > .off-canvas-search > input:focus {
+  outline: 0;
+  background-color: #eee;
+  color: #000;
+}
+.mm-listview > .off-canvas-search > span.ico {
+  position: absolute;
+  top: 20px; right: 20px;
+  z-index: 1;
+  padding: 0;
+}
+.mm-listview > .off-canvas-search.focussed > span.ico {
+  color: #000;
+}
+
+.mm-menu.mm-theme-black .mm-listview>li.mm-selected>a:not(.mm-next) {
+  background-color: transparent !important;
+}

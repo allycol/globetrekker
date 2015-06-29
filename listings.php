@@ -17,9 +17,7 @@ include("config.inc.php"); //include config file
 
 <?php include("includes/off-canvas-nav.php"); ?>
 
-<nav id="filters-canvas-menu" style="display: none;">
-
-</nav>
+<?php include("includes/filters.php"); ?>
 
 <div id="page">
 
@@ -48,7 +46,7 @@ include("config.inc.php"); //include config file
             <li class="next"><a href="">Next</a></li>
           </ul>
           <p>31 - 60 of 96 products</p>
-          <a href="#" class="filters-button">Filters</a>
+          <a href="#off-canvas-filters" class="filters-button">Filters</a>
         </div>
       </div>
 
