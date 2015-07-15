@@ -99,9 +99,6 @@
   }
 
 
-
-
-
   .listings {
     .item {
       padding-bottom: $space-large;
@@ -126,6 +123,18 @@
     }
   }
 
+}
+
+#off-canvas-filters {
+  //border: 1px solid red;
+  label {
+    cursor: pointer;
+    display: block;
+  }
+  input[type="checkbox"] {
+    margin-right: $space-tiny;
+    float: left;
+  }
 }
 
 @include breakpoint($large) {
