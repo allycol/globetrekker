@@ -9,6 +9,7 @@
   "author": "ALly C",
   "license": "ISC",
   "devDependencies": {
+    "browser-sync": "^2.8.0",
     "consolidate": "^0.13.1",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.5.2",

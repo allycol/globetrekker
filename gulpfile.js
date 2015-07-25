@@ -7,7 +7,8 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     concat = require('gulp-concat'),
     fontgen = require("gulp-fontgen"),
-    sourcemaps = require('gulp-sourcemaps');
+    sourcemaps = require('gulp-sourcemaps'),
+    browserSync = require('browser-sync').create();
 
 
 gulp.task('iconfont', function(){
@@ -57,13 +58,22 @@ gulp.task('styles', function(){
   }))
   .pipe(minifyCss())
   .pipe(sourcemaps.write())
-  .pipe(gulp.dest('build/css'));
+  .pipe(gulp.dest('build/css'))
+  .pipe(browserSync.stream());
+});
+
+gulp.task('serve', ['styles'], function() {
+    browserSync.init({
+        proxy: "localhost/~allycolquhoun/globetrekker"
+    });
+    gulp.watch("*.php").on('change', browserSync.reload);
 });
 
 gulp.task('watch', function() {
   gulp.watch('assets/scss/*.scss', ['styles']);
   gulp.watch('assets/js/*.js', ['scripts']);
   gulp.watch('assets/icons/*.svg', ['iconfont']);
+
 });
 
-gulp.task('default', ['iconfont', 'scripts', 'styles', 'watch']);
+gulp.task('default', ['iconfont', 'scripts', 'styles', 'serve', 'watch']);
