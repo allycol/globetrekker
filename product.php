@@ -26,11 +26,11 @@ include("config.inc.php"); //include config file
 
 			<div class="frame">
 
-        <ul class="breadcrumb">
+        <!-- <ul class="breadcrumb">
           <li><a href="#">Category</a></li>
           <li><a href="#">Sub Category</a></li>
           <li><a href="#">Cool T-Shirt</a></li>
-        </ul>
+        </ul> -->
 
         <div class="product-gallery">
           <div class="product-gallery-lrg swiper-container">
@@ -139,8 +139,9 @@ include("config.inc.php"); //include config file
     </section>
 
     <section class="other-products">
-        <div class="frame">
-          <h2>You might also like</h2>
+      <div class="frame">
+        <h2>You might also like</h2>
+        <div class="swipe-arrow-wrapper">
           <!-- Slider main container -->
           <div class="product-swiper swiper-container">
               <!-- Additional required wrapper -->
@@ -161,31 +162,34 @@ include("config.inc.php"); //include config file
           <!-- If we need navigation buttons -->
           <div class="swiper-button-prev others-prev"></div>
           <div class="swiper-button-next others-next"></div>
+        </div>
       </div>
     </section>
 
     <section class="products-viewed">
       <div class="frame">
         <h2>Items viewed</h2>
-        <!-- Slider main container -->
-        <div class="viewed-swiper swiper-container">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-                <!-- Slides -->
-                <div class="swiper-slide"><a href="#"><img src="http://placehold.it/190"></a></div>
-                <div class="swiper-slide"><a href="#"><img src="http://placehold.it/190"></a></div>
-                <div class="swiper-slide"><a href="#"><img src="http://placehold.it/190"></a></div>
-                <div class="swiper-slide"><a href="#"><img src="http://placehold.it/190"></a></div>
-                <div class="swiper-slide"><a href="#"><img src="http://placehold.it/190"></a></div>
-                <div class="swiper-slide"><a href="#"><img src="http://placehold.it/190"></a></div>
-                <div class="swiper-slide"><a href="#"><img src="http://placehold.it/190"></a></div>
-                <div class="swiper-slide"><a href="#"><img src="http://placehold.it/190"></a></div>
-                <div class="swiper-slide"><a href="#"><img src="http://placehold.it/190"></a></div>
-            </div>
+        <div class="swipe-arrow-wrapper">
+          <!-- Slider main container -->
+          <div class="viewed-swiper swiper-container">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper">
+                  <!-- Slides -->
+                  <div class="swiper-slide"><a href="#"><img src="http://placehold.it/190"></a></div>
+                  <div class="swiper-slide"><a href="#"><img src="http://placehold.it/190"></a></div>
+                  <div class="swiper-slide"><a href="#"><img src="http://placehold.it/190"></a></div>
+                  <div class="swiper-slide"><a href="#"><img src="http://placehold.it/190"></a></div>
+                  <div class="swiper-slide"><a href="#"><img src="http://placehold.it/190"></a></div>
+                  <div class="swiper-slide"><a href="#"><img src="http://placehold.it/190"></a></div>
+                  <div class="swiper-slide"><a href="#"><img src="http://placehold.it/190"></a></div>
+                  <div class="swiper-slide"><a href="#"><img src="http://placehold.it/190"></a></div>
+                  <div class="swiper-slide"><a href="#"><img src="http://placehold.it/190"></a></div>
+              </div>
+          </div>
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev viewed-prev"></div>
+          <div class="swiper-button-next viewed-next"></div>
         </div>
-        <!-- If we need navigation buttons -->
-        <div class="swiper-button-prev viewed-prev"></div>
-        <div class="swiper-button-next viewed-next"></div>
       </div>
     </section>
 

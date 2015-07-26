@@ -21,6 +21,7 @@ $icon-size: 32px;
 	font-size:32px;
 	line-height:1em;
 	display:inline-block;
+	//vertical-align: text-bottom;
 }
 
 .ico {
@@ -101,6 +102,9 @@ $icon-size: 32px;
 	}
 	@if $filename == twitter {
 		$char: "\E014";
+	}
+	@if $filename == warning {
+		$char: "\E015";
 	}
 
 	@return $char;
@@ -194,6 +198,10 @@ $icon-size: 32px;
 		content: icon-char(twitter);
 	}
 
+	@mixin icon-warning{
+		content: icon-char(warning);
+	}
+
 
 
 .ico-bag {
@@ -255,4 +263,7 @@ $icon-size: 32px;
 }
 .ico-twitter {
 	@include icon(twitter);
+}
+.ico-warning {
+	@include icon(warning);
 }

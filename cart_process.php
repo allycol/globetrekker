@@ -57,7 +57,7 @@ if(isset($_POST["load_cart"]) && $_POST["load_cart"]==1)
 			$total = ($total + $subtotal);
 		}
 		$cart_box .= "</ul>";
-		$cart_box .= '<div class="cart-products-footer"><div class="cart-products-total">Total : '.$currency.sprintf("%01.2f",$total).'</div><div class="go-to-basket"><a class="button" href="view_cart.php" title="Review Cart and Check-Out">Check-out</a></div></div>';
+		$cart_box .= '<div class="cart-products-footer"><div class="cart-products-total">Total : '.$currency.sprintf("%01.2f",$total).'</div><div class="go-to-basket"><a class="button" href="bag.php" title="Review Cart and Check-Out">Check-out</a></div></div>';
 		die($cart_box); //exit and output content
 	}else{
 		die("Your bag is empty"); //we have empty cart

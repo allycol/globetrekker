@@ -32,7 +32,7 @@ include("config.inc.php"); //include config file
 
           <div class="bag-item">
             <div class="pic">
-              <a href="#"><img src="http://placehold.it/190" /></a>
+              <a href="product.php"><img src="http://placehold.it/190" /></a>
             </div>
             <div class="txt">
               <h2><a href="product.php">The North Face Men's McMurdo Parka 2</a></h2>
@@ -44,14 +44,36 @@ include("config.inc.php"); //include config file
             </div>
             <div class="functions">
               <div class="price">&pound;269.99</div>
-              <a class="remove" href="#"><span class="ico ico-chevron-right ico-xs"></span>Remove</a>
+              <a class="button smaller remove" href="#">Remove</a>
             </div>
           </div>
 
-          <p class="return"><a href="product.php">Return to The North Face Men's McMurdo Parka 2 and continue shopping</a></p>
-          <div class="pricebasket">Sub-total: &pound;269.99</div>
-          <div style="clear:both;"></div>
-          <div class="checkout"><a class="button" href="https://www.outdoorkit.co.uk/checkout.php">Proceed to checkout</a></div>
+          <div class="bag-item">
+            <div class="pic">
+              <a href="product.php"><img src="http://placehold.it/190" /></a>
+            </div>
+            <div class="txt">
+              <h2><a href="product.php">The North Face Men's McMurdo Parka 2</a></h2>
+              <ul>
+                <li>TNF Black - Small</li>
+                <li>In stock</li>
+                <li>Quantity: 1</li>
+              </ul>
+            </div>
+            <div class="functions">
+              <div class="price">&pound;269.99</div>
+              <a class="button smaller remove" href="#">Remove</a>
+            </div>
+          </div>
+
+          <div class="return">
+            <a href="product.php"><span class="ico ico-xs ico-chevron-left"></span>Continue shopping</a>
+          </div>
+
+          <div class="bag-footer">
+            <div class="sub-total">Sub-total: &pound;269.99</div>
+            <a class="button" href="checkout.php">Proceed to checkout</a>
+          </div>
 
         </div>
 

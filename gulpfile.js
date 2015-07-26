@@ -65,15 +65,14 @@ gulp.task('styles', function(){
 gulp.task('serve', ['styles'], function() {
     browserSync.init({
         proxy: "localhost/~allycolquhoun/globetrekker"
-    });
-    gulp.watch("*.php").on('change', browserSync.reload);
+    });  
 });
 
 gulp.task('watch', function() {
   gulp.watch('assets/scss/*.scss', ['styles']);
   gulp.watch('assets/js/*.js', ['scripts']);
   gulp.watch('assets/icons/*.svg', ['iconfont']);
-
+  gulp.watch("*.php").on('change', browserSync.reload);
 });
 
 gulp.task('default', ['iconfont', 'scripts', 'styles', 'serve', 'watch']);

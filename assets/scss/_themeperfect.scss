@@ -73,6 +73,9 @@ $brand1: $bodyfont;
 @mixin linkbase {
   color: $dark;
   text-decoration: none;
+  &:hover, &:focus {
+    color: $brand-red;
+  }
 }
 
 // H1
@@ -122,11 +125,6 @@ $brand1: $bodyfont;
 }
 
 
-// Home promos
-
-
-
-
 // Form elements
 
 @mixin fieldset {
@@ -161,7 +159,7 @@ $brand1: $bodyfont;
     -o-border-radius: 0;
     border-radius: 0;
     font-size: $body;
-    padding: $space-small $space-larger $space-small $space-small;
+    padding: $space-small $space-massive $space-small $space-small;
     border: 1px solid $dark;
     position: relative;
     min-width: 4rem;
@@ -183,13 +181,14 @@ $brand1: $bodyfont;
 // Buttons
 
 @mixin button {
-  display: inline-block;
+  display: block;
+  width: 100%;
   font-size: $body;
   text-transform: uppercase;
   text-align: center;
   letter-spacing: 0.08rem;
   color: rgba(#fff, 0.8);
-  padding: $space-small $space-larger;
+  padding: $space-small 0;
   background-color: rgba($dark, 0.8);
   border: none;
   -webkit-transition: all 200ms ease;
@@ -212,6 +211,15 @@ $brand1: $bodyfont;
   &:hover {
     color: rgba(#fff, 1);
     background-color: rgba($dark, 1);
+  }
+  &.smaller {
+    font-size: $smaller;
+    padding: $space-small $space-large;
+  }
+  @include breakpoint($medium) {
+    display: inline-block;
+    width: auto;
+    padding: $space-small $space-larger;
   }
 }
 
@@ -239,6 +247,7 @@ $small-promo-second: $small-promo-first/2;
     }
     .second {
       font-size: $large-promo-second/2;
+      letter-spacing: 0.1rem;
     }
     @include breakpoint($small) {
       margin-top: -$large-promo-first;
@@ -260,6 +269,7 @@ $small-promo-second: $small-promo-first/2;
     }
     .second {
       font-size: $small-promo-second/1.5;
+      letter-spacing: 0.1rem;
     }
     @include breakpoint($small) {
       .first {
@@ -269,5 +279,49 @@ $small-promo-second: $small-promo-first/2;
         font-size: $small-promo-second;
       }
     }
+  }
+}
+
+// Home promos colours
+
+.brand-yellow {
+  &.large-promo {
+    a { // Change the BG colour only for large promo
+      background-color: rgba($brand-yellow, 0.3) !important;
+      &:hover {
+        background-color: rgba($brand-yellow, 0.1) !important;
+      }
+    }
+  }
+  .first { // Change the Txt colour for all
+    color: $brand-yellow;
+  }
+}
+
+.brand-orange {
+  &.large-promo {
+    a { // Change the BG colour only for large promo
+      background-color: rgba($brand-orange, 0.3) !important;
+      &:hover {
+        background-color: rgba($brand-orange, 0.1) !important;
+      }
+    }
+  }
+  .first { // Change the Txt colour for all
+    color: $brand-orange;
+  }
+}
+
+.brand-red {
+  &.large-promo {
+    a { // Change the BG colour only for large promo
+      background-color: rgba($brand-red, 0.3) !important;
+      &:hover {
+        background-color: rgba($brand-red, 0.1) !important;
+      }
+    }
+  }
+  .first { // Change the Txt colour for all
+    color: $brand-red;
   }
 }

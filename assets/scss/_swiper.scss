@@ -206,6 +206,10 @@
   touch-action: pan-x;
 }
 /* Arrows */
+.swipe-arrow-wrapper {
+  position: relative;
+}
+
 .swiper-button-prev,
 .swiper-button-next {
   position: absolute;
@@ -214,7 +218,7 @@
   cursor: pointer;
   // width: 27px;
   // height: 44px;
-  // margin-top: -22px;
+  margin-top: -16px;
   // -moz-background-size: 27px 44px;
   // -webkit-background-size: 27px 44px;
   // background-size: 27px 44px;
@@ -292,10 +296,10 @@
     // }
   }
   .swiper-button-prev {
-    left: -20px;
+    left: -30px;
   }
   .swiper-button-next {
-    right: -20px;
+    right: -30px;
   }
 }
 

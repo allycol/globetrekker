@@ -19,8 +19,8 @@
     a {
       position: absolute;
       top: 0; bottom: 0; left: 0; right: 0;
-      background-color: rgba(#000, 0.3);
 
+      background-color: rgba(#000, 0.2);
 
       -webkit-transition: background 500ms ease;
       -moz-transition: background 500ms ease;
@@ -56,7 +56,7 @@
     @include small-home-promo;
   }
 
-  .three-equal {
+  .three-equal { // 3x middle txt only promos
 
     @include break;
 
@@ -83,9 +83,6 @@
       &.promo-2 {
         a {
           background-color: $promo-2-color;
-          &:hover {
-            //background-color: $brand-yellow;
-          }
         }
       }
       &.promo-1, &.promo-2 {

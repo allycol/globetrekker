@@ -1,16 +1,23 @@
 .banner {
-  width: 100%;
+  background-color: $light;
+}
+
+.banner img {
+  max-width: 100%;
   height: auto;
   display: none;
+  max-height: 400px;
+  text-align: center;
   @include breakpoint($medium) {
     display: block;
+    margin: auto;
   }
   //display: none;
 }
 
 .product-listings {
 
-  @include layout($listings);
+  //@include layout($listings); // Wider!
 
   position: relative;
   background-color: $light;
@@ -51,7 +58,6 @@
   }
 
   .filters {
-    // @include pad(0.75rem);
     background-color: $light;
     display: none;
     font-size: $body;
@@ -102,12 +108,12 @@
   .listings {
     .item {
       padding-bottom: $space-large;
-      @include gallery(6 of 12);
+      @include gallery(6 of 12); // 2
       @include breakpoint($medium) {
-        @include gallery(4 of 12);
+        @include gallery(4 of 12); // 3
       }
-      @include breakpoint($fullwidth) {
-        @include gallery(3 of 12);
+      @include breakpoint($large) {
+        @include gallery(3 of 12); // 4
       }
       // @include breakpoint($huge) {
       //   @include gallery(2 of 12);
@@ -159,13 +165,14 @@
         float: right;
       }
     }
-    .filters {
-      display: block;
-      @include span(2 of 12);
-    }
+    // Not required for PL
+    // .filters {
+    //   display: block;
+    //   @include span(2 of 12);
+    // }
 
-    .listings {
-      @include span(10 last);
-    }
+    // .listings {
+    //   @include span(10 last);
+    // }
   }
 }

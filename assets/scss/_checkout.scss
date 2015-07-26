@@ -4,12 +4,17 @@
   padding: $space-large 0;
 
   .pic {
-    @include span(3);
   }
   .txt {
-    @include span(6);
+    @include span(9);
+    @include breakpoint($medium) {
+      @include span(6);
+    }
     h2 {
       margin-top: 0;
+    }
+    ul {
+      padding-left: 1rem;
     }
   }
   .functions {
@@ -17,7 +22,80 @@
     text-align: right;
     .price {
       @include header2;
-      margin-top: 0;
+      margin: 0 0 $space-small 0;
     }
+  }
+}
+
+.return {
+  margin: $space-large 0;
+  text-align: center;
+}
+
+.bag-footer {
+  text-align: center;
+  .sub-total {
+    @include header2;
+    margin: $space-large 0;
+  }
+  .button {
+    @include addtocartbutton;
+  }
+}
+
+@include breakpoint($medium) {
+  .pic {
+    @include span(3);
+  }
+  .return {
+    @include span(6);
+    text-align: left;
+  }
+  .bag-footer {
+    @include span(6 last);
+    text-align: right;
+  }
+}
+
+
+.checkout-login, .checkout-signup {
+  .button {
+    @include addtocartbutton;
+  }
+}
+
+.progress {
+  ul {
+    @include container;
+    border-top: 1px solid $line-colour;
+    border-bottom: 1px solid $line-colour;
+    list-style: none;
+    padding: $space-large 0;
+    margin-top: 0;
+    text-align: center;
+    li {
+      opacity: 0.3;
+      display: inline-block;
+      position: relative;
+      padding: 0 $space-large;
+      font-size: $bigger;
+      &:before {
+        position: absolute;
+        @include iconbase;
+        font-size: 10px;
+        @include icon-chevron-right;
+        left: -3px;
+        top: 7px;
+      }
+      &.active {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.subOptions {
+  li {
+    display: none;
   }
 }

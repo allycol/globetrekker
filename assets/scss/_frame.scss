@@ -33,9 +33,6 @@ p {
   }
   a {
     text-decoration: underline;
-    &:hover, &:focus {
-      color: $brand-red;
-    }
   }
 }
 a {
@@ -46,7 +43,10 @@ a {
 
 fieldset {
   @include fieldset;
-  padding: $space-larger;
+  padding: $space-medium;
+  p {
+    margin: 0 0 $space-large 0;
+  }
   ul {
     list-style: none;
     padding: 0;
@@ -55,13 +55,53 @@ fieldset {
       margin: 0 0 $space-small 0;
       @include container;
       label {
-        @include span(2);
+        margin-bottom: $space-tiny;
+        padding-top: $space-small;
+        display: block;
       }
+    }
+    .checkbox {
       .field {
-        @include span(8);
+        input {
+          display: inline;
+          margin-right: $space-small;
+        }
+        label {
+          display: inline-block;
+        }
       }
-      .button-field {
-        @include span(isolate 8 at 3);
+    }
+  }
+  .serverError {
+    color: $brand-red;
+    margin-top: 0;
+    padding-left: 35px;
+    .ico {
+      //float: left;
+      margin-left: -35px;
+    }
+  }
+}
+
+@include breakpoint($medium) {
+  fieldset {
+    padding: $space-larger;
+    ul {
+      li.textfield {
+        label {
+          @include span(2);
+        }
+        .field {
+          @include span(8);
+        }
+        .button-field {
+          @include span(isolate 8 at 3);
+        }
+      }
+      .checkbox {
+        .field {
+          @include span(isolate 8 at 3);
+        }
       }
     }
   }

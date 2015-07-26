@@ -339,6 +339,32 @@ Outdoorkit.bag = function() {
   });
 };
 
+Outdoorkit.deilveryOptions = function() {
+
+	if (!$('.delOptions').length) return;
+
+	var $contentLayer = $('.subOptions li');
+	var $tabLink = $('.delOptions li input');
+	var activeClass = 'selected';
+
+	$tabLink.attr('checked', false);
+
+	function hideAll() {
+		$tabLink.parent().removeClass(activeClass);
+		$contentLayer.hide().find('input').removeClass('required');;
+	}
+
+	$tabLink.bind('click', function() {
+		if (!$(this).parent().hasClass(activeClass)) {
+			hideAll();
+			$('#deliveryOptions').css('width', '650px');
+			$(this).parent().addClass(activeClass);
+			$contentLayer.eq($tabLink.index(this)).show().find('input').addClass('required');
+		}
+	});
+
+};
+
 Outdoorkit.init = function() {
     Outdoorkit.mobimenu();
     Outdoorkit.megamenu();
@@ -348,6 +374,7 @@ Outdoorkit.init = function() {
     Outdoorkit.bannerSwiper();
     Outdoorkit.filters();
     Outdoorkit.bag();
+    Outdoorkit.deilveryOptions();
 };
 
 $(document).ready(function() {
