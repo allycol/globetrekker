@@ -59,6 +59,13 @@ fieldset {
         padding-top: $space-small;
         display: block;
       }
+      .forgot-password {
+        display: inline-block;
+        margin-top: $space-small;
+      }
+      .button-field {
+        padding-top: $space-medium;
+      }
     }
     .checkbox {
       .field {
@@ -83,6 +90,25 @@ fieldset {
   }
 }
 
+
+
+input[type="search"], input[type="text"], input[type="password"], textarea {
+  @include textinput;
+}
+
+.dropdown {
+  display: block;
+  @include dropdown;
+  select {
+    display: block;
+    width: 100%;
+  }
+}
+
+.button {
+  @include button;
+}
+
 @include breakpoint($medium) {
   fieldset {
     padding: $space-larger;
@@ -94,9 +120,9 @@ fieldset {
         .field {
           @include span(8);
         }
-        .button-field {
-          @include span(isolate 8 at 3);
-        }
+      }
+      .button-field {
+        @include span(isolate 8 at 3);
       }
       .checkbox {
         .field {
@@ -105,18 +131,13 @@ fieldset {
       }
     }
   }
-}
-
-input[type="search"], input[type="text"], input[type="password"], textarea {
-  @include textinput;
-}
-
-.dropdown {
-  @include dropdown;
-}
-
-.button {
-  @include button;
+  .dropdown {
+    display: inline-block;
+    select {
+      display: inline;
+      width: auto;
+    }
+  }
 }
 
 // Container

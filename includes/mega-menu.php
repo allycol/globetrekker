@@ -1,7 +1,7 @@
 <nav>
   <ul>
-    <li><a href="product.php">Interior</a>
-      <div class="subMenu">
+    <li><a href="listings.php">Product listings</a>
+      <!-- <div class="subMenu">
         <div class="frame">
           <ul>
              <li><a href="listings.php">Listings page</a></li>
@@ -9,39 +9,47 @@
              <li><a href="#/">Sub category</a></li>
           </ul>
         </div>
-      </div>
+      </div> -->
     </li>
-    <li><a href="#">Plaster</a>
-      <div class="subMenu">
+    <li><a href="product.php">Product details</a>
+      <!-- <div class="subMenu">
         <div class="frame">Plaster mega menu content</div>
-      </div>
+      </div> -->
     </li>
-    <li><a href="#">Bathroom</a>
-      <div class="subMenu">
+    <li><a href="bag.php">Bag</a>
+      <!-- <div class="subMenu">
         <div class="frame">Bathroom mega menu content</div>
+      </div> -->
+    </li>
+    <li><a href="checkout.php">Checkout</a>
+      <div class="subMenu">
+        <div class="frame">
+          <ul>
+             <li><a href="checkout.php">Checkout login</a></li>
+             <li><a href="forgotten.php">Forgot password</a></li>
+             <li><a href="billing.php">Billing address</a></li>
+             <li><a href="delivery-options.php">Delivery options</a></li>
+             <li><a href="order-summary.php">Order summary</a></li>
+          </ul>
+        </div>
       </div>
     </li>
-    <li><a href="#">Bases &amp; Shades</a>
-      <div class="subMenu">
-        <div class="frame">Bases &amp; Shades mega menu content</div>
-      </div>
-    </li>
-    <li><a href="product.php">Interior</a>
-      <div class="subMenu">
+    <li><a href="contact.php">Contact us</a>
+      <!-- <div class="subMenu">
         <div class="frame">Interior mega menu content</div>
-      </div>
+      </div> -->
     </li>
-    <li><a href="#">Plaster</a>
-      <div class="subMenu">
+    <li><a href="about.php">About us</a>
+      <!-- <div class="subMenu">
         <div class="frame">Plaster mega menu content</div>
-      </div>
+      </div> -->
     </li>
-    <li><a href="#">Bathroom</a>
-      <div class="subMenu">
+    <li><a href="#">Account</a>
+      <!-- <div class="subMenu">
         <div class="frame">Bathroom mega menu content</div>
-      </div>
+      </div> -->
     </li>
-    <li><a href="#">Bases &amp; Shades</a>
+    <!-- <li><a href="#">Bases &amp; Shades</a> -->
     </li>
   </ul>
 </nav>

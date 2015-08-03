@@ -45,7 +45,7 @@ include("config.inc.php"); //include config file
 									<label for="password">Password</label>
 									<div class="field">
 										<input type="password" tabindex="2" size="25" value="" id="password" name="password" class="required" />
-										<p><a href="forgotten.php">I've forgotten my password</a></p>
+										<a class="forgot-password" href="forgotten.php">I've forgotten my password</a>
 									</div>
 								</li>
 								<li>

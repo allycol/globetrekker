@@ -4,6 +4,7 @@
   padding: $space-large 0;
 
   .pic {
+
   }
   .txt {
     @include span(9);
@@ -55,47 +56,221 @@
     @include span(6 last);
     text-align: right;
   }
+  .next-button {
+    text-align: right;
+    //@include span(6 last);
+    //margin-top: $space-larger;
+  }
+  // .checkout-login {
+  //   @include span(6);
+  // }
+  // .checkout-signup {
+  //   @include span(6 last);
+  // }
 }
 
 
-.checkout-login, .checkout-signup {
+.checkout-login, .checkout-signup, .next-button {
   .button {
     @include addtocartbutton;
   }
 }
 
+
+
 .progress {
   ul {
-    @include container;
-    border-top: 1px solid $line-colour;
+    //border-top: 1px solid $line-colour;
     border-bottom: 1px solid $line-colour;
     list-style: none;
-    padding: $space-large 0;
+    padding: 0 0 $space-small 0;
     margin-top: 0;
+    margin-bottom: $space-medium;
     text-align: center;
     li {
+      display: none;
       opacity: 0.3;
-      display: inline-block;
+      //display: inline-block;
       position: relative;
-      padding: 0 $space-large;
       font-size: $bigger;
+      padding: 0 $space-large;
       &:before {
         position: absolute;
         @include iconbase;
         font-size: 10px;
         @include icon-chevron-right;
-        left: -3px;
+        left: -5px;
         top: 7px;
+      }
+      &:first-child {
+        &:before {
+          display: none;
+        }
       }
       &.active {
         opacity: 1;
+        display: inline-block;
+      }
+      @include breakpoint($medium) {
+        display: inline-block;
+        padding: 0 $space-medium;
+        font-size: $body;
+      }
+      @include breakpoint($large) {
+        padding: 0 $space-large;
+        font-size: $bigger;
+      }
+    }
+    @include breakpoint($medium) {
+      padding: 0 0 $space-large 0;
+      margin-bottom: $space-massive;
+    }
+  }
+}
+
+.delivery-options {
+  li {
+    position: relative;
+    background-color: $light;
+    &.selected {
+      background-color: $dark;
+      color: white;
+    }
+    input {
+      position: absolute;
+      opacity: 0;
+      margin-right: $space-small;
+    }
+    label {
+      display: block;
+      margin: 0;
+      padding: $space-small;
+      text-align: center;
+      cursor: pointer;
+    }
+  }
+}
+.next-options {
+  min-height: 10rem;
+  text-align: center;
+  padding-top: $space-large;
+  li {
+    display: none;
+    h2 {
+      margin: $space-medium 0;
+    }
+    .delivery-times {
+      max-width: 15rem;
+      margin: auto;
+      .dropdown {
+        display: block;
+        margin-bottom: $space-small;
+        select {
+          display: block;
+          width: 100%;
+        }
       }
     }
   }
 }
 
-.subOptions {
-  li {
-    display: none;
+.confirm-addresses {
+  @include fieldset;
+  @include container;
+  padding: $space-medium;
+  h3 {
+    margin-top: 0;
+  }
+}
+
+.summary-item-header {
+  background-color: $dark;
+  color: white;
+}
+
+.summary-item-header, .summary-item {
+  @include container;
+  .summ-name {
+    @include span(5);
+    padding: $space-small;
+  }
+  .summ-color-size {
+    @include span(3);
+    padding: $space-small;
+  }
+  .summ-quantity {
+    @include span(2);
+    padding: $space-small;
+  }
+  .summ-price {
+    @include span(2 last);
+    padding: $space-small;
+    text-align: right;
+  }
+}
+
+.order-summary-totals {
+  @include container;
+  border-top: 1px solid $line-colour;
+  border-bottom: 1px solid $line-colour;
+  padding: $space-medium 0;
+  margin-bottom: $space-larger;
+  .label {
+    @include span(6);
+    padding: $space-tiny $space-small;
+    @include breakpoint($medium) {
+      @include span(10);
+      text-align: right;
+    }
+  }
+  .ammount {
+    @include span(6 last);
+    padding: $space-tiny $space-small;
+    text-align: right;
+    @include breakpoint($medium) {
+      @include span(2 last);
+    }
+  }
+  .total-ammount {
+    @include header2;
+  }
+}
+
+.confirm-order {
+  .button {
+    margin-bottom: $space-small;
+  }
+}
+
+@include breakpoint($medium) {
+  .delivery-options {
+    @include container;
+    li {
+      @include span(6);
+      -webkit-border-radius: 5px 5px 0 0;
+      border-radius: 5px 5px 0 0;
+      &:last-child {
+        @include span(6 last);
+      }
+    }
+  }
+  .parcelforce {
+    float: left;
+    margin-bottom: 0;
+  }
+  .billing-address {
+    @include span(6);
+  }
+  .delivery-address {
+    @include span(6 last);
+  }
+  .confirm-order {
+    @include container;
+    .change-order {
+      @include span(6);
+    }
+    .next-button {
+      @include span(6 last);
+    }
   }
 }

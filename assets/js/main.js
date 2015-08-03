@@ -341,10 +341,10 @@ Outdoorkit.bag = function() {
 
 Outdoorkit.deilveryOptions = function() {
 
-	if (!$('.delOptions').length) return;
+	if (!$('.delivery-options').length) return;
 
-	var $contentLayer = $('.subOptions li');
-	var $tabLink = $('.delOptions li input');
+	var $contentLayer = $('.next-options li');
+	var $tabLink = $('.delivery-options li input');
 	var activeClass = 'selected';
 
 	$tabLink.attr('checked', false);
@@ -357,7 +357,7 @@ Outdoorkit.deilveryOptions = function() {
 	$tabLink.bind('click', function() {
 		if (!$(this).parent().hasClass(activeClass)) {
 			hideAll();
-			$('#deliveryOptions').css('width', '650px');
+			//$('#deliveryOptions').css('width', '650px');
 			$(this).parent().addClass(activeClass);
 			$contentLayer.eq($tabLink.index(this)).show().find('input').addClass('required');
 		}

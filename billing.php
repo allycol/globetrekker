@@ -23,6 +23,8 @@ include("config.inc.php"); //include config file
 
 		<section class="content-page">
 
+			<div class="frame">
+
       <div class="progress">
         <ul>
           <li class="active">1. Billing address</li>
@@ -33,9 +35,7 @@ include("config.inc.php"); //include config file
         </ul>
       </div>
 
-			<div class="frame">
-
-        <h1>Billing address</h1>
+      <h1>Billing address</h1>
 
 
 			<p>Your billing address must match the billing address on your credit/debit card.</p>
@@ -128,14 +128,15 @@ include("config.inc.php"); //include config file
 							<h2>Your Privacy</h2>
 							<p>At Outdoorkit, we take your privacy very seriously. We will never share your email address with another organisation and will use all information in accordance with our privacy statement. If you would like us to send you relevant offers and information, please select from the list below:</p>
               <div class="dropdown">
-  							<select name="mail_flag"><option value="1" selected>Yes, send me promotional emails</option>
+  							<select name="mail_flag">
+                  <option value="1" selected>Yes, send me promotional emails</option>
   								<option value="0">No, don't send me any emails</option>
   							</select>
                 <span class="ico ico-xs ico-chevron-down"></span>
               </div>
 						</li>
 
-						<li class="">
+						<li class="next-button">
               <input type="hidden" value="next" name="next">
               <input type="submit" class="button" value="Next step" />
             </li>
@@ -144,14 +145,11 @@ include("config.inc.php"); //include config file
 				</fieldset>
 			</form>
 
+		</div>
+	</section>
 
 
-
-			</div>
-		</section>
-
-
-<?php include("includes/footer.php"); ?>
+  <?php include("includes/footer.php"); ?>
 
 </div>
 
