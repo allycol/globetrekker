@@ -21,12 +21,12 @@
 .mm-listview > .off-canvas-search {
   position: relative;
 }
-.mm-listview > .off-canvas-search > input[type="search"] {
+.mm-listview > .off-canvas-search input[type="text"] {
   background-color: #000;
   border: none;
   padding: 20px;
 }
-.mm-listview > .off-canvas-search > input[type="submit"] {
+.mm-listview > .off-canvas-search input[type="submit"] {
   background-color: transparent;
   border: none;
   padding: 20px;
@@ -36,19 +36,23 @@
   z-index: 2;
   border-radius: 0;
 }
-.mm-listview > .off-canvas-search > input:focus {
+.mm-listview > .off-canvas-search input:focus {
   outline: 0;
   background-color: #eee;
   color: #000;
 }
-.mm-listview > .off-canvas-search > span.ico {
+.mm-listview > .off-canvas-search span.ico {
   position: absolute;
   top: 20px; right: 20px;
   z-index: 1;
   padding: 0;
 }
-.mm-listview > .off-canvas-search.focussed > span.ico {
-  color: #000;
+.mm-listview > .off-canvas-search {
+  .focussed{
+    span.ico {
+      color: #000;
+    }
+  }
 }
 
 .mm-menu.mm-theme-black .mm-listview>li.mm-selected>a:not(.mm-next) {

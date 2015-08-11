@@ -26,18 +26,41 @@
             <span class="ico ico-s ico-bag"></span>
             <span class="txt">
               <span class="label">Bag</span>
+
+              <!-- Hard coded mini shopping bag Qty -->
+              <span class="bag-qty">1</span>
+
             	<?php
-            		if(count($_SESSION["products"]) > 0){
-                //if(isset($_SESSION["products"])){
-            			echo '<span class="bag-qty">' .count($_SESSION["products"]). '</span>';
-            		}else{
-            			echo '<span class="bag-qty empty">0</span>';
-            		}
+            		// if(count($_SESSION["products"]) > 0){
+                // //if(isset($_SESSION["products"])){
+            		// 	echo '<span class="bag-qty">' .count($_SESSION["products"]). '</span>';
+            		// }else{
+            		// 	echo '<span class="bag-qty empty">0</span>';
+            		// }
             	?>
             <span>
           </a>
           <div class="shopping-cart-box">
               <div id="shopping-cart-results">
+
+                <!-- Hard coded mini shopping bag -->
+                <ul class="cart-products-loaded">
+                  <li>
+                    <img src="images/tshirt-1.jpg" height="60" width="60">
+                    Cool T-shirt
+                    <span class="qty">Qty : 1</span>
+                    <span class="price"> £8.50</span>
+                    <a href="#" class="remove-item" data-code="TSH1">×</a>
+                  </li>
+                </ul>
+                <div class="cart-products-footer">
+                  <div class="cart-products-total">Total : £8.50</div>
+                  <div class="go-to-basket">
+                    <a class="button" href="bag.php" title="Review bag and Check-Out">Check-out</a>
+                  </div>
+                </div>
+                <!-- END hard coded mini shopping bag -->
+
               </div>
           </div>
         </li>
@@ -46,9 +69,11 @@
         <li class="search"><a href="#"><span class="ico ico-s ico-magnify"></span> <span class="label">Search</span></a></li>
       </ul>
       <div class="search-form">
-        <input type="search" placeholder="Looking for something?" class="search-field" name="search-field" />
-        <input type="submit" value="">
-        <span class="ico ico-xs ico-magnify"></span>
+        <form>
+          <input autocomplete="off" id="search" class="search-field" name="search-field" type="text" value="" placeholder="Looking for something?" />
+          <input name="search-button" type="submit" value="">
+          <span class="ico ico-xs ico-magnify"></span>
+        </form>
       </div>
     </div>
   </div>

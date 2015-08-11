@@ -44,6 +44,10 @@
     text-align: center;
   }
 
+  p {
+    text-align: center;
+  }
+
   .product-count {
     text-align: center;
   }
@@ -147,8 +151,16 @@
   .product-listings {
     padding-top: $space-larger;
     padding-bottom: $space-huge;
+    min-height: 30rem;
+    .header {
+      h1 {
+        @include span(6 of 12);
+      }
+    }
     h1 {
-      @include span(6 of 12);
+      text-align: left;
+    }
+    p {
       text-align: left;
     }
     .product-count {

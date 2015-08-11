@@ -1,15 +1,13 @@
 <nav>
   <ul>
     <li><a href="listings.php">Product listings</a>
-      <!-- <div class="subMenu">
+      <div class="subMenu">
         <div class="frame">
           <ul>
-             <li><a href="listings.php">Listings page</a></li>
-             <li><a href="product.php">Product page</a></li>
-             <li><a href="#/">Sub category</a></li>
+             <li><a href="listings-no-result.php">No results</a></li>
           </ul>
         </div>
-      </div> -->
+      </div>
     </li>
     <li><a href="product.php">Product details</a>
       <!-- <div class="subMenu">

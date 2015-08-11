@@ -1,9 +1,11 @@
 <nav id="off-canvas-menu" style="display: none;">
    <ul>
       <li class="off-canvas-search">
-        <input type="search" placeholder="Search" class="search-field" name="search-field" />
-        <input type="submit" value="">
-        <span class="ico ico-xs ico-magnify"></span>
+        <form>
+          <input autocomplete="off" id="search" class="search-field" name="search-field" type="text" value="" placeholder="Search" />
+          <input name="search-button" type="submit" value="">
+          <span class="ico ico-xs ico-magnify"></span>
+        </form>
       </li>
       <li><a href="/">Home</a></li>
       <li><span>Interior</span>
