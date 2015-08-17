@@ -147,7 +147,7 @@ $brand1: $bodyfont;
 }
 
 @mixin dropdown {
-  
+
   background-color: #fff;
   position: relative;
   select {
@@ -286,12 +286,12 @@ $small-promo-second: $small-promo-first/2;
 
 .brand-yellow {
   &.large-promo {
-    a { // Change the BG colour only for large promo
-      background-color: rgba($brand-yellow, 0.3) !important;
-      &:hover {
-        background-color: rgba($brand-yellow, 0.1) !important;
-      }
-    }
+    // a { // Change the BG colour only for large promo
+    //   background-color: rgba($brand-yellow, 0.3) !important;
+    //   &:hover {
+    //     background-color: rgba($brand-yellow, 0.1) !important;
+    //   }
+    // }
   }
   .first { // Change the Txt colour for all
     color: $brand-yellow;
@@ -300,12 +300,12 @@ $small-promo-second: $small-promo-first/2;
 
 .brand-orange {
   &.large-promo {
-    a { // Change the BG colour only for large promo
-      background-color: rgba($brand-orange, 0.3) !important;
-      &:hover {
-        background-color: rgba($brand-orange, 0.1) !important;
-      }
-    }
+    // a { // Change the BG colour only for large promo
+    //   background-color: rgba($brand-orange, 0.3) !important;
+    //   &:hover {
+    //     background-color: rgba($brand-orange, 0.1) !important;
+    //   }
+    // }
   }
   .first { // Change the Txt colour for all
     color: $brand-orange;
@@ -314,12 +314,12 @@ $small-promo-second: $small-promo-first/2;
 
 .brand-red {
   &.large-promo {
-    a { // Change the BG colour only for large promo
-      background-color: rgba($brand-red, 0.3) !important;
-      &:hover {
-        background-color: rgba($brand-red, 0.1) !important;
-      }
-    }
+    // a { // Change the BG colour only for large promo
+    //   background-color: rgba($brand-red, 0.3) !important;
+    //   &:hover {
+    //     background-color: rgba($brand-red, 0.1) !important;
+    //   }
+    // }
   }
   .first { // Change the Txt colour for all
     color: $brand-red;

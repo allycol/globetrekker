@@ -45,16 +45,14 @@ include("config.inc.php"); //include config file
             <div class="swiper-button-prev product-prev"></div>
             <div class="swiper-button-next product-next"></div>
           </div>
-          <div class="product-gallery-thmbs swiper-container">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide"><img src="http://placehold.it/130/fff"></div>
-              <div class="swiper-slide"><img src="http://placehold.it/130/fff"></div>
-              <div class="swiper-slide"><img src="http://placehold.it/130/fff"></div>
-              <div class="swiper-slide"><img src="http://placehold.it/130/fff"></div>
-              <div class="swiper-slide"><img src="http://placehold.it/130/fff"></div>
-              <div class="swiper-slide"><img src="http://placehold.it/130/fff"></div>
-            </div>
-          </div>
+          <ul class="product-gallery-thmbs">
+            <li><img src="http://placehold.it/130/fff"></li>
+            <li><img src="http://placehold.it/130/fff"></li>
+            <li><img src="http://placehold.it/130/fff"></li>
+            <li><img src="http://placehold.it/130/fff"></li>
+            <li><img src="http://placehold.it/130/fff"></li>
+            <li><img src="http://placehold.it/130/fff"></li>
+          </ul>
         </div>
 
         <div class="product-info">

@@ -73,8 +73,7 @@ include("config.inc.php"); //include config file
 
 
       				<li class="textfield">
-      					<label for="question">Question
-      										</label>
+      					<label for="question">Question</label>
       					<div class="field">
       						<textarea id="message" name="message" rows="10"></textarea>
       					</div>

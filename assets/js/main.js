@@ -223,16 +223,22 @@ Outdoorkit.gallerySwiper = function() {
     prevButton: '.product-prev'
   });
 
-  var galleryThmbs = new Swiper ('.product-gallery-thmbs', {
-    slidesPerView: 'auto',
-    centeredSlides: true,
-    touchRatio: 0.2,
-    //initialSlide: 2,
-    slideToClickedSlide: true
-  });
+  $(".product-gallery-thmbs").on('click', 'li', function(){
+      var $this = $(this);
+      galleryLrg.slideTo($this.index(), 500, true);
+      $this.addClass('active').siblings().removeClass('active');
+    });
 
-  galleryLrg.params.control = galleryThmbs;
-  galleryThmbs.params.control = galleryLrg;
+  // var galleryThmbs = new Swiper ('.product-gallery-thmbs', {
+  //   slidesPerView: 'auto',
+  //   centeredSlides: true,
+  //   touchRatio: 0.2,
+  //   //initialSlide: 2,
+  //   slideToClickedSlide: true
+  // });
+
+  // galleryLrg.params.control = galleryThmbs;
+  // galleryThmbs.params.control = galleryLrg;
 
 };
 
@@ -305,7 +311,7 @@ Outdoorkit.bag = function() {
 
   // Open cart
   function openbasket() {
-    $(".shopping-cart-box").fadeIn(); //display cart box
+    $(".shopping-cart-box").slideDown(); //display cart box
     //$("#shopping-cart-results").html('<img src="images/ajax-loader.gif">'); //show loading image
     //$("#shopping-cart-results" ).load( "cart_process.php", {"load_cart":"1"}); //Make ajax request using jQuery Load() & update results
   }
@@ -313,11 +319,11 @@ Outdoorkit.bag = function() {
   //Close Cart
   $( ".close-shopping-cart-box").click(function(e){ //user click on cart box close link
     e.preventDefault();
-    $(".shopping-cart-box").fadeOut(); //close cart-box
+    $(".shopping-cart-box").slideUp(); //close cart-box
   });
 
   $(document).bind('click', function() {
-    $(".shopping-cart-box").fadeOut(); //close cart-box
+    $(".shopping-cart-box").slideUp(); //close cart-box
     $('.search-form').hide();
     $('.account-nav ul').fadeIn();
   });

@@ -61,12 +61,33 @@
     //@include span(6 last);
     //margin-top: $space-larger;
   }
-  // .checkout-login {
-  //   @include span(6);
-  // }
-  // .checkout-signup {
-  //   @include span(6 last);
-  // }
+}
+
+@include breakpoint($large) {
+  .checkout-login {
+    @include span(6);
+  }
+  .checkout-signup {
+    @include span(6 last);
+  }
+  .checkout-login, .checkout-signup {
+    h2 {
+      margin-top: 0;
+    }
+    ul {
+      li.textfield {
+        label {
+          @include span(4);
+        }
+        .field {
+          @include span(8 last);
+        }
+      }
+      .button-field {
+        @include span(isolate 8 at 5 last);
+      }
+    }
+  }
 }
 
 

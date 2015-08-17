@@ -79,17 +79,17 @@ fieldset {
       }
     }
   }
-  .serverError {
-    color: $brand-red;
-    margin-top: 0;
-    padding-left: 35px;
-    .ico {
-      //float: left;
-      margin-left: -35px;
-    }
-  }
 }
 
+.serverError {
+  color: $brand-red;
+  margin-top: 0;
+  padding-left: 35px;
+  .ico {
+    //float: left;
+    margin-left: -35px;
+  }
+}
 
 
 input[type="search"], input[type="text"], input[type="password"], textarea {
@@ -219,7 +219,7 @@ header {
     @include span(4 last);
     font-size: $body;
     padding-top: $space-large + 0.3rem;
-    //padding-bottom: $space-large;
+    position: relative;
 
     ul {
       margin: 0; padding: 0;
@@ -478,13 +478,16 @@ header {
   font-size: $body;
   li {
     display: inline;
-    a {
+    a, span {
       display: block;
       position: relative;
       float: left;
       padding: 6px 12px;
       margin-left: -1px;
-      //border: 1px solid $line-colour;
+      border: 1px solid $line-colour;
+      @include breakpoint($medium) {
+        border: none;
+      }
       &:hover, &:focus {
         background-color: #fff;
       }

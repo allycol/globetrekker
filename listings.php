@@ -39,19 +39,35 @@ include("config.inc.php"); //include config file
       </ul> -->
 
       <div class="header">
-        <h1>Interiors</h1>
+        <h1>Interiors <span>96 products</span></h1>
         <div class="product-count">
+
+          <!-- <p>31 - 60 of 96 products</p> -->
+
           <ul class="pagination">
             <li class="prev"><a href="">Prev</a></li>
-            <li><a href="" class="active">1</a></li>
+            <li><span class="active">1</span></li>
             <li><a href="">2</a></li>
             <li><a href="">3</a></li>
             <li><a href="">4</a></li>
             <li class="next"><a href="">Next</a></li>
           </ul>
-          <p>31 - 60 of 96 products</p>
           <!-- <a href="#off-canvas-filters" class="filters-button">Filters</a> -->
         </div>
+        <form class="sort-by-form" id="sortbyform" name="sortbyform" action="http://www.outdoorkit.co.uk/productlist.php?category_id=1675&amp;sortby=&amp;" method="get">
+          <label for="sortBy">Sort by</label>
+          <div class="field">
+            <div class="dropdown">
+              <input name="category_id" value="1675" size="3" type="hidden">
+              <select id="sortBy" name="newsortby">
+                <option value="priorityasc">Bestsellers</option>
+                <option value="priceasc">Price (low to high)</option>
+                <option value="pricedesc">Price (high to low)</option>
+              </select>
+              <span class="ico ico-xs ico-chevron-down"></span>
+            </div>
+          </div>
+        </form>
       </div>
 
       <?php
@@ -88,7 +104,7 @@ include("config.inc.php"); //include config file
       <div class="product-count">
       <ul class="pagination">
         <li class="prev"><a href="">Prev</a></li>
-        <li><a href="" class="active">1</a></li>
+        <li><span class="active">1</span></li>
         <li><a href="">2</a></li>
         <li><a href="">3</a></li>
         <li><a href="">4</a></li>

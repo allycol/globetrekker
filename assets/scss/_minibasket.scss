@@ -1,20 +1,35 @@
+.shopping-cart-box-container {
+	@include container;
+	position: relative;
+}
+
 .shopping-cart-box {
+	@include break;
 	display:none;
-	z-index: 9999;
-	position: absolute;
-  right:0;
-	width: 13rem;
+
+	width: 100%;
+	position: relative;
 	text-align: left;
 	background: $light;
-	//border: 1px solid $line-colour;
+	border: 1px solid $line-colour;
 	padding: $space-medium;
-	margin-top: 10px;
-	-webkit-box-shadow: 0 2px 3px 0 rgba(0,0,0,0.5);
-box-shadow: 0 2px 3px 0 rgba(0,0,0,0.5);
+	//margin-top: 60px;
+	@include breakpoint($medium) {
+		z-index: 9999;
+		position: absolute;
+		right:10px;
+		top: -20px;
+		width: 13rem;
+		border: none;
+		-webkit-box-shadow: 0 2px 3px 0 rgba(0,0,0,0.5);
+		box-shadow: 0 2px 3px 0 rgba(0,0,0,0.5);
+	}
+	@include breakpoint($large) {
+		// margin-top: 110px;
+	}
 	> a {
 		color: $dark;
 		text-decoration:none;
-
 	}
 	&:after {
 		content: '';

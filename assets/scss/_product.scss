@@ -10,6 +10,32 @@
     img {
       display: block;
     }
+    .product-gallery-thmbs {
+      list-style: none;
+      margin-top: $space-tiny;
+      padding: 0;
+      @include container;
+      li {
+        display: inline-block;
+        float: left;
+        width: 25%;
+        padding-right: $space-tiny;
+        padding-bottom: $space-tiny;
+        cursor: pointer;
+        @include breakpoint($medium) {
+          width: 20%;
+        }
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+        &.active {
+          img {
+            border: 2px solid $brand-orange;
+          }
+        }
+      }
+    }
   }
 
   .product-info {

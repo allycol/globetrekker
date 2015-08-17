@@ -35,21 +35,38 @@
   .header {
     @include container;
     .pagination {
-      display: none;
+      // display: none;
     }
-  }
-
-  h1 {
-    margin-top: 0;
-    text-align: center;
-  }
-
-  p {
-    text-align: center;
+    h1 {
+      margin: 0;
+      text-align: center;
+      span {
+        font-size: $body;
+        padding-left: $space-small;
+      }
+    }
+    .sort-by-form {
+      text-align: center;
+      padding-bottom: $space-medium;
+      .field {
+        display: inline;
+      }
+      label {
+        display: block;
+        margin-right: $space-small;
+        margin-bottom: $space-small;
+      }
+    }
   }
 
   .product-count {
     text-align: center;
+    padding-top: $space-medium;
+    padding-bottom: $space-medium;
+    p {
+      text-align: center;
+      margin-top: $space-tiny;
+    }
   }
 
   .filters-button {
@@ -147,36 +164,31 @@
   }
 }
 
-@include breakpoint($large) {
+@include breakpoint($medium) {
   .product-listings {
     padding-top: $space-larger;
     padding-bottom: $space-huge;
     min-height: 30rem;
     .header {
       h1 {
-        @include span(6 of 12);
+        @include span(4 of 12);
+        text-align: left;
+      }
+      .product-count {
+        @include span(4 of 12);
+        padding-top: $space-small;
+        padding-bottom: $space-medium;
+      }
+      .sort-by-form {
+        @include span(4 last);
+        padding-top: $space-tiny;
+        text-align: right;
+        label {
+          display: inline;
+        }
       }
     }
-    h1 {
-      text-align: left;
-    }
-    p {
-      text-align: left;
-    }
-    .product-count {
-      @include span(6 last);
-      text-align: right;
-      p {
-        display: inline-block;
-        float: right;
-        padding: 6px 12px;
-        margin-bottom: 0; margin-top: 0;
-      }
-      .pagination {
-        display: block;
-        float: right;
-      }
-    }
+
     // Not required for PL
     // .filters {
     //   display: block;
@@ -186,5 +198,20 @@
     // .listings {
     //   @include span(10 last);
     // }
+  }
+}
+
+@include breakpoint($large) {
+  .product-listings {
+    .header {
+
+      .product-count {
+        .pagination {
+          display: inline-block;
+        }
+      }
+
+    }
+
   }
 }

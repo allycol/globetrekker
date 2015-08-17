@@ -20,13 +20,13 @@
       position: absolute;
       top: 0; bottom: 0; left: 0; right: 0;
 
-      background-color: rgba(#000, 0.2);
 
-      -webkit-transition: background 500ms ease;
-      -moz-transition: background 500ms ease;
-      -ms-transition: background 500ms ease;
-      -o-transition: background 500ms ease;
-      transition: background 500ms ease;
+
+      -webkit-transition: background 300ms ease-in;
+      -moz-transition: background 300ms ease-in;
+      -ms-transition: background 300ms ease-in;
+      -o-transition: background 300ms ease-in;
+      transition: background 300ms ease-in;
 
       &:hover {
         background-color: rgba(#000, 0.1);
@@ -50,10 +50,16 @@
 
   .large-promo {
     @include large-home-promo;
+    a {
+      background-color: rgba(#000, 0.2);
+    }
   }
 
   .small-promo {
     @include small-home-promo;
+    a {
+      background-color: rgba(#000, 0.4);
+    }
   }
 
   .three-equal { // 3x middle txt only promos
@@ -78,7 +84,9 @@
 
       // TODO: Lets put these in the theme
       &.promo-1 {
-        a {background-color: $promo-1-color;}
+        a {
+          background-color: $promo-1-color;
+        }
       }
       &.promo-2 {
         a {
