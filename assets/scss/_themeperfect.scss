@@ -233,7 +233,8 @@ $brand1: $bodyfont;
 // TABLES
 
 @mixin tables {
-
+  width: 100%;
+  margin: $space-larger 0;
   thead {
     th {
       padding: $space-small;
@@ -243,8 +244,16 @@ $brand1: $bodyfont;
     }
   }
   tbody {
-    td {
-      padding: $space-small;
+    tr {
+      td {
+        padding: $space-small;
+        border-bottom: 1px solid $line-colour;
+      }
+      &:nth-child(even) {
+        td {
+          background-color: #fff;
+        }
+      }
     }
   }
 
