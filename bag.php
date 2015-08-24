@@ -26,13 +26,16 @@ include("config.inc.php"); //include config file
 
 			<div class="frame">
 
-        <h1>Your bag</h1>
+        <div class="bag-header">
+          <h1>Your bag</h1>
+          <a class="button" href="checkout.php">Proceed to checkout</a>
+        </div>
 
         <div id="bag">
 
           <div class="bag-item">
             <div class="pic">
-              <a href="product.php"><img src="http://placehold.it/190" /></a>
+              <a href="product.php"><img src="http://placehold.it/300" /></a>
             </div>
             <div class="txt">
               <h2><a href="product.php">The North Face Men's McMurdo Parka 2</a></h2>
@@ -50,7 +53,7 @@ include("config.inc.php"); //include config file
 
           <div class="bag-item">
             <div class="pic">
-              <a href="product.php"><img src="http://placehold.it/190" /></a>
+              <a href="product.php"><img src="http://placehold.it/300" /></a>
             </div>
             <div class="txt">
               <h2><a href="product.php">The North Face Men's McMurdo Parka 2</a></h2>

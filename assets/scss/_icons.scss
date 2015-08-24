@@ -66,44 +66,47 @@ $icon-size: 32px;
 	@if $filename == instagram {
 		$char: "\E008";
 	}
-	@if $filename == magnify {
+	@if $filename == lock {
 		$char: "\E009";
 	}
-	@if $filename == pdf {
+	@if $filename == magnify {
 		$char: "\E00A";
 	}
-	@if $filename == phone {
+	@if $filename == pdf {
 		$char: "\E00B";
 	}
-	@if $filename == pinterest {
+	@if $filename == phone {
 		$char: "\E00C";
 	}
-	@if $filename == profile {
+	@if $filename == pinterest {
 		$char: "\E00D";
 	}
-	@if $filename == rating-five {
+	@if $filename == profile {
 		$char: "\E00E";
 	}
-	@if $filename == rating-four {
+	@if $filename == rating-five {
 		$char: "\E00F";
 	}
-	@if $filename == rating-one {
+	@if $filename == rating-four {
 		$char: "\E010";
 	}
-	@if $filename == rating-three {
+	@if $filename == rating-one {
 		$char: "\E011";
 	}
-	@if $filename == rating-two {
+	@if $filename == rating-three {
 		$char: "\E012";
 	}
-	@if $filename == star {
+	@if $filename == rating-two {
 		$char: "\E013";
 	}
-	@if $filename == twitter {
+	@if $filename == star {
 		$char: "\E014";
 	}
-	@if $filename == warning {
+	@if $filename == twitter {
 		$char: "\E015";
+	}
+	@if $filename == warning {
+		$char: "\E016";
 	}
 
 	@return $char;
@@ -147,6 +150,10 @@ $icon-size: 32px;
 
 	@mixin icon-instagram{
 		content: icon-char(instagram);
+	}
+
+	@mixin icon-lock{
+		content: icon-char(lock);
 	}
 
 	@mixin icon-magnify{
@@ -226,6 +233,9 @@ $icon-size: 32px;
 }
 .ico-instagram {
 	@include icon(instagram);
+}
+.ico-lock {
+	@include icon(lock);
 }
 .ico-magnify {
 	@include icon(magnify);

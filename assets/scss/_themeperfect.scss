@@ -230,6 +230,28 @@ $brand1: $bodyfont;
   }
 }
 
+// TABLES
+
+@mixin tables {
+
+  thead {
+    th {
+      padding: $space-small;
+      text-align: left;
+      background-color: $dark;
+      color: #fff;
+    }
+  }
+  tbody {
+    td {
+      padding: $space-small;
+    }
+  }
+
+
+}
+
+
 // Home page banners typography
 
 $large-promo-first: 3.75rem;

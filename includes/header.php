@@ -22,7 +22,7 @@
     <div class="account-nav">
       <ul>
         <li class="basket">
-          <a href="#" class="cart-box" id="cart-info" title="View Cart">
+          <a href="bag.php" class="cart-box" id="cart-info" title="View Cart">
             <span class="ico ico-s ico-bag"></span>
             <span class="txt">
               <span class="label">Bag</span>
@@ -42,7 +42,7 @@
           </a>
         </li>
         <!-- <li class="signin"><a href="#"><span class="ico ico-s ico-profile"></span> <span class="label">Sign in</span></a></li> -->
-        <li class="account"><a href="#"><span class="ico ico-s ico-profile"></span> <span class="label">My account</span></a><br></li>
+        <li class="account"><a href="profile.php"><span class="ico ico-s ico-profile"></span> <span class="label">My account</span></a><br></li>
         <li class="search"><a href="#"><span class="ico ico-s ico-magnify"></span> <span class="label">Search</span></a></li>
       </ul>
       <div class="search-form">
@@ -56,11 +56,11 @@
     </div>
   </div>
 
-  <div class="shopping-cart-box-container">
+  <!-- <div class="shopping-cart-box-container">
     <div class="shopping-cart-box">
-      <div id="shopping-cart-results">
+      <div id="shopping-cart-results"> -->
         <!-- Hard coded mini shopping bag -->
-        <ul class="cart-products-loaded">
+        <!-- <ul class="cart-products-loaded">
           <li>
             <img src="images/tshirt-1.jpg" height="60" width="60">
             Cool T-shirt
@@ -74,11 +74,11 @@
           <div class="go-to-basket">
             <a class="button" href="bag.php" title="Review bag and Check-Out">Check-out</a>
           </div>
-        </div>
+        </div> -->
         <!-- END hard coded mini shopping bag -->
-      </div>
+      <!-- </div>
     </div>
-  </div>
+  </div> -->
 
   <?php include("includes/mega-menu.php"); ?>
 

@@ -1,10 +1,48 @@
+// My Account section
+
+.account-section {
+  position: relative;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid $line-colour;
+  border-radius: 5px;
+  margin: $space-larger 0;
+  padding: $space-large $space-medium $space-medium $space-medium;
+  h2 {
+    margin-top: $space-medium;
+  }
+  .ico {
+    margin: $space-medium 0;
+  }
+  @include breakpoint($medium) {
+    @include gallery(4 of 12); // 3
+    padding-bottom: $space-huge;
+    &:last-child {
+      @include gallery(4 of 12 last); // 2
+    }
+    .button {
+      padding-left: 0; padding-right: 0;
+      // width: 100%;
+      position: absolute; bottom: $space-medium;
+      right: $space-medium; left: $space-medium;
+    }
+  }
+}
+
+
+// Checkout journey
+
 .bag-item {
   @include container;
   border-bottom: 1px solid $line-colour;
   padding: $space-large 0;
 
   .pic {
-
+    margin-bottom: $space-small;
+    img {
+      max-width: 100%;
+      height: auto;
+    }
   }
   .txt {
     @include span(9);
@@ -33,7 +71,7 @@
   text-align: center;
 }
 
-.bag-footer {
+.bag-footer, .bag-header {
   text-align: center;
   .sub-total {
     @include header2;
@@ -47,10 +85,22 @@
 @include breakpoint($medium) {
   .pic {
     @include span(3);
+    margin-bottom: 0 !important;
   }
   .return {
     @include span(6);
     text-align: left;
+  }
+  .bag-header {
+    text-align: left;
+    @include container;
+    h1 {
+      @include span(6);
+    }
+    .button {
+      float: right;
+      margin-top: $space-medium;
+    }
   }
   .bag-footer {
     @include span(6 last);

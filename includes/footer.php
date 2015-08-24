@@ -3,7 +3,7 @@
     <section>
       <h3>Ordering</h3>
       <ul>
-        <li><a href="#">Delivery Information</a></li>
+        <li><a href="delivery-info.php">Delivery Information</a></li>
         <li><a href="#">Order Tracking</a></li>
         <li><a href="#">Returns &amp; Exchanges</a></li>
         <li><a href="#">Security Information</a></li>

@@ -42,7 +42,7 @@
         <div class="frame">Plaster mega menu content</div>
       </div> -->
     </li>
-    <li><a href="#">Account</a>
+    <li><a href="profile.php">Account</a>
       <!-- <div class="subMenu">
         <div class="frame">Bathroom mega menu content</div>
       </div> -->

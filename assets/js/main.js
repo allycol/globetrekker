@@ -276,29 +276,29 @@ Outdoorkit.bag = function() {
 
     //button_content.attr('disabled','disabled'); //disable button before Ajax request
 
-    // $.ajax({ //make ajax request to cart_process.php
-    //   url: "cart_process.php",
-    //   type: "POST",
-    //   dataType:"json", //expect json value from server
-    //   data: { quantity: iqty, product_code: icode}
-    // }).done(function(data){ //on Ajax success
-    //    $("#cart-info .bag-qty").html(data.items); //total items in cart-info element
-    //    if(data.items == 0) {
-    //      $("#cart-info .bag-qty").addClass('empty');
-    //    } else {
-    //      $("#cart-info .bag-qty").removeClass('empty');
-    //    }
-    //
-    //
-    //   //button_content.html('Add to Cart'); //reset button text to original text
-    //
-    //   openbasket();
-    //
-    //   // This doesn't do anything:
-    //   /*if($(".shopping-cart-box").css("display") == "block"){ //if cart box is still visible
-    //     $(".cart-box").trigger( "click" ); //trigger click to update the cart box.
-    //   }*/
-    // })
+    $.ajax({ //make ajax request to cart_process.php
+      url: "cart_process.php",
+      type: "POST",
+      dataType:"json", //expect json value from server
+      data: { quantity: iqty, product_code: icode}
+    }).done(function(data){ //on Ajax success
+       $("#cart-info .bag-qty").html(data.items); //total items in cart-info element
+       if(data.items == 0) {
+         $("#cart-info .bag-qty").addClass('empty');
+       } else {
+         $("#cart-info .bag-qty").removeClass('empty');
+       }
+
+
+      //button_content.html('Add to Cart'); //reset button text to original text
+
+      openbasket();
+
+      // This doesn't do anything:
+      /*if($(".shopping-cart-box").css("display") == "block"){ //if cart box is still visible
+        $(".cart-box").trigger( "click" ); //trigger click to update the cart box.
+      }*/
+    })
 
   });
 
@@ -312,8 +312,8 @@ Outdoorkit.bag = function() {
   // Open cart
   function openbasket() {
     $(".shopping-cart-box").slideDown(); //display cart box
-    //$("#shopping-cart-results").html('<img src="images/ajax-loader.gif">'); //show loading image
-    //$("#shopping-cart-results" ).load( "cart_process.php", {"load_cart":"1"}); //Make ajax request using jQuery Load() & update results
+    $("#shopping-cart-results").html('<img src="images/ajax-loader.gif">'); //show loading image
+    $("#shopping-cart-results" ).load( "cart_process.php", {"load_cart":"1"}); //Make ajax request using jQuery Load() & update results
   }
 
   //Close Cart
@@ -329,21 +329,21 @@ Outdoorkit.bag = function() {
   });
 
 
-  //Remove items from cart
-  // $("#shopping-cart-results").on('click', 'a.remove-item', function(e) {
-  //   e.preventDefault();
-  //   var pcode = $(this).attr("data-code"); //get product code
-  //   $(this).parent().fadeOut(); //remove item element from box
-  //   $.getJSON( "cart_process.php", {"remove_code":pcode} , function(data){ //get Item count from Server
-  //     $("#cart-info .bag-qty").html(data.items); //update Item count in cart-info
-  //     if(data.items == 0) {
-  //       $("#cart-info .bag-qty").addClass('empty');
-  //     } else {
-  //       $("#cart-info .bag-qty").removeClass('empty');
-  //     }
-  //     $(".cart-box").trigger( "click" ); //trigger click on cart-box to update the items list
-  //   });
-  // });
+  // Remove items from cart
+  $("#shopping-cart-results").on('click', 'a.remove-item', function(e) {
+    e.preventDefault();
+    var pcode = $(this).attr("data-code"); //get product code
+    $(this).parent().fadeOut(); //remove item element from box
+    $.getJSON( "cart_process.php", {"remove_code":pcode} , function(data){ //get Item count from Server
+      $("#cart-info .bag-qty").html(data.items); //update Item count in cart-info
+      if(data.items == 0) {
+        $("#cart-info .bag-qty").addClass('empty');
+      } else {
+        $("#cart-info .bag-qty").removeClass('empty');
+      }
+      $(".cart-box").trigger( "click" ); //trigger click on cart-box to update the items list
+    });
+  });
 };
 
 Outdoorkit.deilveryOptions = function() {
@@ -372,6 +372,57 @@ Outdoorkit.deilveryOptions = function() {
 
 };
 
+Outdoorkit.equalColumnHeights = function() {
+
+  if (!$('.equal-heights').length) return;
+
+  /* Thanks to CSS Tricks for pointing out this bit of jQuery
+  http://css-tricks.com/equal-height-blocks-in-rows/
+  It's been modified into a function called at page load and then each time the page is resized. One large modification was to remove the set height before each new calculation. */
+
+  equalheight = function(container){
+
+  var currentTallest = 0,
+       currentRowStart = 0,
+       rowDivs = new Array(),
+       $el,
+       topPosition = 0;
+   $(container).each(function() {
+
+     $el = $(this);
+     $($el).height('auto')
+     topPostion = $el.position().top;
+
+     if (currentRowStart != topPostion) {
+       for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
+         rowDivs[currentDiv].height(currentTallest);
+       }
+       rowDivs.length = 0; // empty the array
+       currentRowStart = topPostion;
+       currentTallest = $el.height();
+       rowDivs.push($el);
+     } else {
+       rowDivs.push($el);
+       currentTallest = (currentTallest < $el.height()) ? ($el.height()) : (currentTallest);
+    }
+     for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
+       rowDivs[currentDiv].height(currentTallest);
+     }
+   });
+  }
+
+  $(window).load(function() {
+    equalheight('.equal-heights .equalise-column');
+  });
+
+
+  $(window).resize(function(){
+    equalheight('.equal-heights .equalise-column');
+  });
+
+};
+
+
 Outdoorkit.init = function() {
     Outdoorkit.mobimenu();
     Outdoorkit.megamenu();
@@ -380,8 +431,9 @@ Outdoorkit.init = function() {
     Outdoorkit.gallerySwiper();
     Outdoorkit.bannerSwiper();
     Outdoorkit.filters();
-    Outdoorkit.bag();
+    // Outdoorkit.bag();
     Outdoorkit.deilveryOptions();
+    Outdoorkit.equalColumnHeights();
 };
 
 $(document).ready(function() {

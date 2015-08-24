@@ -39,6 +39,10 @@ a {
   @include linkbase;
 }
 
+table {
+  @include tables;
+}
+
 /* forms */
 
 fieldset {
