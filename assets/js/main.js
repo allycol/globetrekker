@@ -115,6 +115,11 @@ Outdoorkit.search = function() {
 
   });
 
+  $(document).bind('click', function() {
+    $('.search-form').hide();
+    $('.account-nav ul').fadeIn();
+  });
+
   $('.off-canvas-search').find(".search-field").bind('focusin', function(){
     $(this).parent().addClass('focussed');
   }).bind('focusout', function(){
@@ -219,15 +224,37 @@ Outdoorkit.gallerySwiper = function() {
     slidesPerView: 1,
     //initialSlide: 2,
     effect: 'fade',
-    nextButton: '.product-next',
-    prevButton: '.product-prev'
+    // nextButton: '.product-next',
+    // prevButton: '.product-prev'
   });
 
+  var isNotMobile = ($(window).width()) > 768;
+
+  var largePic  = $('.product-gallery-thmbs li:first-child').find('img').attr('data-lrg-img');
+  if(isNotMobile) galleryZoom(largePic);
+
   $(".product-gallery-thmbs").on('click', 'li', function(){
-      var $this = $(this);
-      galleryLrg.slideTo($this.index(), 500, true);
-      $this.addClass('active').siblings().removeClass('active');
+    var $this = $(this);
+    var largePic  = $this.find('img').attr('data-lrg-img');
+    $('.product-gallery-lrg .swiper-slide').trigger('zoom.destroy');
+    galleryLrg.slideTo($this.index(), 500, true);
+    $this.addClass('active').siblings().removeClass('active');
+    if(isNotMobile) galleryZoom(largePic);
+  });
+
+  function galleryZoom(url) {
+    $('.product-gallery-lrg .swiper-slide').zoom({
+      url: url,
+      target: '.zoomed-image',
+      onZoomIn: function(){
+        $('.zoomed-image').css('display', 'block');
+      },
+      onZoomOut: function(){
+        $('.zoomed-image').css('display', 'none');
+      }
     });
+  }
+
 
   // var galleryThmbs = new Swiper ('.product-gallery-thmbs', {
   //   slidesPerView: 'auto',
@@ -364,7 +391,6 @@ Outdoorkit.deilveryOptions = function() {
 	$tabLink.bind('click', function() {
 		if (!$(this).parent().hasClass(activeClass)) {
 			hideAll();
-			//$('#deliveryOptions').css('width', '650px');
 			$(this).parent().addClass(activeClass);
 			$contentLayer.eq($tabLink.index(this)).show().find('input').addClass('required');
 		}
@@ -387,6 +413,7 @@ Outdoorkit.equalColumnHeights = function() {
        rowDivs = new Array(),
        $el,
        topPosition = 0;
+
    $(container).each(function() {
 
      $el = $(this);

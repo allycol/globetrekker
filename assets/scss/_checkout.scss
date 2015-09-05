@@ -108,6 +108,7 @@
   }
   .next-button {
     text-align: right;
+    float: right;
     //@include span(6 last);
     //margin-top: $space-larger;
   }
@@ -222,11 +223,14 @@
   }
 }
 .next-options {
-  min-height: 10rem;
+  // min-height: 10rem;
   text-align: center;
-  padding-top: $space-large;
+  padding: $space-larger 0;
   li {
     display: none;
+    &:first-child {
+      display: block;
+    }
     h2 {
       margin: $space-medium 0;
     }
@@ -329,11 +333,16 @@
     float: left;
     margin-bottom: 0;
   }
-  .billing-address {
-    @include span(6);
-  }
-  .delivery-address {
-    @include span(6 last);
+  .confirm-addresses {
+    .billing-address {
+      @include span(4);
+    }
+    .delivery-address {
+      @include span(4);
+    }
+    .delivery-options {
+      @include span(4 last);
+    }
   }
   .confirm-order {
     @include container;

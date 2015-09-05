@@ -39,11 +39,13 @@ include("config.inc.php"); //include config file
       </ul> -->
 
       <div class="header">
-        <h1>Interiors <span>96 products</span></h1>
+
+        <!-- <h1>Interiors</h1> -->
+        <h1>Search results for "Focus Mini Ceiling Light" </h1>
+
+        <div class="product-number">96 products</div>
+
         <div class="product-count">
-
-          <!-- <p>31 - 60 of 96 products</p> -->
-
           <ul class="pagination">
             <li class="prev"><a href="">Prev</a></li>
             <li><span class="active">1</span></li>

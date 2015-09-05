@@ -2,7 +2,7 @@
 
   position: relative;
   background-color: $light;
-  padding-top: $space-huge;
+  padding-top: $space-large;
   padding-bottom: $space-larger;
 
   .product-gallery {
@@ -10,24 +10,24 @@
     img {
       display: block;
     }
+
     .product-gallery-thmbs {
       list-style: none;
       margin-top: $space-tiny;
       padding: 0;
       @include container;
       li {
-        display: inline-block;
-        float: left;
-        width: 25%;
-        padding-right: $space-tiny;
+        @include gallery(3);
+        // padding-right: $space-tiny;
         padding-bottom: $space-tiny;
         cursor: pointer;
         @include breakpoint($medium) {
-          width: 20%;
+          // width: 20%;
         }
         img {
           max-width: 100%;
           height: auto;
+          border: 2px solid #fff;
         }
         &.active {
           img {
@@ -35,6 +35,13 @@
           }
         }
       }
+    }
+    .zoomed-image {
+      display: none;
+      position: absolute !important;
+      left: 105%; top: 0;
+      height: 100%; width: 100%;
+      border: 1px solid $line-colour;
     }
   }
 
@@ -55,15 +62,25 @@
 
       .add-qty {
         text-align: center;
-        margin-bottom: $space-larger;
+        margin-bottom: $space-large;
         label {
           display: block;
           font-size: $body;
           margin-bottom: $space-small;
         }
+        .dropdown {
+          select {
+            padding: $space-small $space-massive $space-small $space-small;
+          }
+          span {
+            top: 10px; bottom: 10px; right: 11px;
+            padding-left: 10px;
+            padding-top: 6px;
+          }
+        }
       }
 
-      .add-button {
+      .button-field {
         button {
           @include addtocartbutton;
         }
@@ -114,7 +131,15 @@
 
 @include breakpoint($medium) {
 
+  .product-gallery-lrg {
+    img:hover {
+      cursor: zoom-in;
+    }
+  }
+
   .product-details {
+
+    padding-top: $space-huge;
 
     .product-gallery {
       @include span(6);

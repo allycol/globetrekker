@@ -35,23 +35,22 @@ include("config.inc.php"); //include config file
         <div class="product-gallery">
           <div class="product-gallery-lrg swiper-container">
             <div class="swiper-wrapper">
-              <div class="swiper-slide"><img src="http://placehold.it/760/fff?text=Gallery+one"></div>
-              <div class="swiper-slide"><img src="http://placehold.it/760/fff?text=Gallery+two"></div>
-              <div class="swiper-slide"><img src="http://placehold.it/760/fff?text=Gallery+three"></div>
-              <div class="swiper-slide"><img src="http://placehold.it/760/fff?text=Gallery+four"></div>
-              <div class="swiper-slide"><img src="http://placehold.it/760/fff?text=Gallery+five"></div>
-              <div class="swiper-slide"><img src="http://placehold.it/760/fff?text=Gallery+six"></div>
+              <div class="swiper-slide"><img src="images/20840_1_medium.jpg"></div>
+              <div class="swiper-slide"><img src="images/20840_2_medium.jpg"></div>
+              <div class="swiper-slide"><img src="images/20840_3_medium.jpg"></div>
+              <div class="swiper-slide"><img src="images/20840_4_medium.jpg"></div>
+              <div class="swiper-slide"><img src="images/20840_5_medium.jpg"></div>
+              <div class="swiper-slide"><img src="images/20840_6_medium.jpg"></div>
             </div>
-            <div class="swiper-button-prev product-prev"></div>
-            <div class="swiper-button-next product-next"></div>
+            <div class="zoomed-image"></div>
           </div>
           <ul class="product-gallery-thmbs">
-            <li><img src="http://placehold.it/130/fff"></li>
-            <li><img src="http://placehold.it/130/fff"></li>
-            <li><img src="http://placehold.it/130/fff"></li>
-            <li><img src="http://placehold.it/130/fff"></li>
-            <li><img src="http://placehold.it/130/fff"></li>
-            <li><img src="http://placehold.it/130/fff"></li>
+            <li><img src="images/20840_1_thumbnail.jpg" data-lrg-img="images/20840_1_large.jpg"></li>
+            <li><img src="images/20840_2_thumbnail.jpg" data-lrg-img="images/20840_2_large.jpg"></li>
+            <li><img src="images/20840_3_thumbnail.jpg" data-lrg-img="images/20840_3_large.jpg"></li>
+            <li><img src="images/20840_4_thumbnail.jpg" data-lrg-img="images/20840_4_large.jpg"></li>
+            <li><img src="images/20840_5_thumbnail.jpg" data-lrg-img="images/20840_5_large.jpg"></li>
+            <li><img src="images/20840_6_thumbnail.jpg" data-lrg-img="images/20840_6_large.jpg"></li>
           </ul>
         </div>
 
@@ -81,7 +80,7 @@ include("config.inc.php"); //include config file
                     echo '<span class="ico ico-xs ico-chevron-down"></span>';
                   echo '</div>';
                 echo '</div>';
-                echo '<div class="add-button">';
+                echo '<div class="button-field">';
     							echo '<input class="p-code" type="hidden" value="'.$row["product_code"].'">';
     							echo '<button class="button" type="submit">Add to Cart</button>';
                 echo '</div>';

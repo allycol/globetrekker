@@ -58,9 +58,15 @@ fieldset {
     li {
       margin: 0 0 $space-small 0;
       @include container;
+      .serverError {
+        padding-left: 0;
+        margin: 0 0 $space-small 0;
+        position: relative;
+        font-size: $body;
+      }
       label {
         margin-bottom: $space-tiny;
-        padding-top: $space-small;
+        padding-top: $space-tiny;
         display: block;
       }
       .forgot-password {
@@ -86,13 +92,7 @@ fieldset {
 }
 
 .serverError {
-  color: $brand-red;
-  margin-top: 0;
-  padding-left: 35px;
-  .ico {
-    //float: left;
-    margin-left: -35px;
-  }
+  @include serverError;
 }
 
 
@@ -120,9 +120,13 @@ input[type="search"], input[type="text"], input[type="password"], textarea {
       li.textfield {
         label {
           @include span(2);
+          @include break;
         }
         .field {
-          @include span(8);
+          @include span(6);
+        }
+        .serverError {
+          @include span(isolate 8 at 3);
         }
       }
       .button-field {

@@ -44,7 +44,7 @@ include("config.inc.php"); //include config file
           <fieldset>
 
             <ul class="delivery-options">
-              <li>
+              <li class="selected">
                   <input type="radio" name="deliveryoption" value="next" id="nextDay" class="required" />
                   <label for="nextDay">Next working day</label>
               </li>

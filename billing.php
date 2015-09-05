@@ -104,6 +104,7 @@ include("config.inc.php"); //include config file
 						</li>
 
 						<li class="textfield">
+              <p class="serverError">This is not a valid UK postcode</p>
 							<label for="postcode">Postcode <span class="asterisk">*</span></label>
 							<div class="field">
 								<input name="postcode" value="" size="30" type="text" tabindex="25" class="required" />

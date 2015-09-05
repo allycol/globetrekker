@@ -37,6 +37,10 @@ include("config.inc.php"); //include config file
 
         <h1>Order summary</h1>
 
+        <div class="next-button">
+          <a class="button" href="https://www.outdoorkit.co.uk/order_registration.php">Confirm Order</a>
+        </div>
+
         <p>Please check your details and press the confirm order button. </p>
 
         <div class="confirm-addresses">
@@ -45,21 +49,26 @@ include("config.inc.php"); //include config file
   					<h3>Billing Address</h3>
   					<p>Mr Ally COl<br>
   					2 SPringfield, Hook, RG278SF<br>0404390503</p>
-  					<p><a href="https://www.outdoorkit.co.uk/billing.php?fromordersummary=true">Change billing address</a></p>
+  					<p><a href="#">Change billing address</a></p>
   				</div>
 
   				<div class="delivery-address">
   					<h3>Delivery Address</h3>
   					<p>Mr Ally COl<br>
   					2 SPringfield, Hook, RG278SF</p>
-  					<p><a href="https://www.outdoorkit.co.uk/delivery.php?fromordersummary=true">Change delivery address</a></p>
+  					<p><a href="#">Change delivery address</a></p>
+  				</div>
+
+          <div class="delivery-options">
+  					<h3>Delivery Options</h3>
+  					<p>Delivery by Parcelforce<br>
+              3rd September PM £3.95.</p>
+  					<p><a href="#">Change delivery options</a></p>
   				</div>
 
 		   </div>
 
-       <div class="next-button">
-         <a class="button" href="https://www.outdoorkit.co.uk/order_registration.php">Confirm Order</a>
-       </div>
+
 
   			<h2>Your Order</h2>
 

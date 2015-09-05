@@ -59,6 +59,11 @@
     }
   }
 
+  .product-number {
+    text-align: center;
+    padding-top: $space-medium;
+  }
+
   .product-count {
     text-align: center;
     padding-top: $space-medium;
@@ -171,8 +176,14 @@
     min-height: 30rem;
     .header {
       h1 {
+        text-align: left;
+        padding-bottom: $space-small;
+      }
+      .product-number {
         @include span(4 of 12);
         text-align: left;
+        padding-top: $space-medium;
+        padding-bottom: $space-medium;
       }
       .product-count {
         @include span(4 of 12);
@@ -181,7 +192,7 @@
       }
       .sort-by-form {
         @include span(4 last);
-        padding-top: $space-tiny;
+        padding-top: $space-small;
         text-align: right;
         label {
           display: inline;

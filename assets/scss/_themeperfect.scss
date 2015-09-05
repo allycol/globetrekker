@@ -135,7 +135,7 @@ $brand1: $bodyfont;
 }
 
 @mixin textinput {
-  padding: 10px;
+  padding: $space-tiny;
   width: 100%;
   box-sizing: border-box;
   border-radius: 0;
@@ -159,7 +159,7 @@ $brand1: $bodyfont;
     -o-border-radius: 0;
     border-radius: 0;
     font-size: $body;
-    padding: $space-small $space-massive $space-small $space-small;
+    padding: $space-tiny $space-massive $space-tiny $space-small;
     border: 1px solid $dark;
     position: relative;
     min-width: 4rem;
@@ -170,12 +170,25 @@ $brand1: $bodyfont;
     }
   }
   span {
-    position: absolute; top: 10px; bottom: 10px; right: 11px;
+    position: absolute; top: 6px; bottom: 6px; right: 7px;
     z-index: 1;
     border-left: 1px solid $dark;
-    padding-left: 10px;
-    padding-top: 6px;
+    padding-left: 5px;
+    padding-top: 4px;
   }
+}
+
+// Errors
+
+@mixin serverError {
+  color: $brand-red;
+  margin-top: 0;
+  padding-left: 35px;
+  .ico {
+    //float: left;
+    margin-left: -35px;
+  }
+
 }
 
 // Buttons
