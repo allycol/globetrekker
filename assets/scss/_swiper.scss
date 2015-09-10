@@ -15,9 +15,9 @@
 .swiper-container {
   margin: 0 auto;
   position: relative;
-  // overflow: hidden;
+  overflow: hidden;
   /* Fix of Webkit flickering */
-  z-index: 15;
+  z-index: 1;
 }
 .swiper-container-no-flexbox .swiper-slide {
   float: left;

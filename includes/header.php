@@ -41,13 +41,13 @@
             <span>
           </a>
         </li>
-        <!-- <li class="signin"><a href="#"><span class="ico ico-s ico-profile"></span> <span class="label">Sign in</span></a></li> -->
-        <li class="account"><a href="profile.php"><span class="ico ico-s ico-profile"></span> <span class="label">My account</span></a><br></li>
+        <!-- <li class="signin"><a href="#"><span class="ico ico-s ico-lock"></span> <span class="label">Log out</span></a></li> -->
+        <li class="account"><a href="profile.php"><span class="ico ico-s ico-profile"></span> <span class="label">My account</span></a><br><a href="#" class="logout">Log out</a></li>
         <li class="search"><a href="#"><span class="ico ico-s ico-magnify"></span> <span class="label">Search</span></a></li>
       </ul>
       <div class="search-form">
         <form>
-          <input autocomplete="off" id="search" class="search-field" name="search-field" type="text" value="" placeholder="Looking for something?" />
+          <input autocomplete="off" id="search" class="search-field" name="search-field" type="search" value="" placeholder="Looking for something?" />
           <input name="search-button" type="submit" value="">
           <span class="ico ico-xs ico-magnify"></span>
         </form>

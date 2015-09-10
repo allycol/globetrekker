@@ -228,9 +228,6 @@
   padding: $space-larger 0;
   li {
     display: none;
-    &:first-child {
-      display: block;
-    }
     h2 {
       margin: $space-medium 0;
     }
@@ -238,6 +235,7 @@
       max-width: 15rem;
       margin: auto;
       .dropdown {
+        @include fatselect;
         display: block;
         margin-bottom: $space-small;
         select {

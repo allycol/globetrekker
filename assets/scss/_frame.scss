@@ -43,6 +43,15 @@ table {
   @include tables;
 }
 
+iframe {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  width: 100%;
+  height: 20rem;
+  margin: 0;
+}
+
 /* forms */
 
 fieldset {
@@ -164,7 +173,7 @@ input[type="search"], input[type="text"], input[type="password"], textarea {
 
 header {
 
-    border-top: 10px solid $header-strip;
+  border-top: 10px solid $header-strip;
 
   .phone {
     display: none;
@@ -280,6 +289,9 @@ header {
       @include span(isolate 9 at 4);
       position: relative;
       display: none;
+      input[type="search"] {
+        @include fattextinput;
+      }
       input[type="submit"] {
         background-color: transparent;
         border: none;
@@ -314,6 +326,10 @@ header {
           a {
             display: inline-block;
             position: relative;
+            &.logout {
+              font-size: $smaller;
+              margin-top: 5px;
+            }
           }
           &.search {
             display: block;
@@ -321,12 +337,12 @@ header {
           }
           &.account {
             display: block;
-            @include span(3);
+            @include span(4);
           }
-          &.signin {
-            display: block;
-            @include span(3);
-          }
+          // &.signin {
+          //   display: block;
+          //   @include span(3);
+          // }
           &.basket {
             @include span(3);
             .ico {

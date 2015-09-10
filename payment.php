@@ -21,10 +21,11 @@ include("config.inc.php"); //include config file
   <link rel="icon" type="image/png" sizes="96x96" href="images/icons/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon-16x16.png">
   <link rel="manifest" href="images/icons/manifest.json">
-  <title>Reset your password</title>
+  <title>Billing address</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <link href="build/css/main.css" rel="stylesheet" type="text/css" />
 </head>
+
 
 <body>
 
@@ -32,42 +33,31 @@ include("config.inc.php"); //include config file
 
 	<div id="page">
 
-	  <?php include("includes/header.php"); ?>
-
+	  <?php include("includes/checkout-header.php"); ?>
 
 		<section class="content-page">
 
 			<div class="frame">
 
-        <h1>Reset Your Password</h1>
+      <div class="progress">
+        <ul>
+          <li>1. Billing address</li>
+          <li>2. Delivery address</li>
+          <li>3. Delivery options</li>
+          <li class="active">4. Payment</li>
+          <li>5. Order summary</li>
+        </ul>
+      </div>
 
-        <p>Please enter your email address below and we'll send you an e-mail containing instructions on how to reset your password.</p>
+      <h1>Payment</h1>
 
-        <form name="reset" action="https://www.outdoorkit.co.uk/forgotten.php" method=get>
-    			<fieldset>
-    					<ul>
-    						<li class="textfield">
-    							<label for="email">Email address</label>
+      <iframe class="payment" src="card_details_low.html"></iframe>
 
-    							<div class="field">
-    								<input type="text" tabindex="1" size="25" value="" id="email" name="email" class="required" />
-    								<input type="hidden" tabindex="1" size="25" value="submit" id="email" name="submit" class="required" />
-    							</div>
-    						</li>
-    						<li>
-                  <div class="button-field">
-    							         <input type="submit" class="button" value="Reset" />
-                  </div>
-    						</li>
-    					</ul>
-    				</fieldset>
-    			</form>
-
-			</div>
-		</section>
+		</div>
+	</section>
 
 
-<?php include("includes/footer.php"); ?>
+  <?php include("includes/footer.php"); ?>
 
 </div>
 

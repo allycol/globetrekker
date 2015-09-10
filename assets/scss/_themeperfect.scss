@@ -26,6 +26,7 @@ $background: #fff;
 $header-strip: #000;
 
 $line-colour: #d9d9d9;
+$form-colour: #bbb;
 
 $light: #f4f4f4;
 $dark: #000;
@@ -139,15 +140,18 @@ $brand1: $bodyfont;
   width: 100%;
   box-sizing: border-box;
   border-radius: 0;
-  border: 1px solid $line-colour;
+  border: 1px solid $form-colour;
   &:focus {
     outline: 0;
     border: 1px solid #000;
   }
 }
 
-@mixin dropdown {
+@mixin fattextinput {
+  padding: $space-small $space-massive $space-small $space-small;
+}
 
+@mixin dropdown {
   background-color: #fff;
   position: relative;
   select {
@@ -160,21 +164,37 @@ $brand1: $bodyfont;
     border-radius: 0;
     font-size: $body;
     padding: $space-tiny $space-massive $space-tiny $space-small;
-    border: 1px solid $dark;
+    border: 1px solid $form-colour;
     position: relative;
     min-width: 4rem;
     background-color: transparent;
     z-index: 2;
     &:focus {
       outline: 0;
+      border: 1px solid #000;
+    }
+    &.larger {
+      padding: $space-small $space-massive $space-small $space-small;
     }
   }
   span {
     position: absolute; top: 6px; bottom: 6px; right: 7px;
     z-index: 1;
-    border-left: 1px solid $dark;
+    border-left: 1px solid $form-colour;
     padding-left: 5px;
     padding-top: 4px;
+    color: $dark;
+  }
+}
+
+@mixin fatselect {
+  select {
+    padding: $space-small $space-massive $space-small $space-small;
+  }
+  span {
+    top: 10px; bottom: 10px; right: 11px;
+    padding-left: 10px;
+    padding-top: 6px;
   }
 }
 

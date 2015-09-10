@@ -381,18 +381,39 @@ Outdoorkit.deilveryOptions = function() {
 	var $tabLink = $('.delivery-options li input');
 	var activeClass = 'selected';
 
-	$tabLink.attr('checked', false);
+  // Get default values from hidden inputs
+  var defaultTab = $('#DefaultTabSelection').val();
+  var defaultDaySelection = $('#DefaultDaySelection').val();
+  var defaultTimeSelection = $('#DefaultTimeSelection').val();
+
+  // If they exist, show the right tab, content div and selected values
+  if(defaultTab && defaultDaySelection) {
+    // console.log(defaultTab + ' and ' +  defaultDaySelection);
+    $tabLink.eq(defaultTab - 1).attr('checked',true).parent().addClass(activeClass);
+    $contentLayer.eq(defaultTab - 1).show();
+    $contentLayer.eq(defaultTab - 1).find('select[name=sd_delivery_date]').val(defaultDaySelection);
+    $contentLayer.eq(defaultTab - 1).find('select[name=sd_delivery_service]').val(defaultTimeSelection);
+    $contentLayer.eq(defaultTab - 1).find('select[name=nwd_delivery_service]').val(defaultTimeSelection);
+  }
+  else {
+    // Otherwise default to the first tab
+    // console.log("No defaults");
+    $tabLink.eq(0).attr('checked',true).parent().addClass(activeClass);
+    $contentLayer.eq(0).show();
+  }
 
 	function hideAll() {
 		$tabLink.parent().removeClass(activeClass);
-		$contentLayer.hide().find('input').removeClass('required');;
+		$contentLayer.hide();
 	}
 
 	$tabLink.bind('click', function() {
+    var $tabIndex = $tabLink.index(this);
+    console.log($tabIndex);
 		if (!$(this).parent().hasClass(activeClass)) {
-			hideAll();
-			$(this).parent().addClass(activeClass);
-			$contentLayer.eq($tabLink.index(this)).show().find('input').addClass('required');
+			hideAll();                                           // Hide everything
+			$(this).parent().addClass(activeClass);              // Add active class to tab
+			$contentLayer.eq($tabIndex).show();                  // Show the right content layer
 		}
 	});
 
