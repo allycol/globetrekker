@@ -421,7 +421,7 @@ Outdoorkit.deilveryOptions = function() {
 
 Outdoorkit.equalColumnHeights = function() {
 
-  if (!$('.equal-heights').length) return;
+  if (!$('.three-equal').length) return;
 
   /* Thanks to CSS Tricks for pointing out this bit of jQuery
   http://css-tricks.com/equal-height-blocks-in-rows/
@@ -460,16 +460,62 @@ Outdoorkit.equalColumnHeights = function() {
   }
 
   $(window).load(function() {
-    equalheight('.equal-heights .equalise-column');
+    equalheight('.three-equal .equalise-column');
   });
 
 
   $(window).resize(function(){
-    equalheight('.equal-heights .equalise-column');
+    equalheight('.three-equal .equalise-column');
   });
 
 };
 
+
+Outdoorkit.iframeHeight = function() {
+
+  /**
+   * Called to resize a given iframe.
+   *
+   * @param frame The iframe to resize.
+   */
+  function resize( frame ) {
+    var b = frame.contentWindow.document.body || frame.contentDocument.body,
+        cHeight = $(b).height();
+
+    if( frame.oHeight !== cHeight ) {
+      $(frame).height( 0 );
+      frame.style.height = 0;
+
+      $(frame).height( cHeight );
+      frame.style.height = cHeight + "px";
+
+      frame.oHeight = cHeight;
+    }
+
+    // Call again to check whether the content height has changed.
+    setTimeout( function() { resize( frame ); }, 250 );
+  }
+
+  /**
+   * Resizes all the iframe objects on the current page. This is called when
+   * the page is loaded. For some reason using jQuery to trigger on loading
+   * the iframe does not work in Firefox 26.
+   */
+  window.onload = function() {
+    var frame,
+        frames = document.getElementsByTagName( 'iframe' ),
+        i = frames.length - 1;
+
+    while( i >= 0 ) {
+      frame = frames[i];
+      frame.onload = resize( frame );
+
+      i -= 1;
+    }
+  };
+
+
+};
 
 Outdoorkit.init = function() {
     Outdoorkit.mobimenu();
@@ -482,6 +528,7 @@ Outdoorkit.init = function() {
     // Outdoorkit.bag();
     Outdoorkit.deilveryOptions();
     Outdoorkit.equalColumnHeights();
+    Outdoorkit.iframeHeight();
 };
 
 $(document).ready(function() {

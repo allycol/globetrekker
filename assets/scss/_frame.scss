@@ -56,6 +56,7 @@ iframe {
 
 fieldset {
   @include fieldset;
+  @include break;
   padding: $space-medium;
   p {
     margin: 0 0 $space-large 0;
@@ -83,7 +84,7 @@ fieldset {
         margin-top: $space-small;
       }
       .button-field {
-        padding-top: $space-medium;
+        margin-top: $space-medium;
       }
     }
     .checkbox {
@@ -109,12 +110,30 @@ input[type="search"], input[type="text"], input[type="password"], textarea {
   @include textinput;
 }
 
+.inline-dropdown {
+  // border: 1px solid red;
+  margin-top: $space-tiny;
+  @include gallery(6);
+}
+
 .dropdown {
   display: block;
   @include dropdown;
   select {
     display: block;
     width: 100%;
+  }
+  .old-ie & {
+    display: inline;
+    select {
+      // width: 100%;
+      display: inline;
+      background-color: #fff;
+      padding: $space-small !important;
+    }
+    span {
+      display: none;
+    }
   }
 }
 
@@ -125,6 +144,7 @@ input[type="search"], input[type="text"], input[type="password"], textarea {
 @include breakpoint($medium) {
   fieldset {
     padding: $space-larger;
+    position: relative;
     ul {
       li.textfield {
         label {
@@ -148,12 +168,21 @@ input[type="search"], input[type="text"], input[type="password"], textarea {
       }
     }
   }
+  .inline-dropdown {
+    // @include gallery(5);
+  }
   .dropdown {
     display: inline-block;
     select {
       display: inline;
       width: auto;
     }
+  }
+}
+
+@include breakpoint($large) {
+  .inline-dropdown {
+    @include gallery(5);
   }
 }
 
@@ -229,11 +258,15 @@ header {
     @include span(4 at 5 of 12);
     text-align: center;
     @include logo;
+    svg {
+      display: block;
+    }
   }
 
 
   .account-nav {
     @include span(4 last);
+    @include suffix(0.75rem);
     font-size: $body;
     padding-top: $space-large + 0.3rem;
     position: relative;
@@ -318,9 +351,10 @@ header {
 
   @include breakpoint($large) {
 
+    .account-nav {@include suffix(0);}
+
     @include with-layout(rtl) {
       .account-nav {
-        //padding-bottom: $space-larger;
         ul li {
           text-align: center;
           a {

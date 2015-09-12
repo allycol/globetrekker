@@ -13,10 +13,7 @@
     </div>
     <div class="logo">
       <a href="index.php">
-        <picture>
-          <source type="image/svg+xml" srcset="images/perfect-logo.svg" />
-          <img src="images/perfect-logo.png" alt="Perfect Lights" />
-        </picture>
+        <?php echo file_get_contents("images/perfect-logo.svg"); ?>
       </a>
     </div>
     <div class="account-nav">

@@ -3,7 +3,10 @@ session_start(); //start session
 include("config.inc.php"); //include config file
 ?>
 <!doctype html>
+<!--[if lte IE 9]> <html class="old-ie"> <![endif]-->
+<!--[if gt IE 9]><!-->
 <html>
+<!--<![endif]-->
 
 <head>
   <meta content="width=device-width, initial-scale=1.0, minimum-scale=.5, maximum-scale=1.0, user-scalable=yes" name="viewport" />
@@ -68,7 +71,7 @@ include("config.inc.php"); //include config file
       </a>
     </div>
 
-    <div class="three-equal equal-heights">
+    <div class="three-equal">
       <div class="other-promo promo-1 equalise-column">
         <a href="#"><span class="first">Get the latest direct to your mailbox.</span><span class="second"></span><span class="link-button"><span class="button bordered">Join</span></span></a>
       </div>

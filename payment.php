@@ -3,7 +3,10 @@ session_start(); //start session
 include("config.inc.php"); //include config file
 ?>
 <!doctype html>
+<!--[if lte IE 9]> <html class="old-ie"> <![endif]-->
+<!--[if gt IE 9]><!-->
 <html>
+<!--<![endif]-->
 
 <head>
   <meta content="width=device-width, initial-scale=1.0, minimum-scale=.5, maximum-scale=1.0, user-scalable=yes" name="viewport" />
@@ -51,7 +54,7 @@ include("config.inc.php"); //include config file
 
       <h1>Payment</h1>
 
-      <iframe class="payment" src="card_details_low.html"></iframe>
+      <iframe class="iframe payment" src="card_details_low.html" scrolling="no" frameborder="0"></iframe>
 
 		</div>
 	</section>

@@ -111,15 +111,16 @@ $brand1: $bodyfont;
 // LOGO PLACEMENT
 
 @mixin logo {
-  //padding-top: $space-large;
   padding-bottom: $space-large;
   margin-top: -10px;
-  img {
+  a {
+    display: block;
     margin: auto;
+    max-width: 3rem;
     max-width: 3rem;
   }
   @include breakpoint($medium) {
-    img {
+    a {
       max-width: 4.6rem;
     }
   }

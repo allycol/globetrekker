@@ -3,7 +3,10 @@ session_start(); //start session
 include("config.inc.php"); //include config file
 ?>
 <!doctype html>
+<!--[if lte IE 9]> <html class="old-ie"> <![endif]-->
+<!--[if gt IE 9]><!-->
 <html>
+<!--<![endif]-->
 
 <head>
   <meta content="width=device-width, initial-scale=1.0, minimum-scale=.5, maximum-scale=1.0, user-scalable=yes" name="viewport" />
@@ -51,11 +54,12 @@ include("config.inc.php"); //include config file
 
         <h1>Order summary</h1>
 
-        <div class="next-button">
-          <a class="button" href="https://www.outdoorkit.co.uk/order_registration.php">Confirm Order</a>
+        <div class="confirm-order">
+          <div class="next-button">
+            <a class="button" href="https://www.outdoorkit.co.uk/order_registration.php">Confirm Order</a>
+          </div>
+          <p>Please check your details and press the confirm order button. </p>
         </div>
-
-        <p>Please check your details and press the confirm order button. </p>
 
         <div class="confirm-addresses">
 
