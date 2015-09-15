@@ -65,7 +65,7 @@ gulp.task('styles', function(){
 gulp.task('serve', ['styles'], function() {
     browserSync.init({
         proxy: "localhost/~allycolquhoun/globetrekker"
-    });  
+    });
 });
 
 gulp.task('watch', function() {

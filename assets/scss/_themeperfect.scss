@@ -187,6 +187,9 @@ $brand1: $bodyfont;
       padding: $space-small $space-massive $space-small $space-small;
     }
   }
+  select::-ms-expand {
+    display: none;
+  }
   span {
     position: absolute; top: 6px; bottom: 6px; right: 7px;
     z-index: 1;
