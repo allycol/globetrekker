@@ -108,6 +108,10 @@ $brand1: $bodyfont;
   margin-bottom: $space-small;
 }
 
+@mixin boldType {
+  font-weight: normal;
+}
+
 // LOGO PLACEMENT
 
 @mixin logo {
@@ -117,11 +121,16 @@ $brand1: $bodyfont;
     display: block;
     margin: auto;
     max-width: 3rem;
-    max-width: 3rem;
+    svg {
+      max-width: 3rem;
+    }
   }
   @include breakpoint($medium) {
     a {
       max-width: 4.6rem;
+      svg {
+        max-width: 4.6rem;
+      }
     }
   }
 }

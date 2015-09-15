@@ -43,30 +43,37 @@ include("config.inc.php"); //include config file
 
 			<div class="frame">
 
-        <h1>My Account</h1>
+        <h1>My Orders</h1>
 
-        <p>From this page, you can update your details or check on the status of your orders.</p>
+        <div class="history-summary-item-header">
 
-        <div class="account-landing three-equal">
-          <div class="account-section equalise-column">
-            <span class="ico ico-l ico-bag"></span>
-            <h2>My Orders</h2>
-            <p>Check the status of all outstanding orders and see all your past orders</p>
-            <a href="orders.php" class="button">View orders</a>
-          </div>
-          <div class="account-section equalise-column">
-            <span class="ico ico-l ico-profile"></span>
-            <h2>My Details</h2>
-            <p>Update your address details or mailing preferences.</p>
-            <a href="my-details.php" class="button">Update details</a>
-          </div>
-          <div class="account-section equalise-column">
-            <span class="ico ico-l ico-lock"></span>
-            <h2>Password</h2>
-            <p>Update your password.</p>
-            <a href="https://www.perfectlights.co.uk/forgotten.php?email=allycolquhoun@gmail.com&amp;submit=true" class="button">Update password</a>
-          </div>
+          <div class="history-order-date">Date</div>
+          <div class="history-order-number">Order number</div>
+          <div class="history-item-name">Product</div>
+          <div class="history-total">Price</div>
+          <div class="history-status">Status</div>
+  			</div>
+
+        <div class="history-summary-item">
+          <div class="history-order-date">15-09-2015</div>
+          <div class="history-order-number">12353</div>
+          <div class="history-item-name">1 x Samite Ceiling Light<br>( One size)</div>
+          <div class="history-total">&pound;112.95</div>
+          <div class="history-status">Processing</div>
         </div>
+
+        <div class="history-summary-item">
+          <div class="history-order-date">15-09-2015</div>
+          <div class="history-order-number">12354</div>
+          <div class="history-item-name">
+            1 x Cross Wall Light (One size)<br>
+            1 x Cross Table Lamp (One size)
+          </div>
+          <div class="history-total">&pound;140.00</div>
+          <div class="history-status">Processing</div>
+        </div>
+
+
 
 			</div>
 		</section>

@@ -27,8 +27,9 @@
              <li><a href="forgotten.php">Forgot password</a></li>
              <li><a href="billing.php">Billing address</a></li>
              <li><a href="delivery-options.php">Delivery options</a></li>
-             <li><a href="payment.php">Payment</a></li>
              <li><a href="order-summary.php">Order summary</a></li>
+             <li><a href="payment.php">Payment</a></li>
+             <li><a href="order-confirmed.php">Order confirmation</a></li>
           </ul>
         </div>
       </div>

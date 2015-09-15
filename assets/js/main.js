@@ -222,7 +222,6 @@ Outdoorkit.gallerySwiper = function() {
 
   var galleryLrg = new Swiper ('.product-gallery-lrg', {
     slidesPerView: 1,
-    //initialSlide: 2,
     effect: 'fade',
     // nextButton: '.product-next',
     // prevButton: '.product-prev'
@@ -230,42 +229,18 @@ Outdoorkit.gallerySwiper = function() {
 
   var isNotMobile = ($(window).width()) > 768;
 
-  var largePic  = $('.product-gallery-thmbs li:first-child').find('img').attr('data-lrg-img');
-  if(isNotMobile) galleryZoom(largePic);
-
-  $(".product-gallery-thmbs").on('click', 'li', function(){
+  $(".product-gallery-thmbs li").bind('click', function(){
     var $this = $(this);
-    var largePic  = $this.find('img').attr('data-lrg-img');
-    $('.product-gallery-lrg .swiper-slide').trigger('zoom.destroy');
+    $largePic = $this.find('img').attr('data-lrg-img');
+    $('.large-image').attr('href', $largePic);
     galleryLrg.slideTo($this.index(), 500, true);
     $this.addClass('active').siblings().removeClass('active');
-    if(isNotMobile) galleryZoom(largePic);
+    // console.log($largePic);
   });
 
-  function galleryZoom(url) {
-    $('.product-gallery-lrg .swiper-slide').zoom({
-      url: url,
-      target: '.zoomed-image',
-      onZoomIn: function(){
-        $('.zoomed-image').css('display', 'block');
-      },
-      onZoomOut: function(){
-        $('.zoomed-image').css('display', 'none');
-      }
-    });
-  }
-
-
-  // var galleryThmbs = new Swiper ('.product-gallery-thmbs', {
-  //   slidesPerView: 'auto',
-  //   centeredSlides: true,
-  //   touchRatio: 0.2,
-  //   //initialSlide: 2,
-  //   slideToClickedSlide: true
-  // });
-
-  // galleryLrg.params.control = galleryThmbs;
-  // galleryThmbs.params.control = galleryLrg;
+  if(isNotMobile) $('.large-image').featherlight({
+    loading: 'Loading image'
+  });
 
 };
 

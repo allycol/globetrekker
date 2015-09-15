@@ -24,7 +24,7 @@ include("config.inc.php"); //include config file
   <link rel="icon" type="image/png" sizes="96x96" href="images/icons/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon-16x16.png">
   <link rel="manifest" href="images/icons/manifest.json">
-  <title>My account</title>
+  <title>My details</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <link href="build/css/main.css" rel="stylesheet" type="text/css" />
 </head>
@@ -38,43 +38,26 @@ include("config.inc.php"); //include config file
 
 	  <?php include("includes/header.php"); ?>
 
-
 		<section class="content-page">
 
 			<div class="frame">
 
-        <h1>My Account</h1>
+        <h1>Order complete</h1>
+        <h3 class="order-confirmed"><span class="ico ico-s ico-success"></span> Your order has been successfully placed. Your order number is <strong>12353</strong></h3>
+        <h2>Next steps</h2>
+        <p>Now what happens? Shouldn't we say something about their Tax Invoice or a confirmation email?</p>
+        <p>If you have any queries in relation to your order, please contact us using the <a href="http://www.perfectlights.co.uk/contact_us.php" target="_top">Contact page</a> or phone us on 01727 61 41 61. Please remember to quote the order number above when contacting us.</p>
+        <h2>Track your order</h2>
+        <p>You can track the status of your order from the <a href="https://www.perfectlights.co.uk/profile.php" target="_top">My Account</a> section of our site.</p>
+        <h2>Thank you for ordering from us!</h2>
 
-        <p>From this page, you can update your details or check on the status of your orders.</p>
-
-        <div class="account-landing three-equal">
-          <div class="account-section equalise-column">
-            <span class="ico ico-l ico-bag"></span>
-            <h2>My Orders</h2>
-            <p>Check the status of all outstanding orders and see all your past orders</p>
-            <a href="orders.php" class="button">View orders</a>
-          </div>
-          <div class="account-section equalise-column">
-            <span class="ico ico-l ico-profile"></span>
-            <h2>My Details</h2>
-            <p>Update your address details or mailing preferences.</p>
-            <a href="my-details.php" class="button">Update details</a>
-          </div>
-          <div class="account-section equalise-column">
-            <span class="ico ico-l ico-lock"></span>
-            <h2>Password</h2>
-            <p>Update your password.</p>
-            <a href="https://www.perfectlights.co.uk/forgotten.php?email=allycolquhoun@gmail.com&amp;submit=true" class="button">Update password</a>
-          </div>
-        </div>
-
-			</div>
-		</section>
+  		</div>
+  	</section>
 
 
-<?php include("includes/footer.php"); ?>
+    <?php include("includes/footer.php"); ?>
 
-</div>
+  </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="build/js/app.js"></script>

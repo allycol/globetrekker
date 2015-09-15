@@ -148,6 +148,7 @@
       background-color: transparent;
       color: $dark;
       letter-spacing: 0;
+      margin-left: $space-small;
       &:hover {
         color: $brand-red;
       }
@@ -263,30 +264,108 @@
   }
 }
 
-.summary-item-header {
-  background-color: $dark;
-  color: white;
+.summary-item-header, .history-summary-item-header {
+  display: none;
 }
 
-.summary-item-header, .summary-item {
+.summary-item {
   @include container;
+  padding: $space-medium $space-small;
   .summ-name {
-    @include span(5);
-    padding: $space-small;
+    padding-bottom: $space-tiny;
   }
   .summ-color-size {
-    @include span(3);
-    padding: $space-small;
+    @include span(4);
   }
   .summ-quantity {
-    @include span(2);
-    padding: $space-small;
+    @include span(4);
   }
   .summ-price {
-    @include span(2 last);
-    padding: $space-small;
+    @include span(4 last);
     text-align: right;
   }
+}
+
+.history-summary-item {
+  padding: $space-medium 0;
+  border-top: 1px solid $line-colour;
+  @include container;
+  .history-order-date {
+    @include span(6);
+  }
+  .history-order-number {
+    @include span(6 last);
+    text-align: right;
+  }
+  .history-item-name {
+
+  }
+  .history-total {
+    @include span(6);
+  }
+  .history-status {
+    @include span(6 last);
+    text-align: right;
+  }
+}
+
+@include breakpoint($medium) {
+
+  .summary-item-header, .history-summary-item-header {
+    @include container;
+    display: block;
+    background-color: $dark;
+    color: white;
+  }
+
+  .summary-item-header, .summary-item {
+    padding: 0;
+    border: none;
+    .summ-name {
+      @include span(5);
+      padding: $space-small;
+    }
+    .summ-color-size {
+      @include span(3);
+      padding: $space-small;
+    }
+    .summ-quantity {
+      @include span(2);
+      padding: $space-small;
+    }
+    .summ-price {
+      @include span(2 last);
+      padding: $space-small;
+      text-align: right;
+    }
+  }
+
+  .history-summary-item-header, .history-summary-item {
+    @include container;
+    padding: 0;
+    .history-order-date {
+      @include span(2);
+      padding: $space-small;
+    }
+    .history-order-number {
+      @include span(2);
+      padding: $space-small;
+    }
+    .history-item-name {
+      @include span(4);
+      padding: $space-small;
+    }
+    .history-total {
+      @include span(2);
+      padding: $space-small;
+    }
+    .history-status {
+      @include span(2 last);
+      padding: $space-small;
+      text-align: right;
+    }
+  }
+
 }
 
 .order-summary-totals {
@@ -392,5 +471,17 @@
       margin-top: 0;
       @include span(6 last);
     }
+  }
+}
+
+.order-confirmed {
+  padding: $space-large;
+  background-color: #fff;
+  border: 1px solid $line-colour;
+  border-radius: 5px;
+  .ico {
+    float: left;
+    margin-right: $space-small;
+    color: green;
   }
 }

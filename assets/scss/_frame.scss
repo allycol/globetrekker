@@ -2,7 +2,7 @@ html {
   font-size: $base;
 }
 
-body {
+* {
   @include border-box-sizing;
 }
 
@@ -37,6 +37,10 @@ p {
 }
 a {
   @include linkbase;
+}
+
+strong {
+  @include boldType;
 }
 
 table {
@@ -258,9 +262,6 @@ header {
     @include span(4 at 5 of 12);
     text-align: center;
     @include logo;
-    svg {
-      display: block;
-    }
   }
 
 
@@ -586,7 +587,6 @@ header {
   background-color: $light;
   padding-top: $space-small;
   padding-bottom: $space-huge;
-
   .sub-nav {
     ul {
       list-style: none;
@@ -608,6 +608,7 @@ header {
 @include breakpoint($medium) {
   .content-page {
     padding-top: $space-larger;
+    min-height: 30rem;
     .sub-nav {
       @include span(2);
     }

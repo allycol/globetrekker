@@ -51,19 +51,20 @@ include("config.inc.php"); //include config file
         </ul> -->
 
         <div class="product-gallery">
-          <div class="zoom-image-wrapper">
-            <div class="product-gallery-lrg swiper-container">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="images/20840_1_medium.jpg"></div>
-                <div class="swiper-slide"><img src="images/20840_2_medium.jpg"></div>
-                <div class="swiper-slide"><img src="images/20840_3_medium.jpg"></div>
-                <div class="swiper-slide"><img src="images/20840_4_medium.jpg"></div>
-                <div class="swiper-slide"><img src="images/20840_5_medium.jpg"></div>
-                <div class="swiper-slide"><img src="images/20840_6_medium.jpg"></div>
-              </div>
+          <div class="product-gallery-lrg swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="images/20840_1_medium.jpg"></div>
+              <div class="swiper-slide"><img src="images/20840_2_medium.jpg"></div>
+              <div class="swiper-slide"><img src="images/20840_3_medium.jpg"></div>
+              <div class="swiper-slide"><img src="images/20840_4_medium.jpg"></div>
+              <div class="swiper-slide"><img src="images/20840_5_medium.jpg"></div>
+              <div class="swiper-slide"><img src="images/20840_6_medium.jpg"></div>
             </div>
-            <div class="zoomed-image"></div>
+            <a class="large-image" href="images/20840_1_large.jpg"></a>
+            <!-- <div class="swiper-button-prev product-prev"></div>
+            <div class="swiper-button-next product-next"></div> -->
           </div>
+
           <ul class="product-gallery-thmbs">
             <li><img src="images/20840_1_thumbnail.jpg" data-lrg-img="images/20840_1_large.jpg"></li>
             <li><img src="images/20840_2_thumbnail.jpg" data-lrg-img="images/20840_2_large.jpg"></li>
