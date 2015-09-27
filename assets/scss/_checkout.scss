@@ -143,15 +143,17 @@
 .checkout-login, .checkout-signup, .next-button {
   .button {
     @include addtocartbutton;
-    &.cancel {
-      text-transform: none;
-      background-color: transparent;
-      color: $dark;
-      letter-spacing: 0;
-      margin-left: $space-small;
-      &:hover {
-        color: $brand-red;
-      }
+  }
+}
+
+.button {
+  &.cancel {
+    text-transform: none;
+    background-color: transparent;
+    color: $dark;
+    letter-spacing: 0;
+    &:hover {
+      color: $brand-red;
     }
   }
 }
@@ -159,7 +161,6 @@
 
 .progress {
   ul {
-    //border-top: 1px solid $line-colour;
     border-bottom: 1px solid $line-colour;
     list-style: none;
     padding: 0 0 $space-small 0;
@@ -169,7 +170,6 @@
     li {
       display: none;
       opacity: 0.3;
-      //display: inline-block;
       position: relative;
       font-size: $bigger;
       padding: 0 $space-large;
@@ -406,15 +406,9 @@
 }
 
 .payment-logos {
-  width: 150px;
-  text-align: center;
-  float: right;
-  margin-bottom: $space-small;
-  // span {
-  //   display: inline-block;
-  //   font-size: $smaller;
-  //   margin-bottom: $space-tiny;
-  // }
+  width: 98px;
+  display: inline-block;
+  margin-top: $space-small;
   img {
     width: 100%;
     height: auto;
@@ -422,12 +416,6 @@
 }
 
 @include breakpoint($medium) {
-  .payment-logos {
-    width: 180px;
-    position: absolute;
-    right: $space-larger;
-    top: $space-larger;
-  }
   .security-logo {
     width: 150px;
     position: absolute;

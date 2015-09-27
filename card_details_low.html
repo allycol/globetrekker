@@ -43,191 +43,188 @@
 
       </SCRIPT> -->
    </head>
-   <body onload="showHide(document.getElementById('cardcountry'))">
-      <div style="text-align: center; padding: 5px;">
-         <span class="errortext"></span>
-      </div>
-      <form method="post" name="carddetails" id="carddetails" action="/gateway/service/carddetails">
-         <fieldset style="margin-top: 0;">
-           <div class="payment-logos">
-             <!-- <span>Accpeted payment methods</span> -->
-             <img src="images/payment-icons.png">
-           </div>
-            <ul>
-               <li class="textfield">
-                  <label for="cardnumber">Card Number
-                     <span class="asterisk">*</span>
-                  </label>
-                  <div class="field">
-                     <input name="cardnumber" type="text" size="30" autocomplete="off" />
-                  </div>
-               </li>
-               <input type="hidden" name="cardfirstnames" size="30" maxlength="20" autocomplete="off"
-                      value="William"></input>
-               <input type="hidden" name="cardsurname" size="30" maxlength="256" autocomplete="off"
-                      value="Wonker"></input>
-               <li class="textfield">
-                  <label for="validfrom">Valid From</label>
-                  <div class="field">
-                    <span class="inline-dropdown">Month:
-                      <div class="dropdown">
-                         <select name="startmonth" size="1">
-                            <option value=""></option>
-                            <option value="01">01</option>
-                            <option value="02">02</option>
-                            <option value="03">03</option>
-                            <option value="04">04</option>
-                            <option value="05">05</option>
-                            <option value="06">06</option>
-                            <option value="07">07</option>
-                            <option value="08">08</option>
-                            <option value="09">09</option>
-                            <option value="10">10</option>
-                            <option value="11">11</option>
-                            <option value="12">12</option>
-                         </select>
-                         <span class="ico ico-xs ico-chevron-down"></span>
-                      </div>
-                    </span>
-                     <span class="inline-dropdown">Year:
-                        <div class="dropdown">
-                          <select name="startyear" size="1">
-                             <option value=""></option>
-                             <option value="95">1995</option>
-                             <option value="96">1996</option>
-                             <option value="97">1997</option>
-                             <option value="98">1998</option>
-                             <option value="99">1999</option>
-                             <option value="00">2000</option>
-                             <option value="01">2001</option>
-                             <option value="02">2002</option>
-                             <option value="03">2003</option>
-                             <option value="04">2004</option>
-                             <option value="05">2005</option>
-                             <option value="06">2006</option>
-                             <option value="07">2007</option>
-                             <option value="08">2008</option>
-                             <option value="09">2009</option>
-                             <option value="10">2010</option>
-                             <option value="11">2011</option>
-                             <option value="12">2012</option>
-                             <option value="13">2013</option>
-                             <option value="14">2014</option>
-                             <option value="15">2015</option>
-                          </select>
-                          <span class="ico ico-xs ico-chevron-down"></span>
-                       </div>
-                     </span>
-                  </div>
-               </li>
-               <li class="textfield">
-                  <label for="expirydate">Expiry date
-                     <span class="asterisk">*</span>
-                  </label>
-                  <div class="field">
-                    <span class="inline-dropdown">Month:
-                      <div class="dropdown">
-                         <select name="expirymonth" size="1">
-                            <option value=""></option>
-                            <option value="01">01</option>
-                            <option value="02">02</option>
-                            <option value="03">03</option>
-                            <option value="04">04</option>
-                            <option value="05">05</option>
-                            <option value="06">06</option>
-                            <option value="07">07</option>
-                            <option value="08">08</option>
-                            <option value="09">09</option>
-                            <option value="10">10</option>
-                            <option value="11">11</option>
-                            <option value="12">12</option>
-                         </select>
-                         <span class="ico ico-xs ico-chevron-down"></span>
-                      </div>
-                    </span>
-                     <span class="inline-dropdown">Year:
-                       <div class="dropdown">
-                          <select name="expiryyear" size="1">
-                             <option value=""></option>
-                             <option value="15">2015</option>
-                             <option value="16">2016</option>
-                             <option value="17">2017</option>
-                             <option value="18">2018</option>
-                             <option value="19">2019</option>
-                             <option value="20">2020</option>
-                             <option value="21">2021</option>
-                             <option value="22">2022</option>
-                             <option value="23">2023</option>
-                             <option value="24">2024</option>
-                             <option value="25">2025</option>
-                             <option value="26">2026</option>
-                             <option value="27">2027</option>
-                             <option value="28">2028</option>
-                             <option value="29">2029</option>
-                             <option value="30">2030</option>
-                             <option value="31">2031</option>
-                             <option value="32">2032</option>
-                             <option value="33">2033</option>
-                             <option value="34">2034</option>
-                          </select>
-                          <span class="ico ico-xs ico-chevron-down"></span>
-                       </div>
-                     </span>
-                  </div>
-               </li>
-               <li class="textfield">
-                  <label for="issueno">Issue Number</label>
-                  <div class="field">
-                     <input type="text" size="2" maxlength="2" name="cardissue" style="width: 50px;" autocomplete="off" />
-                  </div>
-               </li>
-               <li class="textfield">
-                  <label for="securitycode">Security Code
-                     <span class="asterisk">*</span>
-                  </label>
-                  <div class="field">
-                     <input type="text" size="5" maxlength="4" name="securitycode" style="width:50px;" autocomplete="off" />
-                  </div>
-               </li>
-               <input type="hidden" size="30" maxlength="100" name="cardaddress" autocomplete="off"
-                      value="1 The Chocolate Factory" />
-               <input type="hidden" size="30" maxlength="100" name="cardaddress2" autocomplete="off"
-                      value="Bourbon Street" />
-               <input type="hidden" size="30" maxlength="40" name="cardcity" autocomplete="off"
-                      value="Wonker" />
-               <input type="hidden" size="5" maxlength="15" name="cardcountry" value="GB"
-                      style="height: 22px; width: 70px;" />
-               <input type="hidden" size="5" maxlength="10" name="cardpostcode" value="W8T 5ON"
-                      style="height: 22px; width: 70px;" />
-               <li class="next-button">
-                  <input type="submit" class="button" value="Pay now" />
-                  <input type="button" class="button cancel" value="Or Cancel" />
-               </li>
-            </ul>
-            <div class="security-logo">
-              <img src="images/geotrust.jpg" alt="GeoTrust">
-            </div>
-         </fieldset>
-      </form>
-      <!-- <form method="post" name="cancelpayment" id="cancelpayment"
-            action="/gateway/service/cancellation">
-         <input type="hidden" name="clickedButton" value=""></input>
-         <a href="#" onmouseover="activate('cancel')" onmouseout="inactivate('cancel')"
-            onclick="submitTheForm('cancelpayment','cancel');return false">
-            <SCRIPT type="text/javascript" language="JavaScript">
-               document.write('<img border="0" name="cancel" src="');
-               document.write('../images/YourImages/en/English_Cancel_grey.gif');
-               document.write('" alt="');
-               document.write('Cancel');
-               document.write('"/>');
+   <body>
 
-            </SCRIPT>
-         </a>
-         <NOSCRIPT>
-            <input name="cancel" type="image"
-                   src="../images/YourImages/en/English_Cancel_grey.gif"
-                   alt="Cancel"></input>
-         </NOSCRIPT>
-      </form> -->
+    <div style="text-align: center; padding: 5px;">
+       <span class="errortext"></span>
+    </div>
+
+     <fieldset>
+       <form method="post" name="carddetails" id="carddetails" action="/gateway/service/carddetails">
+
+          <ul>
+             <li class="textfield">
+                <label for="cardnumber">Card Number
+                   <span class="asterisk">*</span>
+                </label>
+                <div class="field">
+                   <input name="cardnumber" type="text" size="30" autocomplete="off" />
+                   <div class="payment-logos">
+                     <!-- <span>Accpeted payment methods</span> -->
+                     <img src="images/payment-icons.png">
+                   </div>
+                </div>
+             </li>
+             <input type="hidden" name="cardfirstnames" size="30" maxlength="20" autocomplete="off"
+                    value="William"></input>
+             <input type="hidden" name="cardsurname" size="30" maxlength="256" autocomplete="off"
+                    value="Wonker"></input>
+             <li class="textfield">
+                <label for="validfrom">Valid From</label>
+                <div class="field">
+                  <span class="inline-dropdown">
+                    <div class="dropdown">
+                       <select name="startmonth" size="1">
+                          <option value="">Month</option>
+                          <option value="01">01</option>
+                          <option value="02">02</option>
+                          <option value="03">03</option>
+                          <option value="04">04</option>
+                          <option value="05">05</option>
+                          <option value="06">06</option>
+                          <option value="07">07</option>
+                          <option value="08">08</option>
+                          <option value="09">09</option>
+                          <option value="10">10</option>
+                          <option value="11">11</option>
+                          <option value="12">12</option>
+                       </select>
+                       <span class="ico ico-xs ico-chevron-down"></span>
+                    </div>
+                  </span>
+                   <span class="inline-dropdown">
+                      <div class="dropdown">
+                        <select name="startyear" size="1">
+                           <option value="">Year</option>
+                           <option value="95">1995</option>
+                           <option value="96">1996</option>
+                           <option value="97">1997</option>
+                           <option value="98">1998</option>
+                           <option value="99">1999</option>
+                           <option value="00">2000</option>
+                           <option value="01">2001</option>
+                           <option value="02">2002</option>
+                           <option value="03">2003</option>
+                           <option value="04">2004</option>
+                           <option value="05">2005</option>
+                           <option value="06">2006</option>
+                           <option value="07">2007</option>
+                           <option value="08">2008</option>
+                           <option value="09">2009</option>
+                           <option value="10">2010</option>
+                           <option value="11">2011</option>
+                           <option value="12">2012</option>
+                           <option value="13">2013</option>
+                           <option value="14">2014</option>
+                           <option value="15">2015</option>
+                        </select>
+                        <span class="ico ico-xs ico-chevron-down"></span>
+                     </div>
+                   </span>
+                </div>
+             </li>
+             <li class="textfield">
+                <label for="expirydate">Expiry date
+                   <span class="asterisk">*</span>
+                </label>
+                <div class="field">
+                  <span class="inline-dropdown">
+                    <div class="dropdown">
+                       <select name="expirymonth" size="1">
+                          <option value="">Month</option>
+                          <option value="01">01</option>
+                          <option value="02">02</option>
+                          <option value="03">03</option>
+                          <option value="04">04</option>
+                          <option value="05">05</option>
+                          <option value="06">06</option>
+                          <option value="07">07</option>
+                          <option value="08">08</option>
+                          <option value="09">09</option>
+                          <option value="10">10</option>
+                          <option value="11">11</option>
+                          <option value="12">12</option>
+                       </select>
+                       <span class="ico ico-xs ico-chevron-down"></span>
+                    </div>
+                  </span>
+                   <span class="inline-dropdown">
+                     <div class="dropdown">
+                        <select name="expiryyear" size="1">
+                           <option value="">Year</option>
+                           <option value="15">2015</option>
+                           <option value="16">2016</option>
+                           <option value="17">2017</option>
+                           <option value="18">2018</option>
+                           <option value="19">2019</option>
+                           <option value="20">2020</option>
+                           <option value="21">2021</option>
+                           <option value="22">2022</option>
+                           <option value="23">2023</option>
+                           <option value="24">2024</option>
+                           <option value="25">2025</option>
+                           <option value="26">2026</option>
+                           <option value="27">2027</option>
+                           <option value="28">2028</option>
+                           <option value="29">2029</option>
+                           <option value="30">2030</option>
+                           <option value="31">2031</option>
+                           <option value="32">2032</option>
+                           <option value="33">2033</option>
+                           <option value="34">2034</option>
+                        </select>
+                        <span class="ico ico-xs ico-chevron-down"></span>
+                     </div>
+                   </span>
+                </div>
+             </li>
+             <li class="textfield">
+                <label for="issueno">Issue Number</label>
+                <div class="field">
+                   <input type="text" size="2" maxlength="2" name="cardissue" style="width: 50px;" autocomplete="off" />
+                </div>
+             </li>
+             <li class="textfield">
+                <label for="securitycode">Security Code
+                   <span class="asterisk">*</span>
+                </label>
+                <div class="field">
+                   <input type="text" size="5" maxlength="4" name="securitycode" style="width:50px;" autocomplete="off" />
+                </div>
+             </li>
+             <input type="hidden" size="30" maxlength="100" name="cardaddress" autocomplete="off"
+                    value="1 The Chocolate Factory" />
+             <input type="hidden" size="30" maxlength="100" name="cardaddress2" autocomplete="off"
+                    value="Bourbon Street" />
+             <input type="hidden" size="30" maxlength="40" name="cardcity" autocomplete="off"
+                    value="Wonker" />
+             <input type="hidden" size="5" maxlength="15" name="cardcountry" value="GB"
+                    style="height: 22px; width: 70px;" />
+             <input type="hidden" size="5" maxlength="10" name="cardpostcode" value="W8T 5ON"
+                    style="height: 22px; width: 70px;" />
+             <li class="next-button">
+                <input type="submit" class="button" value="Pay now" />
+             </li>
+          </ul>
+      </form>
+
+      <form method="post" name="cancelpayment" id="cancelpayment" action="/gateway/service/cancellation">
+        <input type="hidden" name="clickedButton" value=""></input>
+        <ul>
+          <li>
+             <input type="submit" class="button cancel" value="Or Cancel" onclick="submitTheForm('cancelpayment','cancel');return false"></input>
+          </li>
+        </ul>
+     </form>
+
+     <div class="security-logo">
+       <img src="images/geotrust.jpg" alt="GeoTrust">
+     </div>
+
+    </fieldset>
+
+
+
+
    </body>
 </html>

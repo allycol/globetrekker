@@ -123,6 +123,8 @@ $brand1: $bodyfont;
     max-width: 3rem;
     svg {
       max-width: 3rem;
+      max-height: 3rem;
+      display: block;
     }
   }
   @include breakpoint($medium) {
@@ -130,6 +132,7 @@ $brand1: $bodyfont;
       max-width: 4.6rem;
       svg {
         max-width: 4.6rem;
+        max-height: 4.6rem;
       }
     }
   }
