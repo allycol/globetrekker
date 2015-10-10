@@ -57,10 +57,10 @@ include("config.inc.php"); //include config file
 
       <div class="header">
 
-        <!-- <h1>Interiors</h1> -->
+        <!-- <h1>Pendants</h1> -->
         <h1>Search results for "Focus Mini Ceiling Light" </h1>
 
-        <div class="product-number">96 products</div>
+        <div class="product-number">24 products</div>
 
         <div class="product-count">
           <ul class="pagination">
@@ -71,8 +71,10 @@ include("config.inc.php"); //include config file
             <li><a href="">4</a></li>
             <li class="next"><a href="">Next</a></li>
           </ul>
-          <!-- <a href="#off-canvas-filters" class="filters-button">Filters</a> -->
         </div>
+
+        <!-- <a href="#off-canvas-filters" class="filters-button">Filters</a> -->
+
         <form class="sort-by-form" id="sortbyform" name="sortbyform" action="http://www.outdoorkit.co.uk/productlist.php?category_id=1675&amp;sortby=&amp;" method="get">
           <label for="sortBy">Sort by</label>
           <div class="field">
@@ -87,6 +89,7 @@ include("config.inc.php"); //include config file
             </div>
           </div>
         </form>
+
       </div>
 
       <?php

@@ -61,12 +61,11 @@
 
   .product-number {
     text-align: center;
-    padding-top: $space-medium;
+    padding: $space-medium 0;
   }
 
   .product-count {
     text-align: center;
-    padding-top: $space-medium;
     padding-bottom: $space-medium;
     p {
       text-align: center;
@@ -182,17 +181,15 @@
       .product-number {
         @include span(4 of 12);
         text-align: left;
-        padding-top: $space-medium;
+        padding-top: $space-tiny;
         padding-bottom: $space-medium;
       }
       .product-count {
         @include span(4 of 12);
-        padding-top: $space-small;
         padding-bottom: $space-medium;
       }
       .sort-by-form {
         @include span(4 last);
-        padding-top: $space-small;
         text-align: right;
         label {
           display: inline;
