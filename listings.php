@@ -57,8 +57,8 @@ include("config.inc.php"); //include config file
 
       <div class="header">
 
-        <!-- <h1>Pendants</h1> -->
-        <h1>Search results for "Focus Mini Ceiling Light" </h1>
+        <h1>Pendants</h1>
+        <!-- <h1>Search results for "Focus Mini Ceiling Light" </h1> -->
 
         <div class="product-number">24 products</div>
 

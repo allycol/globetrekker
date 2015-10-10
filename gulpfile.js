@@ -52,12 +52,12 @@ gulp.task('scripts', function(){
 
 gulp.task('styles', function(){
   gulp.src('assets/scss/*.scss')
-  .pipe(sourcemaps.init())
+  // .pipe(sourcemaps.init())
   .pipe(sass({
     errLogToConsole: true
   }))
   .pipe(minifyCss())
-  .pipe(sourcemaps.write())
+  // .pipe(sourcemaps.write())
   .pipe(gulp.dest('build/css'))
   .pipe(browserSync.stream());
 });

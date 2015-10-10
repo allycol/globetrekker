@@ -185,7 +185,7 @@
         padding-bottom: $space-medium;
       }
       .product-count {
-        @include span(4 of 12);
+        @include span(4 of 12); 
         padding-bottom: $space-medium;
       }
       .sort-by-form {
