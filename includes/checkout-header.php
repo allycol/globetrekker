@@ -3,7 +3,7 @@
     <div class="phone">
       <span class="ico ico-s ico-phone"></span>
       <span class="number">01582 879 879</span>
-      <span class="times">8.30am-5.30pm Monday-Friday</span>
+      <span class="times">8.30am-5.30pm Monday-Friday <a href="">or email us</a></span>
     </div>
     <div class="off-canvas-button">
       <a href="#off-canvas-menu">
@@ -13,7 +13,8 @@
     </div>
     <div class="logo">
       <a href="index.php">
-        <?php echo file_get_contents("images/perfect-logo.svg"); ?>
+        <? /*php echo file_get_contents("images/perfect-logo.svg"); */ ?>
+        <?php echo file_get_contents("images/odk-logo-dos.svg"); ?>
       </a>
     </div>
     <div class="account-nav">
@@ -39,7 +40,7 @@
           </div>
         </li>
         <!-- <li class="signin"><a href="#"><span class="ico ico-s ico-profile"></span> <span class="label">Sign in</span></a></li> -->
-        <li class="account"><a href="#"><span class="ico ico-s ico-profile"></span> <span class="label">My account</span></a><br></li>
+        <li class="account"><a href="#"><span class="ico ico-s ico-profile"></span> <span class="label">My account</span></a><br><a href="#" class="logout">Log out</a></li>
         <li class="search"><a href="#"><span class="ico ico-s ico-magnify"></span> <span class="label">Search</span></a></li>
       </ul>
       <div class="search-form">

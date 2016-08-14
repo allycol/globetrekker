@@ -36,7 +36,7 @@ gulp.task('iconfont', function(){
 });
 
 // gulp.task('fontgen', function(){
-//   gulp.src('assets/fonts/*.otf')
+//   gulp.src('assets/fonts/*.otf', 'assets/fonts/*.ttf')
 //     .pipe(fontgen({
 //         dest: "assets/scss/"
 //     }));

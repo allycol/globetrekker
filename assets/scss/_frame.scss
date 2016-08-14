@@ -24,9 +24,11 @@ h2 {
 h3 {
   @include header3;
 }
+
 p {
+  @include paragraphs;
   .ico {
-    margin-right: $space-tiny;
+    // margin-right: $space-tiny;
     &:before {
       vertical-align: sub;
     }
@@ -35,6 +37,11 @@ p {
     text-decoration: underline;
   }
 }
+
+ul.plain {
+  @include paragraphs;
+}
+
 a {
   @include linkbase;
 }
@@ -52,7 +59,7 @@ iframe {
   outline: none;
   background-color: transparent;
   width: 100%;
-  height: 20rem;
+  height: 900px;
   margin: 0;
 }
 
@@ -76,7 +83,6 @@ fieldset {
         padding-left: 0;
         margin: 0 0 $space-small 0;
         position: relative;
-        font-size: $body;
       }
       label {
         margin-bottom: $space-tiny;
@@ -152,22 +158,27 @@ input[type="search"], input[type="text"], input[type="password"], textarea {
     ul {
       li.textfield {
         label {
-          @include span(2);
+          @include span(3);
           @include break;
         }
         .field {
-          @include span(6);
-        }
-        .serverError {
-          @include span(isolate 8 at 3);
+          @include span(8);
+          .serverError {
+            margin: $space-tiny 0 0 0;
+          }
+          .hint {
+            margin: $space-tiny 0;
+            font-size: $smaller;
+            line-height: 1.2rem;
+          }
         }
       }
       .button-field {
-        @include span(isolate 8 at 3);
+        @include span(isolate 8 at 4);
       }
       .checkbox {
         .field {
-          @include span(isolate 8 at 3);
+          @include span(isolate 8 at 4);
         }
       }
     }
@@ -206,7 +217,14 @@ input[type="search"], input[type="text"], input[type="password"], textarea {
 
 header {
 
-  border-top: 10px solid $header-strip;
+  @include breakpoint($medium) {
+    border-top: 10px solid $header-strip;
+  }
+
+  .frame {
+    @include layout($widerGrid); // Wider!
+    @include container;
+  }
 
   .phone {
     display: none;
@@ -221,56 +239,65 @@ header {
 
     .ico {
       float: left;
-      margin-top: 3px;
+      margin-top: 6px;
     }
     .number {
-      font-size: $sub-title;
-      margin-bottom: $space-tiny;
-      margin-left: 28px;
+      @include phonenumber;
     }
     .times {
-      font-size: $smaller;
-      margin-left: 28px;
+      @include phonetimes;
     }
   }
 
   .off-canvas-button {
     display: block;
-    padding-top: $space-large + 0.3rem;
+    padding-top: $space-small;
     //padding-bottom: $space-large;
     font-size: $body;
-
-    @include span(4 of 12);
+    @include span(3);
+    @include breakpoint($medium) {
+      @include span(4);
+      padding-top: $space-large + 0.3rem;
+    }
     @include breakpoint($large) {
       display: none;
     }
 
     .menu-label {
-      height: 36px;
-      width: 4rem;
-      padding-top: 5px;
+      // height: 36px;
+      // width: 4rem;
+      // padding-top: 5px;
       display: block;
+      font-size: $smaller;
     }
 
-    .burger {
-      float: left;
-      margin-right: $space-tiny;
-    }
+    // .burger {
+    //   float: left;
+    //   margin-right: $space-tiny;
+    // }
   }
 
   .logo {
-    @include span(4 at 5 of 12);
+    @include span(6);
     text-align: center;
     @include logo;
+    @include breakpoint($medium) {
+      @include span(4);
+    }
   }
 
 
   .account-nav {
-    @include span(4 last);
+    @include span(3 last);
     @include suffix(0.75rem);
     font-size: $body;
-    padding-top: $space-large + 0.3rem;
+    padding-top: $space-small;
     position: relative;
+
+    @include breakpoint($medium) {
+      @include span(4 last);
+      padding-top: $space-large + 0.3rem;
+    }
 
     ul {
       margin: 0; padding: 0;
@@ -280,15 +307,22 @@ header {
       text-align: right;
       position: relative;
       .label {
-        display: inline-block;
+        display: block;
         padding-top: $space-tiny;
+        font-size: $body;
+        // @include breakpoint($medium) {
+        //   font-size: $body;
+        // }
+      }
+      .ico {
+        vertical-align: baseline;
       }
       &.search {
         display: none;
       }
-      .ico {
-        display: block;
-      }
+      // .ico {
+      //   display: block;
+      // }
       &.account {
         display: none;
       }
@@ -299,19 +333,14 @@ header {
         @include span(12 last);
         position: relative;
         .ico {
-          float: right;
-          margin-left: $space-tiny;
+          // float: right;
+          // margin-left: $space-tiny;
         }
         .bag-qty {
           display: block;
           position: absolute; right: -8px; top: 0px;
-          height: 16px; width: 16px;
-          line-height: 16px;
-          border-radius: 8px;
-          background-color: $brand-orange;
-          font-size: $smaller;
-          color: #fff;
           text-align: center;
+          @include bagQty;
           &.empty {
             display: none;
           }
@@ -345,9 +374,11 @@ header {
   }
 
   @include breakpoint($medium) {
+
     .phone, .off-canvas-button, .account-nav {
-      padding-top: $space-massive - 0.2rem;
+      padding-top: $space-larger; // 4.8px
     }
+
   }
 
   @include breakpoint($large) {
@@ -358,12 +389,12 @@ header {
       .account-nav {
         ul li {
           text-align: center;
+          @include accountnavfont;
           a {
             display: inline-block;
             position: relative;
             &.logout {
-              font-size: $smaller;
-              margin-top: 5px;
+              @include logoutlink;
             }
           }
           &.search {
@@ -411,57 +442,84 @@ header {
 
   nav {
     @include break();
+    @include nav-styles;
+
+    position: relative;
+    text-align: center;
 
     display: none;
     @include breakpoint($large) {
       display: block;
     }
 
-    position: relative;
-    text-align: center;
-    padding: $space-tiny 0;
-    border-top: 1px solid $line-colour;
-
-    ul {
+    >ul {
       @include container;
       margin: 0 auto; padding: 0;
+      >li {
+        list-style: none;
+        display: inline-block;
+        padding: 0 10px;
+        @include breakpoint($custom-nav-break) {
+          padding: 0 15px;
+        }
+        >a, >span {
+          display: block;
+        }
+        &.active {
+          >a, >span {
+            color: $brand-orange;
+          }
+        }
+      }
     }
 
-    li {
-      list-style: none;
-      display: inline-block;
-      padding: 0 10px;
-      font-size: $bigger;
-
-      @include breakpoint($custom-nav-break) {
-        padding: 0 14px;
-      }
-      .subMenu {
+    .subMenu {
+      position: absolute;
+      z-index: 9999;
+      left: 0;
+      width: 100%;
+      text-align: left;
+      padding: $space-larger;
+      min-height: 300px;
+      display: none;
+      background-color: #fff;
+      border-bottom: 1px solid $line-colour;
+      @include sub-menu;
+      .close-mega-menu {
         position: absolute;
-        z-index: 9999;
-        left: 0;
-        width: 100%;
-        text-align: left;
-        padding: $space-larger;
-        min-height: 300px;
-        display: none;
-        background-color: #fff;
-        border-bottom: 1px solid $line-colour;
-        // border: 1px solid #000;
+        right: 0; top: 0;
+        cursor: pointer;
+        &:hover, &:focus {
+          color: $brand-orange;
+        }
       }
-
+      .column {
+        @include span(3);
+        &:nth-child(5) {
+          @include span(3 last);
+        }
+      }
+      h3 {
+        margin: 0 0 $space-small 0;
+      }
+      ul {
+        list-style: none;
+        margin: 0 0 $space-larger 0; padding: 0;
+        font-size: $smaller;
+        li {
+          margin: $space-tiny 0;
+          a:hover, a:focus {
+            text-decoration: underline;
+          }
+        }
+      }
     }
 
-    a {
-      display: block;
-      padding: 10px 10px;
-    }
   }
 }
 
-.other-products, .products-viewed {
-
-  padding-bottom: $space-larger;
+.other-products, .products-viewed{
+  padding-bottom: $space-medium;
   position: relative;
   overflow: hidden;
   h2 {
@@ -470,15 +528,37 @@ header {
   }
 }
 
-.other-products {
-  padding-top: $space-huge;
-  background-image: url(../../images/logo-element.svg);
-  background-repeat: no-repeat;
-  background-size: 200px;
-  background-position: top;
+.other-products, .brands {
+  padding-top: $space-massive;
   img {
     display: block;
     margin-bottom: $space-small;
+  }
+}
+
+.brands {
+  position: relative;
+  overflow: hidden;
+  h2 {
+    text-align: center;
+    margin: 0 0 $space-larger 0
+  }
+  a {
+    img {
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+      -webkit-transition: all 300ms ease;
+      -moz-transition: all 300ms ease;
+      -ms-transition: all 300ms ease;
+      -o-transition: all 300ms ease;
+      transition: all 300ms ease;
+    }
+    &:hover, &:focus {
+      img {
+        -webkit-filter: grayscale(0%);
+        filter: grayscale(0%);
+      }
+    }
   }
 }
 
@@ -501,10 +581,9 @@ header {
 }
 
 @include breakpoint($large) {
-
   .breadcrumb {
     display: block;
-    margin: 0 0 $space-large 0;
+    margin: 0 0 $space-small 0;
     padding: 0;
     list-style: none;
     font-size: $smaller;
@@ -514,13 +593,16 @@ header {
     li:not(:first-child) {
       &:before {
         @include iconbase;
-        font-size: 12px;
+        font-size: 10px;
         @include icon-chevron-right;
         float: left;
-        margin: 2px 3px;
+        margin: 4px 3px;
       }
     }
   }
+}
+
+@include breakpoint($large) {
 
   .other-products {
     // padding-top: $space-massive;
@@ -534,25 +616,29 @@ header {
   margin: 0 0 0 0;
   padding: 0;
   list-style: none;
-  font-size: $body;
+  font-size: $smaller;
   li {
     display: inline;
     a, span {
       display: block;
       position: relative;
       float: left;
-      padding: 6px 12px;
+      padding: 8px 12px;
       margin-left: -1px;
-      border: 1px solid $line-colour;
+      border: 1px solid #fff;
+      background-color: $light;
       @include breakpoint($medium) {
-        border: none;
+        // border: none;
+        // padding: 6px 8px;
       }
       &:hover, &:focus {
-        background-color: #fff;
+        // background-color: #fff;
       }
       &.active {
-        background-color: $brand-orange;
-        color: #fff;
+        background-color: $brand-blue;
+        color: rgba(#fff, 1);
+        // border: 1px solid $form-colour;
+        border-radius: 2px;
       }
     }
   }
@@ -565,6 +651,7 @@ header {
         font-size: 10px;
         @include icon-chevron-left;
         margin-right: 3px;
+        vertical-align: middle;
       }
     }
   }
@@ -577,6 +664,7 @@ header {
         font-size: 10px;
         @include icon-chevron-right;
         margin-left: 3px;
+        vertical-align: middle;
       }
     }
   }
@@ -584,8 +672,8 @@ header {
 
 .content-page {
   position: relative;
-  background-color: $light;
-  padding-top: $space-small;
+  background-color: #fff;
+  padding-top: $space-tiny;
   padding-bottom: $space-huge;
   .sub-nav {
     ul {
@@ -607,7 +695,7 @@ header {
 
 @include breakpoint($medium) {
   .content-page {
-    padding-top: $space-larger;
+    padding-top: 0;
     min-height: 30rem;
     .sub-nav {
       @include span(2);
@@ -618,50 +706,39 @@ header {
   }
 }
 
+@include breakpoint($large) {
+  .content-page {
+    padding-top: $space-larger;
+  }
+}
+
 
 footer {
-  background-color: $dark;
+  @include footer;
   padding: $space-huge 0;
-  text-align: center;
-  color: #fff;
-
-  h3 {
-    color: $brand-yellow;
-    margin-top: 0;
-  }
-
-  a {
-    color: rgba(#fff, 0.7);
-    &:hover, &:focus {
-      color: rgba(#fff, 1);
-      text-decoration: underline;
-    }
-    .ico {
-      margin-right: $space-tiny;
-    }
-  }
+  text-align: left;
 
   section {
-
+    text-align: center;
     @include breakpoint($medium) {
-      @include gallery(4);
+      @include gallery(3);
+      text-align: left;
     }
+  }
 
-    ul {
-      list-style: none;
-      padding: 0;
-      margin-bottom: $space-larger;
-      font-size: $body;
-      line-height: $base;
-      li {
-        margin: $space-tiny 0;
-      }
-
+  .trust-pilot {
+    .trustpilot-widget {
+      width: 200px;
+      margin: auto;
+    }
+    @include breakpoint($medium) {
+      @include gallery(3 last);
     }
   }
 
   .follow-us {
-    margin-bottom: $space-larger;
+    margin-bottom: $space-medium;
+    text-align: center;
     h3 {
       margin-right: $space-small;
       display: inline-block;
@@ -679,10 +756,17 @@ footer {
         }
       }
     }
+    @include breakpoint($medium) {
+      text-align: left;
+    }
   }
 
   .copy {
     font-size: $smaller;
-    color: rgba(#fff, 0.7);
+    color: rgba($footer-links-color, 0.7);
+    text-align: center;
+    @include breakpoint($medium) {
+      text-align: left;
+    }
   }
 }

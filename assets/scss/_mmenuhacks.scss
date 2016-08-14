@@ -1,4 +1,8 @@
 /* Ally's custom styles */
+.mm-menu.mm-theme-black {
+  background-color: #222;
+}
+
 .mm-listview>li>a, .mm-listview>li>span {
   padding: 15px 10px 15px 20px;
 }
@@ -22,7 +26,7 @@
   position: relative;
 }
 .mm-listview > .off-canvas-search input[type="text"] {
-  background-color: #000;
+  background-color: #222;
   border: none;
   padding: 20px;
 }

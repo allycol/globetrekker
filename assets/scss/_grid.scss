@@ -2,15 +2,19 @@ $susy: (
   columns: 12,
   gutters: .25,
   global-box-sizing: border-box,
-  container: 43rem
+  container: 1032px
 );
-/* Container = 1032px */
+/*  PL Container = 1032px */
 
 $promos: (
   gutters: 0,
   container: auto
 );
 
-$listings: (
-  container: 64rem
+$widerGrid: (
+  container: 1200px
+);
+
+$fullWidth: (
+  container: 100%
 );

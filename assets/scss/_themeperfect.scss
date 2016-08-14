@@ -39,6 +39,8 @@ $promo-1-color: $dark;
 $promo-2-color: $brand-red;
 $promo-3-color: $light;
 
+$footer-links-color: $brand-yellow;
+$active-color: $brand-red;
 
 // General typography
 
@@ -75,7 +77,7 @@ $brand1: $bodyfont;
   color: $dark;
   text-decoration: none;
   &:hover, &:focus {
-    color: $brand-red;
+    color: $active-color;
   }
 }
 
@@ -101,6 +103,10 @@ $brand1: $bodyfont;
   margin-top: $space-larger;
 }
 
+@mixin header2alt {
+  // NONE
+}
+
 @mixin header3 {
   font-family: $brand1;
   font-size: $bigger;
@@ -110,6 +116,20 @@ $brand1: $bodyfont;
 
 @mixin boldType {
   font-weight: normal;
+}
+
+@mixin paragraphs {
+  line-height: 1rem;
+}
+
+// SOME HEADER CHANGES SPECIFICALLY FOR PL
+
+.other-products {
+  padding-top: $space-huge !important;
+  background-image: url(../../images/logo-element.svg);
+  background-repeat: no-repeat;
+  background-size: 200px;
+  background-position: top;
 }
 
 // LOGO PLACEMENT
@@ -138,6 +158,52 @@ $brand1: $bodyfont;
   }
 }
 
+// HEADER ELEMENTS
+
+@mixin phonenumber {
+  font-size: $sub-title;
+  margin-bottom: $space-tiny;
+  margin-left: 28px;
+}
+
+@mixin phonetimes {
+  font-size: $smaller;
+  margin-left: 28px;
+}
+
+@mixin accountnavfont {
+  font-size: $body;
+}
+
+@mixin logoutlink {
+  font-size: $smaller;
+  margin-top: 5px;
+}
+
+@mixin bagQty {
+  height: 16px; width: 16px;
+  line-height: 16px;
+  border-radius: 8px;
+  background-color: $brand-orange;
+  font-size: $smaller;
+  color: #fff;
+}
+
+// NAV BAR
+
+@mixin nav-styles {
+  padding: $space-tiny 0;
+  border-top: 1px solid $line-colour;
+  font-size: $bigger;
+  a {
+    font-family: $brand1;
+  }
+}
+
+
+@mixin sub-menu {
+
+}
 
 // Form elements
 
@@ -279,6 +345,12 @@ $brand1: $bodyfont;
   }
 }
 
+// LISTINGS TEXT STYLES
+
+@mixin listingStyles {
+  font-size: $bigger;
+}
+
 // TABLES
 
 @mixin tables {
@@ -306,7 +378,40 @@ $brand1: $bodyfont;
     }
   }
 
+}
 
+// FOOTER
+
+@mixin footer {
+  background-color: $dark;
+  color: #fff;
+  h3 {
+    color: $footer-links-color;
+    margin-top: 0;
+  }
+
+  a {
+    color: rgba(#fff, 0.7);
+    &:hover, &:focus {
+      color: rgba(#fff, 1);
+      text-decoration: underline;
+    }
+    .ico {
+      margin-right: $space-tiny;
+    }
+  }
+  section {
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: $space-larger;
+      font-size: $body;
+      line-height: $base;
+      li {
+        margin: $space-tiny 0;
+      }
+    }
+  }
 }
 
 

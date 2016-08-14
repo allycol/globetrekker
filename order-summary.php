@@ -44,11 +44,11 @@ include("config.inc.php"); //include config file
 
         <div class="progress">
           <ul>
-            <li>1. Billing address</li>
-            <li>2. Delivery address</li>
-            <li>3. Delivery options</li>
-            <li>4. Payment</li>
-            <li class="active">5. Order summary</li>
+            <li class="active"><em>1</em><span>Billing address</span></li>
+            <li class="active"><em>2</em><span>Delivery address</span></li>
+            <li class="active"><em>3</em><span>Delivery options</span></li>
+            <li class="active"><em>4</em><span>Order summary</span></li>
+            <li><em>5</em></i><span>Payment</span></li>
           </ul>
         </div>
 
@@ -127,8 +127,6 @@ include("config.inc.php"); //include config file
 			</div>
 		</section>
 
-
-<?php include("includes/footer.php"); ?>
 
 </div>
 

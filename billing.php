@@ -44,24 +44,34 @@ include("config.inc.php"); //include config file
 
       <div class="progress">
         <ul>
-          <li class="active">1. Billing address</li>
-          <li>2. Delivery address</li>
-          <li>3. Delivery options</li>
-          <li>4. Payment</li>
-          <li>5. Order summary</li>
+          <li class="active"><em>1</em><span>Billing address</span></li>
+          <li><em>2</em><span>Delivery address</span></li>
+          <li><em>3</em><span>Delivery options</span></li>
+          <li><em>4</em><span>Order summary</span></li>
+          <li><em>5</em></i><span>Payment</span></li>
         </ul>
       </div>
 
       <h1>Billing address</h1>
 
+      <div class="registered-user">
+        <span class="ico ico-s ico-profile"></span>
+        <h2>Already a registered user? <a href="#">Sign in</a></h2>
+      </div>
 
-			<p>Your billing address must match the billing address on your credit/debit card.</p>
-			<p>Please note that we only ship within the United Kingdom.</p>
-
-			<form name="billing" class="thisForm" action="https://www.outdoorkit.co.uk/billing.php" method="post">
+			<form name="billing" class="checkout" action="https://www.outdoorkit.co.uk/billing.php" method="post">
 				<fieldset>
-          <p>Fields with an asterisk (<span class="asterisk">*</span>) must be filled in.</p>
+          <!-- <p>Fields with an asterisk (<span class="asterisk">*</span>) must be filled in.</p> -->
 					<ul>
+
+            <li class="textfield">
+              <label for="firstname">Email <span class="asterisk">*</span></label>
+              <div class="field">
+                <input name="email" value="" size="30" type=text tabindex="25" class="required" />
+                <p class="hint">We need this to update you on the status of your order. We will never share your email with any other entities.</p>
+              </div>
+            </li>
+
 						<li class="textfield">
 							<label for="title">Title</label>
 							<div class="field">
@@ -121,10 +131,11 @@ include("config.inc.php"); //include config file
 						</li>
 
 						<li class="textfield">
-              <p class="serverError">This is not a valid UK postcode</p>
+
 							<label for="postcode">Postcode <span class="asterisk">*</span></label>
 							<div class="field">
 								<input name="postcode" value="" size="30" type="text" tabindex="25" class="required" />
+                <p class="serverError">This is not a valid UK postcode</p>
 							</div>
 						</li>
 
@@ -142,7 +153,7 @@ include("config.inc.php"); //include config file
               </div>
 						</li>
 
-						<li class="yourPrivacy">
+						<!-- <li class="yourPrivacy">
 							<h2>Your Privacy</h2>
 							<p>At Outdoorkit, we take your privacy very seriously. We will never share your email address with another organisation and will use all information in accordance with our privacy statement. If you would like us to send you relevant offers and information, please select from the list below:</p>
               <div class="dropdown">
@@ -152,7 +163,7 @@ include("config.inc.php"); //include config file
   							</select>
                 <span class="ico ico-xs ico-chevron-down"></span>
               </div>
-						</li>
+						</li> -->
 
 						<li class="next-button">
               <input type="hidden" value="next" name="next">
@@ -163,11 +174,56 @@ include("config.inc.php"); //include config file
 				</fieldset>
 			</form>
 
+      <div class="checkout-help">
+
+        <h2 class="mini-bag-title">Your basket</h2>
+
+        <div class="mini-bag-item">
+          <div class="pic">
+            <img src="images/SKU_182620-black_main.jpg">
+          </div>
+          <div class="txt">
+            <h3>The North Face Men's Parka 2</h3>
+            <ul>
+              <li>TNF Black - Small</li>
+              <li>In stock</li>
+              <li>Quantity: 1</li>
+            </ul>
+            <div class="price">&pound;269.99</div>
+          </div>
+        </div>
+
+        <div class="mini-bag-item">
+          <div class="pic">
+            <img src="images/SKU_252567-black-pumpkin_main.jpg">
+          </div>
+          <div class="txt">
+            <h3>The North Face Men's Parka 2</h3>
+            <ul>
+              <li>TNF Black - Small</li>
+              <li>In stock</li>
+              <li>Quantity: 1</li>
+            </ul>
+            <div class="price">&pound;269.99</div>
+          </div>
+        </div>
+
+        <div class="sub-total">Sub-total: £391.99</div>
+
+        <div class="security-logo">
+          <!-- <img src="http://placehold.it/350x150?text=Security logo"> -->
+          <img src="images/geotrust.jpg" alt="GeoTrust">
+        </div>
+
+        <div class="payment-logos">
+           <h4>Accepted payment methods</h4>
+           <img src="images/payment-icons.png">
+         </div>
+
+      </div>
+
 		</div>
 	</section>
-
-
-  <?php include("includes/footer.php"); ?>
 
 </div>
 

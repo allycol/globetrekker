@@ -12,83 +12,237 @@
     display: block;
     margin: auto;
   }
-  //display: none;
 }
 
-.product-listings {
-
-  //@include layout($listings); // Wider!
-
+.brand-page, .product-listings {
+  @include container;
   position: relative;
-  background-color: $light;
   padding-top: $space-large;
   padding-bottom: $space-large;
-
-  .frame {
-    @include container;
-    @include pad(10px);
-    @include breakpoint($huge) {
-      @include pad(0);
-    }
+  @include breakpoint($large) {
+    padding-top: $space-larger;
+    padding-bottom: $space-huge;
+    min-height: 30rem;
   }
-
-  .header {
+  hgroup {
     @include container;
-    .pagination {
-      // display: none;
-    }
+    border-bottom: 1px solid $line-colour;
+    text-align: center;
+    padding-bottom: $space-medium;
     h1 {
       margin: 0;
-      text-align: center;
       span {
         font-size: $body;
         padding-left: $space-small;
       }
     }
-    .sort-by-form {
-      text-align: center;
-      padding-bottom: $space-medium;
-      .field {
-        display: inline;
-      }
-      label {
+  }
+}
+
+
+.brand-categories {
+  @include container;
+  list-style: none;
+  margin: 0; padding: 0;
+  li {
+    margin: 0 0 $space-small 0; padding: 0;
+    @include gallery(6);
+    position: relative;
+    a {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(#000, 0.2);
+      -webkit-transition: background 300ms ease-in;
+      -moz-transition: background 300ms ease-in;
+      -ms-transition: background 300ms ease-in;
+      -o-transition: background 300ms ease-in;
+      transition: background 300ms ease-in;
+      span {
+        @include header2;
+        color: #fff;
+        position: absolute;
         display: block;
-        margin-right: $space-small;
-        margin-bottom: $space-small;
+        // top: 50%;
+        bottom: $space-medium;
+        width: 100%;
+        // margin: -1rem 0 0 0;
+        padding: 0 $space-small;
+        text-align: center;
+        text-shadow: 0 0 20px rgba(0,0,0,.6);
+      }
+      &:hover, &:focus {
+        background-color: rgba(#000, 0);
+      }
+    }
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    @include breakpoint($medium) {
+      @include gallery(4);
+    }
+    @include breakpoint($large) {
+      @include gallery(3);
+    }
+  }
+}
+.view-all {
+  @include container;
+  text-align: center;
+  margin-top: $space-massive;
+}
+
+
+.brand-top {
+  @include container;
+  padding: $space-large 0;
+  h2 {
+    margin-top: 0;
+  }
+  .about-brand {
+    img {
+      max-width: 150px;
+      display: block;
+      float: right;
+      @include breakpoint($medium) {
+        float: left;
+        margin: 0 $space-medium $space-medium 0;
+      }
+    }
+    @include breakpoint($medium) {
+      @include span(6 of 12);
+    }
+    &.single {
+      @include breakpoint($medium) {
+        @include span(12 of 12);
       }
     }
   }
+  .about-odk {
+    @include breakpoint($medium) {
+      @include span(6 of 12 last);
+    }
+  }
+}
 
-  .product-number {
-    text-align: center;
-    padding: $space-medium 0;
+
+.product-listings {
+
+  @include layout($fullWidth);
+  @include container;
+
+  .frame {
+    @include container;
+    @include pad(10px);
   }
 
-  .product-count {
-    text-align: center;
-    padding-bottom: $space-medium;
-    p {
-      text-align: center;
-      margin-top: $space-tiny;
-    }
+  hgroup {
+    @include container;
   }
 
   .filters-button {
-    display: inline-block;
-    @include button;
-    margin: 0 auto $space-large auto;
+    margin: $space-medium 0 0 0;
+    a {
+      @include button;
+    }
     @include breakpoint($large) {
       display: none;
     }
   }
 
+  .brand-top {
+    @include container;
+  }
+
+  .listing-tools {
+
+    @include container;
+    padding: $space-medium 0;
+
+    .breadcrumb {
+      @include span(6 of 12);
+      padding: $space-tiny 0;
+      margin-bottom: 0;
+    }
+
+    .sort-by-form {
+      padding-top: $space-tiny;
+      .field {
+        display: inline;
+        select {
+          font-size: $smaller;
+        }
+      }
+      label {
+        display: block;
+        text-align: left;
+        margin-bottom: $space-tiny;
+        @include breakpoint($medium) {
+          display: inline;
+        }
+      }
+      @include breakpoint($medium) {
+        @include span(4 of 12);
+      }
+    }
+
+    .product-number {
+      padding: $space-medium 0;
+      text-align: center;
+      @include breakpoint($medium) {
+        padding: $space-small 0;
+        @include span(4 of 12);
+      }
+    }
+
+    .product-count {
+      border-top: none;
+      padding: 0;
+      @include breakpoint($medium) {
+        @include span(4 of 12 last);
+        text-align: right;
+        padding: $space-tiny 0;
+      }
+      .pagination {
+        float: none;
+        margin-bottom: 0;
+      }
+    }
+
+  }
+
+  // Bottom pagination
+  .product-count {
+    @include container;
+    text-align: center;
+    padding: $space-medium 0;
+    border-top: 1px solid $line-colour;
+    .pagination {
+      margin-bottom: $space-small;
+      @include breakpoint($large) {
+        margin-bottom: 0;
+        float: right;
+      }
+    }
+    @include breakpoint($large) {
+      text-align: left;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
+
+
+
   .filters {
-    background-color: $light;
     display: none;
     font-size: $body;
     margin-bottom: $space-large;
+    margin-top: $space-medium;
+    border-right: 1px solid $line-colour;
     h3 {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0;
+      padding: 0.4rem;
     }
     h3:first-child {
       margin-top: 0;
@@ -96,35 +250,43 @@
     ul {
       list-style: none;
       padding: $space-tiny;
-      height: 150px;
-      overflow-y: scroll;
-      border: 1px solid $line-colour;
-      background-color: #fff;
+      margin: 0 0 $space-medium 0;
       font-size: $smaller;
       li {
         padding: $space-tiny 0;
+        label {
+          position: relative;
+          padding-left: 20px;
+          display: inline-block;
+          &:hover, &:focus {
+            color: $brand-orange;
+            cursor: pointer;
+          }
+        }
         input {
           margin-right: $space-tiny;
+          position: absolute;
+          left: 0; top: 0;
         }
       }
-      ul::-webkit-scrollbar {
-        -webkit-appearance: none;
-      }
-      ul::-webkit-scrollbar:vertical {
-        width: 11px;
-      }
-      ul::-webkit-scrollbar:horizontal {
-          height: 11px;
-      }
-      ul::-webkit-scrollbar-thumb {
-          border-radius: 8px;
-          border: 2px solid #000; /* should match background, can't be transparent */
-          background-color: rgba(#000, 0.5);
-      }
-      ul::-webkit-scrollbar-track {
-          background-color: #000;
-          border-radius: 8px;
-      }
+      // ul::-webkit-scrollbar {
+      //   -webkit-appearance: none;
+      // }
+      // ul::-webkit-scrollbar:vertical {
+      //   width: 11px;
+      // }
+      // ul::-webkit-scrollbar:horizontal {
+      //     height: 11px;
+      // }
+      // ul::-webkit-scrollbar-thumb {
+      //     border-radius: 8px;
+      //     border: 2px solid #000; /* should match background, can't be transparent */
+      //     background-color: rgba(#000, 0.5);
+      // }
+      // ul::-webkit-scrollbar-track {
+      //     background-color: #000;
+      //     border-radius: 8px;
+      // }
 
     }
   }
@@ -132,24 +294,91 @@
 
   .listings {
     .item {
-      padding-bottom: $space-large;
+      @include listingStyles;
+      position: relative;
+      margin-bottom: $space-larger;
+      // @include pad(20px);
+
       @include gallery(6 of 12); // 2
+
       @include breakpoint($medium) {
         @include gallery(4 of 12); // 3
       }
-      @include breakpoint($large) {
+
+      @include breakpoint($fullwidth) {
         @include gallery(3 of 12); // 4
       }
-      // @include breakpoint($huge) {
-      //   @include gallery(2 of 12);
-      // }
-      font-size: $bigger;
-      img {
-        width: 100%;
-        height: auto;
+
+      @include breakpoint($huge) {
+        @include gallery(2 of 10); // 5
       }
-      span {
+
+      img {
+        max-width: 100%;
+      }
+
+      a {
         display: block;
+        padding: $space-tiny;
+        -webkit-transition: all 300ms ease;
+        -moz-transition: all 300ms ease;
+        -ms-transition: all 300ms ease;
+        -o-transition: all 300ms ease;
+        transition: all 300ms ease;
+        &:hover {
+          -webkit-box-shadow: 0px 0px 5px 0 rgba(0,0,0,0.2);
+          box-shadow: 0px 0px 5px 0 rgba(0,0,0,0.2);
+        }
+        @include breakpoint($medium) {
+          padding: $space-small;
+        }
+      }
+
+      .main-pic {
+        display: block;
+        img {
+          width: 100%;
+          height: auto;
+          // margin-bottom: 1rem;
+        }
+      }
+
+      .colours {
+        display: none;
+        margin: $space-tiny 0; padding: 0;
+        text-align: center;
+        li {
+          display: inline-block;
+          list-style: none;
+          margin: 0 3px 0 3px; padding: 0;
+          height: 40px; width: 40px;
+          background-color: #eee;
+        }
+        @include breakpoint($medium) {
+          display: block;
+        }
+      }
+
+      .brand-logo {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        overflow: hidden;
+        border-radius: 100%;
+        width: 65px;
+        // height: 80px;
+        padding: $space-tiny;
+        background-color: #fff;
+        // -webkit-box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.1);
+        // box-shadow: 0 0 3px 1px rgba(0,0,0,0.2);
+      }
+
+      .price {
+        display: block;
+        color: rgba($dark, 1);
+        span {
+          color: rgba($dark, 0.4);
+        }
       }
     }
   }
@@ -169,57 +398,63 @@
 }
 
 @include breakpoint($medium) {
+
   .product-listings {
-    padding-top: $space-larger;
-    padding-bottom: $space-huge;
-    min-height: 30rem;
-    .header {
-      h1 {
-        text-align: left;
-        padding-bottom: $space-small;
+
+    .listing-tools {
+
+      // margin-bottom: $space-larger;
+      background-color: rgba(#fff, 0.9);
+      z-index: 1000;
+
+      &.is_stuck {
+        top: 0 !important; // Fixes bug. If removed it goes to the bottom of the listings
+        // position: fixed !important;
       }
-      .product-number {
-        @include span(4 of 12);
-        text-align: left;
-        padding-top: $space-tiny;
-        padding-bottom: $space-medium;
-      }
-      .product-count {
-        @include span(4 of 12); 
-        padding-bottom: $space-medium;
-      }
-      .sort-by-form {
-        @include span(4 last);
-        text-align: right;
-        label {
-          display: inline;
-        }
-      }
+
+      // .product-number {
+      //
+      // }
+      //
+      // .filters-button {
+      //   @include span(4 of 12);
+      // }
+      //
+      // .sort-by-form {
+      //   @include span(4 of 12);
+      //   select {
+      //     font-size: $smaller;
+      //   }
+      //   label {
+      //     display: inline;
+      //   }
+      // }
+      //
+      // .product-count {
+      //   @include span(4 of 12 last);
+      //   text-align: right;
+      //
+      // }
+
     }
 
-    // Not required for PL
-    // .filters {
-    //   display: block;
-    //   @include span(2 of 12);
-    // }
-
-    // .listings {
-    //   @include span(10 last);
-    // }
   }
+
 }
 
 @include breakpoint($large) {
+
   .product-listings {
-    .header {
 
-      .product-count {
-        .pagination {
-          display: inline-block;
-        }
-      }
+    .filters {
+      display: block;
+      @include span(2 of 12);
+    }
 
+    .listings {
+      @include span(10 last);
     }
 
   }
+
 }

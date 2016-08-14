@@ -46,14 +46,12 @@ include("config.inc.php"); //include config file
 
     <div class="frame">
 
-      <!-- <ul class="breadcrumb">
-        <li><a href="#">Category</a></li>
-        <li><a href="#">Sub Category</a></li>
-      </ul> -->
+      <div class="header">
 
+        <h1>No products found</h1>
+        <p>Please try another search or go to our <a href="index.php">home page</a>.</p>
 
-      <h1>No products found</h1>
-      <p>Please try another search or go to our <a href="index.php">home page</a>.</p>
+      </div>
 
     </div><!-- END FRAME -->
 

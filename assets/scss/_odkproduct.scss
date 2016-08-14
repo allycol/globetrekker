@@ -1,0 +1,560 @@
+.featherlight .featherlight-close-icon {
+  position: fixed !important;
+  top: 20px !important;
+  right: 20px !important;
+  background: rgba(255,255,255,1) !important;
+  border-radius: 50%;
+}
+
+#sizeChartFrame {
+  padding: $space-large;
+}
+
+.table-swipe {
+  overflow-x: scroll;
+  width: 100%;
+  table {
+    margin: $space-small 0;
+  }
+}
+
+.product-details {
+
+  position: relative;
+  // background-color: $light;
+  padding-top: $space-large;
+  padding-bottom: $space-large;
+
+  @include breakpoint($large) {
+    padding-top: $space-larger;
+    padding-bottom: $space-huge;
+  }
+
+  .frame {
+    @include layout($widerGrid); // Wider!
+    @include container;
+
+  }
+
+  hgroup {
+    border-bottom: 1px solid $line-colour;
+    text-align: center;
+    padding-bottom: $space-medium;
+    h1 {
+      margin: 0;
+    }
+    .price {
+      margin-bottom: 0;
+      @include breakpoint($medium) {
+        display: none;
+      }
+    }
+  }
+
+  .breadcrumb {
+    // text-align: center;
+    margin-top: $space-medium;
+    margin-bottom: 0;
+  }
+
+
+
+  img {
+    display: block;
+  }
+
+  .product-gallery-lrg {
+    padding-top: $space-small;
+    // .large-image {
+    //   position: absolute;
+    //   left: 0; top: 0; right: 0; bottom: 0;
+    //   z-index: 9;
+    // }
+    img {
+      width: 100%;
+    }
+    @include breakpoint($medium) {
+      padding-top: $space-larger;
+    }
+  }
+
+
+  .add-to-bag {
+
+    h2 {
+      margin-top: 0;
+    }
+
+    .add-bag-error {
+      display: none;
+      @include break;
+      background-color: rgba(#f98400, 0.4);
+      // border: 1px solid red;
+      padding: $space-medium;
+      margin: $space-tiny 0;
+      text-align: center;
+      border-radius: 3px;
+      p {
+        margin: 0;
+      }
+    }
+
+    .product-gallery-thmbs {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      @include container;
+      li {
+        @include gallery(2);
+        margin-bottom: $space-tiny; 
+        // background-color: $line-colour;
+        label {
+          display: inline-block;
+          cursor: pointer;
+          img {
+            opacity: 0.99; // HACK Need this so images are clickable in IE11
+            width: 100%;
+            height: auto;
+            border: 2px solid #fff;
+            pointer-events: none;
+          }
+        }
+        &.active {
+          img {
+            border: 2px solid $brand-orange;
+          }
+        }
+        input {
+          position: absolute;
+          opacity: 0;
+        }
+        &.nostock {
+          img {
+            opacity: 0.5;
+            border-color: #fff;
+          }
+          &.active {
+            img {
+              border-color: $form-colour;
+            }
+          }
+        }
+      }
+
+    }
+
+    #selectColor, #selectSize {
+      margin: $space-medium 0;
+      text-align: center;
+      -webkit-box-shadow: 0px 0px 5px 0 rgba(0,0,0,0.2);
+      box-shadow: 0px 0px 5px 0 rgba(0,0,0,0.2);
+      padding: $space-small;
+      border: 2px solid #fff;
+    }
+
+    .selected-colour {
+      display: none;
+      margin-bottom: 0;
+    }
+
+    .stock-notify {
+      display: none;
+      margin: $space-tiny 0;
+    }
+
+    .sizes {
+      @include container;
+
+      display: none; // HIDE BY DEFAULT
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        @include gallery(2);
+        border: 2px solid $light;
+        margin-bottom: $space-tiny;
+        &.nostock {
+          text-decoration: line-through;
+          background: white;
+          opacity: 0.5;
+          border-color: $line-colour;
+          background-color: $line-colour;
+          &.ischecked {
+            border-color: $line-colour;
+            background-color: $line-colour;
+          }
+        }
+        &.ischecked {
+          background-color: white;
+          border-color: $brand-orange;
+        }
+        label {
+          text-align: center;
+          display: block;
+          padding: $space-small 0;
+          cursor: pointer;
+        }
+        input {
+          position: absolute;
+          opacity: 0;
+        }
+      }
+    }
+
+    .add-qty {
+      text-align: center;
+      margin-bottom: $space-large;
+      label {
+        display: block;
+        font-size: $body;
+        margin-bottom: $space-small;
+      }
+      .dropdown {
+        @include fatselect;
+      }
+    }
+
+    .colour-availability, .size-availability {
+      text-align: center;
+      margin: 0 0 0 $space-tiny;
+      display: none;
+      .ico-tick {
+        color: green;
+      }
+      .ico-cross {
+        color: red;
+      }
+    }
+
+    .size-availability {
+      margin: $space-tiny 0;
+    }
+
+    .button-field {
+      button {
+        @include addtocartbutton;
+        &.disabled {
+          background-color: rgba($line-colour, 1);
+        }
+      }
+    }
+
+  }
+
+  .price {
+    @include header1;
+    font-weight: 700;
+    color: $dark;
+    text-align: center;
+    line-height: 1.8rem;
+    span {
+      @include bodycopy;
+      display: block;
+    }
+  }
+
+
+}
+
+.banner-swiper {
+  img {
+    display: block;
+  }
+}
+
+// .product-reviews, .product-about {
+//   background-color: $light;
+//   padding-top: $space-larger;
+//   padding-bottom: $space-larger;
+//   text-align: center;
+//   border-top: 2px dotted white;
+//   h2 {
+//     text-align: center;
+//     margin-top: 0;
+//   }
+//
+//   .button {
+//     margin: $space-large auto 0 auto;
+//   }
+// }
+
+.product-info {
+  // @include breakpoint($large) {
+  //   @include span(6);
+  // }
+  ul {
+    @include paragraphs;
+    padding-left: 1rem;
+    li {
+      padding: 0.2rem 0;
+    }
+  }
+}
+.product-more {
+  // @include breakpoint($large) {
+  //   @include span(6 last);
+  // }
+  ul {
+    list-style: none;
+    padding: 0;
+    @include container;
+    li {
+      @include gallery(4);
+      margin-bottom: $space-small;
+      a {
+        display: inline-block;
+        // background-color: #fff;
+        padding: $space-tiny;
+        text-align: center;
+      }
+      img {
+        display: block;
+      }
+      @include breakpoint($large) {
+        @include gallery(3);
+      }
+    }
+  }
+}
+.review-list {
+  @include container;
+}
+.review {
+  padding-bottom: $space-large;
+  .rating {
+    .ico {
+      color: $brand-orange;
+    }
+  }
+  .from {
+    font-size: $smaller;
+  }
+}
+
+// DESKTOP STYLES
+
+@include breakpoint($medium) {
+
+  .product-details {
+
+    .product-gallery-wrapper {
+      @include span(6);
+    }
+
+    .product-copy {
+      @include span(6 last);
+    }
+
+    .add-to-bag {
+      padding-bottom: $space-larger;
+      padding-top: $space-larger;
+      border-bottom: 1px solid $line-colour;
+      #selectColor, #selectSize {
+        margin: 0 0 $space-large 0;
+        text-align: left;
+        padding: $space-medium;
+        position: relative;
+        .size-guide {
+          position: absolute;
+          top: 0;
+          right: $space-medium;
+        }
+      }
+      .add-qty {
+        text-align: left;
+        @include span(5);
+        label {
+          display: inline-block;
+          margin-right: $space-medium;
+          margin-bottom: 0;
+        }
+      }
+      .colour-availability, .size-availability {
+        text-align: left;
+      }
+      .price {
+        @include span(7 last);
+        margin: 0;
+        text-align: right;
+      }
+      .button-field {
+        .button {
+          display: block;
+          width: 100%;
+        }
+      }
+    }
+
+
+  }
+
+  .product-about {
+    padding-top: $space-massive;
+    padding-bottom: $space-massive;
+    .product-description {
+      @include span(5);
+      // @include suffix(1rem);
+      text-align: left;
+    }
+    .product-info {
+      @include span(4);
+      @include prefix(1rem);
+      text-align: left;
+    }
+    .product-more {
+      @include span(3 last);
+      @include prefix(1rem);
+      text-align: left;
+    }
+  }
+
+  .product-reviews {
+    padding-top: $space-massive;
+    padding-bottom: $space-massive;
+    .review {
+      @include gallery(6);
+      text-align: left;
+      // @include pad(1rem);
+      //@include break;
+      //@include span(isolate 8 at 3 of 12);
+    }
+  }
+
+}
+
+
+/**
+ * Featherlight – ultra slim jQuery lightbox
+ * Version 1.3.3 - http://noelboss.github.io/featherlight/
+ *
+ * Copyright 2015, Noël Raoul Bossart (http://www.noelboss.com)
+ * MIT Licensed.
+**/
+@media all {
+
+  .featherlight {
+		display: none;
+
+		/* dimensions: spanning the background from edge to edge */
+		position:fixed;
+		top: 0; right: 0; bottom: 0; left: 0;
+		z-index: 2147483647; /* z-index needs to be >= elements on the site. */
+
+		/* position: centering content */
+		text-align: center;
+
+		/* insures that the ::before pseudo element doesn't force wrap with fixed width content; */
+		white-space: nowrap;
+
+		/* styling */
+		cursor: pointer;
+		background: #333;
+		/* IE8 "hack" for nested featherlights */
+		background: rgba(0, 0, 0, 0);
+
+	}
+
+	/* support for nested featherlights. Does not work in IE8 (use JS to fix) */
+	.featherlight:last-of-type {
+		background: rgba(0, 0, 0, 0.8);
+	}
+
+	.featherlight:before {
+		/* position: trick to center content vertically */
+		content: '';
+		display: inline-block;
+		height: 100%;
+		vertical-align: middle;
+		margin-right: -0.25em;
+	}
+
+	.featherlight .featherlight-content {
+		/* make content container for positioned elements (close button) */
+		position: relative;
+
+		/* position: centering vertical and horizontal */
+		text-align: left;
+		vertical-align: middle;
+		display: inline-block;
+
+		/* dimensions: cut off images */
+		overflow: auto;
+		padding: 25px 25px 0;
+		border-bottom: 25px solid transparent;
+
+		/* dimensions: handling small or empty content */
+		min-width:  30%;
+
+		/* dimensions: handling large content */
+		margin-left: 5%;
+		margin-right: 5%;
+		max-height: 95%;
+
+		/* styling */
+		background: #fff;
+		cursor: auto;
+
+		/* reset white-space wrapping */
+		white-space: normal;
+	}
+
+	/* contains the content */
+	.featherlight .featherlight-inner {
+		/* make sure its visible */
+		display: block;
+	}
+
+	.featherlight .featherlight-close-icon {
+		/* position: centering vertical and horizontal */
+		position: absolute;
+		z-index: 9999;
+		top: 0;
+		right: 0;
+
+		/* dimensions: 25px x 25px */
+		line-height: 25px;
+		width: 25px;
+
+		/* styling */
+		cursor: pointer;
+		text-align: center;
+		font-family: Arial, sans-serif;
+		background: #fff; /* Set the background in case it overlaps the content */
+		background: rgba(255, 255, 255, 0.3);
+		color: #000;
+	}
+
+
+	.featherlight .featherlight-image {
+		/* styling */
+    // width: 100% !important;
+    // height: auto !important;
+    // box-sizing: content-box !important;
+	}
+
+
+	.featherlight-iframe .featherlight-content {
+		/* removed the border for image croping since iframe is edge to edge */
+		border-bottom: 0;
+		padding: 0;
+	}
+
+	.featherlight iframe {
+		/* styling */
+		border: none;
+	}
+}
+
+/* handling phones and small screens */
+@media only screen and (max-width: 1024px) {
+	.featherlight .featherlight-content {
+		/* dimensions: maximize lightbox with for small screens */
+		margin-left: 10px;
+		margin-right: 10px;
+		max-height: 98%;
+
+		padding: 10px 10px 0;
+		border-bottom: 10px solid transparent;
+	}
+}

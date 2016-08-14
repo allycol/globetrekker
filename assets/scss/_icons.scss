@@ -45,68 +45,80 @@ $icon-size: 32px;
 	@if $filename == bag {
 		$char: "\E001";
 	}
-	@if $filename == burger {
+	@if $filename == blogger {
 		$char: "\E002";
 	}
-	@if $filename == chevron-down {
+	@if $filename == burger {
 		$char: "\E003";
 	}
-	@if $filename == chevron-left {
+	@if $filename == chevron-down {
 		$char: "\E004";
 	}
-	@if $filename == chevron-right {
+	@if $filename == chevron-left {
 		$char: "\E005";
 	}
-	@if $filename == chevron-up {
+	@if $filename == chevron-right {
 		$char: "\E006";
 	}
-	@if $filename == facebook {
+	@if $filename == chevron-up {
 		$char: "\E007";
 	}
-	@if $filename == instagram {
+	@if $filename == cross {
 		$char: "\E008";
 	}
-	@if $filename == lock {
+	@if $filename == facebook {
 		$char: "\E009";
 	}
-	@if $filename == magnify {
+	@if $filename == filter {
 		$char: "\E00A";
 	}
-	@if $filename == pdf {
+	@if $filename == instagram {
 		$char: "\E00B";
 	}
-	@if $filename == phone {
+	@if $filename == lock {
 		$char: "\E00C";
 	}
-	@if $filename == pinterest {
+	@if $filename == magnify {
 		$char: "\E00D";
 	}
-	@if $filename == profile {
+	@if $filename == pdf {
 		$char: "\E00E";
 	}
-	@if $filename == rating-five {
+	@if $filename == phone {
 		$char: "\E00F";
 	}
-	@if $filename == rating-four {
+	@if $filename == pinterest {
 		$char: "\E010";
 	}
-	@if $filename == rating-one {
+	@if $filename == profile {
 		$char: "\E011";
 	}
-	@if $filename == rating-three {
+	@if $filename == rating-five {
 		$char: "\E012";
 	}
-	@if $filename == rating-two {
+	@if $filename == rating-four {
 		$char: "\E013";
 	}
-	@if $filename == star {
+	@if $filename == rating-one {
 		$char: "\E014";
 	}
-	@if $filename == twitter {
+	@if $filename == rating-three {
 		$char: "\E015";
 	}
-	@if $filename == warning {
+	@if $filename == rating-two {
 		$char: "\E016";
+	}
+	@if $filename == star {
+		$char: "\E017";
+	}
+	@if $filename == tick {
+		$char: "\E018";
+	}
+	@if $filename == twitter {
+		$char: "\E019";
+	}
+	@if $filename == warning {
+		$char: "\E01A";
 	}
 
 	@return $char;
@@ -122,6 +134,10 @@ $icon-size: 32px;
 
 	@mixin icon-bag{
 		content: icon-char(bag);
+	}
+
+	@mixin icon-blogger{
+		content: icon-char(blogger);
 	}
 
 	@mixin icon-burger{
@@ -144,8 +160,16 @@ $icon-size: 32px;
 		content: icon-char(chevron-up);
 	}
 
+	@mixin icon-cross{
+		content: icon-char(cross);
+	}
+
 	@mixin icon-facebook{
 		content: icon-char(facebook);
+	}
+
+	@mixin icon-filter{
+		content: icon-char(filter);
 	}
 
 	@mixin icon-instagram{
@@ -200,6 +224,10 @@ $icon-size: 32px;
 		content: icon-char(star);
 	}
 
+	@mixin icon-tick{
+		content: icon-char(tick);
+	}
+
 	@mixin icon-twitter{
 		content: icon-char(twitter);
 	}
@@ -212,6 +240,9 @@ $icon-size: 32px;
 
 .ico-bag {
 	@include icon(bag);
+}
+.ico-blogger {
+	@include icon(blogger);
 }
 .ico-burger {
 	@include icon(burger);
@@ -228,8 +259,14 @@ $icon-size: 32px;
 .ico-chevron-up {
 	@include icon(chevron-up);
 }
+.ico-cross {
+	@include icon(cross);
+}
 .ico-facebook {
 	@include icon(facebook);
+}
+.ico-filter {
+	@include icon(filter);
 }
 .ico-instagram {
 	@include icon(instagram);
@@ -269,6 +306,9 @@ $icon-size: 32px;
 }
 .ico-star {
 	@include icon(star);
+}
+.ico-tick {
+	@include icon(tick);
 }
 .ico-twitter {
 	@include icon(twitter);

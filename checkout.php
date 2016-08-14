@@ -83,9 +83,9 @@ include("config.inc.php"); //include config file
 					<form name="register" class="thisForm" action="https://www.outdoorkit.co.uk/checkout.php" method="post">
 						<h2>If you haven't shopped with us before</h2>
 						<p>Please enter your email address and create a password below. </p>
+            <!-- <p class="serverError">We're sorry, but this email address has already been registered on our system. If you've forgotten your password, please click on the "I've forgotten my password" link on the left and we'll email it to you. If you haven't registered with us already, please check that you've spelt your email address correctly.</p> -->
 						<input type="hidden" name="register" value="register">
 						<fieldset>
-							<p class="serverError"><span class="ico ico-s ico-warning"></span>We're sorry, but this email address has already been registered on our system. If you've forgotten your password, please click on the "I've forgotten my password" link on the left and we'll email it to you. If you haven't registered with us already, please check that you've spelt your email address correctly.</p>
 							<ul>
 								<li class="textfield">
 									<label for="registeremail">Email address</label>

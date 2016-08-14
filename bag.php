@@ -45,14 +45,14 @@ include("config.inc.php"); //include config file
 
         <div class="bag-header">
           <h1>Your bag</h1>
-          <a class="button" href="checkout.php">Proceed to checkout</a>
+          <a class="button" href="billing.php">Proceed to checkout</a>
         </div>
 
         <div id="bag">
 
           <div class="bag-item">
             <div class="pic">
-              <a href="product.php"><img src="http://placehold.it/300" /></a>
+              <a href="product.php"><img src="images/SKU_182620-black_main.jpg"></a>
             </div>
             <div class="txt">
               <h2><a href="product.php">The North Face Men's McMurdo Parka 2</a></h2>
@@ -62,15 +62,15 @@ include("config.inc.php"); //include config file
                 <li>Quantity: 1</li>
               </ul>
             </div>
+            <div class="price">&pound;269.99</div>
             <div class="functions">
-              <div class="price">&pound;269.99</div>
-              <a class="button smaller remove" href="#">Remove</a>
+              <a class="remove" href="#"><span class="ico ico-s ico-cross"></span></a>
             </div>
           </div>
 
           <div class="bag-item">
             <div class="pic">
-              <a href="product.php"><img src="http://placehold.it/300" /></a>
+              <a href="product.php"><img src="images/SKU_252567-black-pumpkin_main.jpg"></a>
             </div>
             <div class="txt">
               <h2><a href="product.php">The North Face Men's McMurdo Parka 2</a></h2>
@@ -80,19 +80,19 @@ include("config.inc.php"); //include config file
                 <li>Quantity: 1</li>
               </ul>
             </div>
+            <div class="price">&pound;269.99</div>
             <div class="functions">
-              <div class="price">&pound;269.99</div>
-              <a class="button smaller remove" href="#">Remove</a>
+              <a class="remove" href="#"><span class="ico ico-s ico-cross"></span></a>
             </div>
           </div>
 
           <div class="return">
-            <a href="product.php"><span class="ico ico-xs ico-chevron-left"></span>Continue shopping</a>
+            <a href="product.php"><span class="ico ico-tiny ico-chevron-left"></span> Continue shopping</a>
           </div>
 
           <div class="bag-footer">
             <div class="sub-total">Sub-total: &pound;269.99</div>
-            <a class="button" href="checkout.php">Proceed to checkout</a>
+            <a class="button" href="billing.php">Proceed to checkout</a>
           </div>
 
         </div>

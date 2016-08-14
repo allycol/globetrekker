@@ -43,12 +43,30 @@ include("config.inc.php"); //include config file
 			<div class="frame">
 
         <h1>Order complete</h1>
-        <h3 class="order-confirmed"><span class="ico ico-s ico-success"></span> Your order has been successfully placed. Your order number is <strong>12353</strong></h3>
+        <h3 class="order-confirmed"><span class="ico ico-m ico-tick"></span> Your order has been successfully placed. Your order number is 12353</h3>
         <h2>Next steps</h2>
         <p>Now what happens? Shouldn't we say something about their Tax Invoice or a confirmation email?</p>
         <p>If you have any queries in relation to your order, please contact us using the <a href="http://www.perfectlights.co.uk/contact_us.php" target="_top">Contact page</a> or phone us on 01727 61 41 61. Please remember to quote the order number above when contacting us.</p>
         <h2>Track your order</h2>
         <p>You can track the status of your order from the <a href="https://www.perfectlights.co.uk/profile.php" target="_top">My Account</a> section of our site.</p>
+        <h2>Create an account</h2>
+        <form name="" class="thisForm" action="" method="post">
+  				<fieldset>
+  					<ul>
+              <li class="textfield">
+  							<label for="firstname">Password</label>
+  							<div class="field">
+  								<input name="password" value="" size="30" type=text tabindex="25" class="required" />
+  							</div>
+  						</li>
+              <li class="next-button">
+                <input type="hidden" value="next" name="next">
+                <input type="submit" class="button" value="Create account" />
+              </li>
+            </ul>
+          </fieldset>
+        </form>
+
         <h2>Thank you for ordering from us!</h2>
 
   		</div>

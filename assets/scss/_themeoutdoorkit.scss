@@ -1,0 +1,629 @@
+// Breakpoints
+
+$small: 640px;
+$medium: 768px;
+$large: 960px;
+$fullwidth: 1032px;
+$huge: 1536px;
+
+$custom-nav-break: 1015px;
+
+
+// Base colours
+
+$background: #fff;
+$light: #e5eaed;
+$dark: #222;
+
+$header-strip: $light;
+
+$line-colour: #e5eaed;
+$form-colour: #bbb;
+
+
+$brand-blue: #154c6c;
+$brand-orange: #f98400;
+
+$promo-1-color: $brand-blue;
+$promo-2-color: $brand-orange;
+$promo-3-color: $light;
+
+$footer-links-color: rgba($dark, 1);
+$active-color: $brand-orange;
+
+// General typography
+
+@font-face {
+    font-family: 'brandfont-std';
+    src: url('../fonts/sourcesanspro-light.eot');
+    src: url('../fonts/sourcesanspro-light.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/sourcesanspro-light.woff2') format('woff2'),
+         url('../fonts/sourcesanspro-light.woff') format('woff'),
+         url('../fonts/sourcesanspro-light.ttf') format('truetype'),
+         url('../fonts/sourcesanspro-light.svg#source_sans_prolight') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'brandfont-std';
+    src: url('../fonts/sourcesanspro-regular.eot');
+    src: url('../fonts/sourcesanspro-regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/sourcesanspro-regular.woff2') format('woff2'),
+         url('../fonts/sourcesanspro-regular.woff') format('woff'),
+         url('../fonts/sourcesanspro-regular.ttf') format('truetype'),
+         url('../fonts/sourcesanspro-regular.svg#source_sans_proregular') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'brandfont-std';
+    src: url('../fonts/sourcesanspro-semibold.eot');
+    src: url('../fonts/sourcesanspro-semibold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/sourcesanspro-semibold.woff2') format('woff2'),
+         url('../fonts/sourcesanspro-semibold.woff') format('woff'),
+         url('../fonts/sourcesanspro-semibold.ttf') format('truetype'),
+         url('../fonts/sourcesanspro-semibold.svg#blockt') format('svg');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'brandfont-std';
+    src: url('../fonts/sourcesanspro-bold.eot');
+    src: url('../fonts/sourcesanspro-bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/sourcesanspro-bold.woff2') format('woff2'),
+         url('../fonts/sourcesanspro-bold.woff') format('woff'),
+         url('../fonts/sourcesanspro-bold.ttf') format('truetype'),
+         url('../fonts/sourcesanspro-bold.svg#source_sans_prosemibold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'brandfont-std';
+    src: url('../fonts/sourcesanspro-black.eot');
+    src: url('../fonts/sourcesanspro-black.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/sourcesanspro-black.woff2') format('woff2'),
+         url('../fonts/sourcesanspro-black.woff') format('woff'),
+         url('../fonts/sourcesanspro-black.ttf') format('truetype'),
+         url('../fonts/sourcesanspro-black.svg#source_sans_problack') format('svg');
+    font-weight: 800;
+    font-style: normal;
+}
+
+$base: 16px; // This effects the size of EVERYTHING - Change with caution!
+
+$main-title: 2.0rem; // 32px
+$main-title-mobile: 1.875rem; // 30px
+$sub-title: 1.5rem; // 24px
+$bigger: 1.125rem; // 18px
+$body: 1rem; // 16px
+$smaller: 0.875rem; // 14px
+$tiny: 0.75rem; // 14px
+
+// Spacing
+
+$space-tiny: 0.375rem;/* 6px */
+$space-small: 0.875rem;/* 14px */
+$space-medium: 1.125rem; /* 18px */
+$space-large: 1.5rem; /* 24px */
+$space-larger: 2.25rem; /* 36px */
+$space-massive: 3rem; /* 48px */
+$space-huge: 4.5rem; /* 72px */
+
+
+// SET FONTS
+
+$bodyfont: brandfont-std, Tahoma, Ariel, Sans-serif;
+$brand1: brandfont-std, Tahoma, Ariel, Sans-serif;
+
+@mixin bodycopy {
+  font-family: $bodyfont;
+  font-weight: 500;
+  font-size: $body;
+}
+
+@mixin linkbase {
+  color: $dark;
+  text-decoration: none;
+  &:hover, &:focus {
+    color: $active-color;
+  }
+}
+
+// H1
+@mixin header1 {
+  font-family: $brand1;
+  font-size: $main-title-mobile;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 2rem;
+  margin: 1rem 0;
+  color: $brand-blue;
+  // text-transform: uppercase;
+  // letter-spacing: 0.2rem;
+  @include breakpoint($medium) {
+    font-size: $main-title;
+  }
+  @include breakpoint($large) {
+
+  }
+}
+
+// H2
+@mixin header2 {
+  font-family: $brand1;
+  font-size: $bigger;
+  font-weight: 700;
+  // text-transform: uppercase;
+  margin-top: $space-larger;
+  color: rgba($dark, 1);
+}
+
+@mixin header2alt {
+  // letter-spacing: 0.4rem;
+  // color: rgba($dark, 0.8);
+}
+
+@mixin header3 {
+  font-family: $brand1;
+  font-size: $body;
+  font-weight: 700;
+  // text-transform: uppercase;
+  margin-bottom: $space-small;
+}
+
+@mixin boldType {
+  font-weight: 600;
+}
+
+@mixin paragraphs {
+  line-height: 1.4rem;
+}
+
+// SOME HEADER CHANGES SPECIFICALLY FOR ODK
+
+.other-products h2, .products-viewed h2, .brands h2, .account-section h2, .product-reviews h2, .product-about h2 {
+  @include header2alt;
+}
+
+// LOGO PLACEMENT
+
+@mixin logo {
+  margin-bottom: $space-medium;
+  margin-top: $space-medium;
+  // border: 1px solid gray;
+  a {
+    display: block;
+    margin: auto;
+    max-width: 12rem;
+    // border: 1px solid red;
+    svg {
+      // border: 1px solid green;
+      max-width: 12rem;
+      max-height: 3rem;
+      display: block;
+    }
+  }
+  @include breakpoint($medium) {
+    margin-bottom: 1.8rem;
+    margin-top: 1.8rem;
+  }
+  @include breakpoint($large) {
+    // margin-bottom: 2rem;
+    a {
+      max-width: 13rem;
+      svg {
+        max-width: 13rem;
+        max-height: 4.5rem;
+      }
+    }
+  }
+}
+
+// HEADER ELEMENTS
+
+@mixin phonenumber {
+  font-size: $sub-title;
+  // margin-bottom: $space-tiny;
+  margin-left: 28px;
+  // font-family: $brand1;
+  font-family: Ariel, sans-serif;
+  // font-weight: 700;
+  font-weight: bold;
+  // letter-spacing: 0.1rem;
+}
+
+@mixin phonetimes {
+  font-size: $smaller;
+  margin-left: 28px;
+  a {
+    text-decoration: underline;
+  }
+}
+
+@mixin accountnavfont {
+  font-family: $brand1;
+  font-weight: 700;
+  // text-transform: uppercase;
+  // letter-spacing: 0.1rem;
+  font-size: $smaller;
+}
+
+@mixin logoutlink {
+  font-family: $bodyfont;
+  font-weight: 500;
+  font-size: $tiny;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+@mixin bagQty {
+  height: 18px; width: 18px;
+  line-height: 16px;
+  border-radius: 8px;
+  font-family: $bodyfont;
+  background-color: $brand-orange;
+  font-size: $tiny;
+  font-weight: 500;
+  color: #fff;
+}
+
+// NAV BAR
+
+@mixin nav-styles {
+  padding: 0;
+  background-color: $brand-blue;
+  font-size: $bigger;
+  > ul > li > span, > ul > li > a {
+    font-family: $brand1;
+    font-weight: 600;
+    // text-transform: uppercase;
+    // letter-spacing: 0.1rem;
+    padding: 14px 8px;
+    color: #fff;
+    cursor: pointer;
+    &:hover, &:focus {
+      color: $brand-orange;
+    }
+  }
+}
+
+@mixin sub-menu {
+  font-size: $body;
+  a {
+    // color: $dark;
+  }
+}
+
+// Form elements
+
+@mixin fieldset {
+  background-color: #fff;
+  -webkit-box-shadow: 0px 0px 5px 0 rgba(0,0,0,0.2);
+  box-shadow: 0px 0px 5px 0 rgba(0,0,0,0.2);
+  border: none;
+  margin: $space-larger 0;
+}
+
+@mixin textinput {
+  padding: $space-tiny;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 0;
+  border: 1px solid $form-colour;
+  &:focus {
+    outline: 0;
+    border: 1px solid #000;
+  }
+}
+
+@mixin fattextinput {
+  padding: $space-small $space-massive $space-small $space-small;
+}
+
+@mixin dropdown {
+  background-color: #fff;
+  position: relative;
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0;
+    font-size: $body;
+    padding: $space-tiny $space-massive $space-tiny $space-small;
+    border: 1px solid $form-colour;
+    border-radius: 3px;
+    position: relative;
+    min-width: 7rem;
+    background-color: transparent;
+    z-index: 2;
+    &:focus {
+      outline: 0;
+      border: 1px solid #000;
+    }
+    &.larger {
+      padding: $space-small $space-massive $space-small $space-small;
+    }
+  }
+  select::-ms-expand {
+    display: none;
+  }
+  span {
+    position: absolute; top: 6px; bottom: 6px; right: 7px;
+    z-index: 1;
+    border-left: 1px solid $form-colour;
+    padding-left: 5px;
+    padding-top: 4px;
+    color: $dark;
+    font-size: 12px !important;
+  }
+}
+
+@mixin fatselect {
+  select {
+    padding: $space-small $space-massive $space-small $space-small;
+  }
+  span {
+    top: 10px; bottom: 10px; right: 11px;
+    padding-left: 10px;
+    padding-top: 9px;
+  }
+}
+
+// Errors
+
+@mixin serverError {
+  color: $brand-orange;
+  margin-top: 0;
+  padding-left: 35px;
+  font-size: $smaller;
+  .ico {
+    //float: left;
+    margin-left: -35px;
+  }
+
+}
+
+// Buttons
+
+@mixin button {
+  display: block;
+  width: 100%;
+  font-size: $body;
+  font-family: $brand1;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.08rem;
+  color: rgba(#fff, 1);
+  padding: $space-small 0;
+  background-color: rgba($dark, 0.8);
+  border: none;
+  outline: 0;
+  cursor: pointer;
+  border-radius: 3px;
+  -webkit-transition: all 200ms ease;
+  -moz-transition: all 200ms ease;
+  -ms-transition: all 200ms ease;
+  -o-transition: all 200ms ease;
+  transition: all 200ms ease;
+  &.bordered {
+    color: rgba($dark, 0.6);
+    background-color: transparent;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgba($dark, 0.6);
+    text-decoration: none;
+    &:hover {
+      color: rgba($dark, 1);
+      background-color: transparent;
+      border-color: rgba($dark, 1);
+    }
+  }
+  &:hover {
+    color: rgba(#fff, 1);
+    background-color: rgba($dark, 1);
+  }
+  &:active {
+    color: rgba(#fff, 0.3);
+  }
+  &.smaller {
+    font-size: $smaller;
+    padding: $space-small $space-large;
+  }
+  @include breakpoint($medium) {
+    display: inline-block;
+    width: auto;
+    padding: $space-medium $space-larger;
+  }
+}
+
+@mixin addtocartbutton {
+  background-color: rgba($brand-orange, 0.8);
+  &:hover {
+    background-color: rgba($brand-orange, 1);
+  }
+}
+
+// PROGRESS BAR
+
+@mixin progress-style {
+  font-family: $brand1;
+  font-size: $body;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  // text-transform: uppercase;
+}
+
+// LISTINGS TEXT STYLES
+
+@mixin listingStyles {
+  line-height: 1.4rem;
+  font-weight: bold;
+  text-align: center;
+  font-size: $body;
+  .price {
+    font-weight: 500;
+  }
+}
+
+// TABLES
+
+@mixin tables {
+  width: 100%;
+  margin: $space-larger 0;
+  thead {
+    tr {
+      th {
+        padding: $space-small;
+        text-align: left;
+        background-color: $dark;
+        color: #fff;
+      }
+    }
+  }
+  tbody {
+    tr {
+      td {
+        padding: $space-small;
+        border-bottom: 1px solid $line-colour;
+      }
+      &:nth-child(even) {
+        td {
+          background-color: #fff;
+        }
+      }
+    }
+  }
+  &.sizes {
+    thead {
+      tr {
+        &:first-child {
+          th {
+            background-color: #fff;
+            color: $dark;
+          }
+        }
+      }
+    }
+  }
+}
+
+// FOOTER
+
+@mixin footer {
+  background-color: #fff;
+  color: $dark;
+  border-top: 4px solid $line-colour;
+  h3 {
+    color: $footer-links-color;
+    // letter-spacing: 0.2rem;
+    margin-top: 0;
+  }
+
+  a {
+    color: rgba($footer-links-color, 0.7);
+    &:hover, &:focus {
+      color: rgba($footer-links-color, 1);
+      text-decoration: underline;
+    }
+    .ico {
+      margin-right: $space-tiny;
+    }
+  }
+  section {
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: $space-medium;
+      font-size: $smaller;
+      // line-height: $base;
+      li {
+        margin: $space-small 0;
+      }
+    }
+  }
+}
+
+// Home page banners typography
+
+$large-promo-first: 4.75rem;
+$large-promo-second: $large-promo-first/3;
+
+$small-promo-first: 3.125rem;
+$small-promo-second: $small-promo-first/3;
+
+@mixin large-home-promo {
+  .promo-copy {
+    top: 50%;
+    margin-top: -$large-promo-first/2;
+    .first {
+      font-family: $brand1;
+      font-weight: 700;
+      font-size: $large-promo-first/2;
+      line-height: $large-promo-first/2+1rem;
+      margin-bottom: $space-tiny;
+      display: inline-block;
+      border-bottom: 2px solid #fff;
+      text-shadow: 0 0 20px rgba(0,0,0,.2);
+    }
+    .second {
+      font-family: $brand1;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: $large-promo-second/2;
+      letter-spacing: 0.4rem;
+      text-shadow: 0 0 20px rgba(0,0,0,.2);
+    }
+    @include breakpoint($medium) {
+      margin-top: -$large-promo-first;
+      .first {
+        font-size: $large-promo-first;
+        line-height: $large-promo-first+1rem;
+      }
+      .second {
+        font-size: $large-promo-second;
+        letter-spacing: 0.8rem;
+      }
+    }
+  }
+}
+
+@mixin small-home-promo {
+  .promo-copy {
+    top: 50%;
+    margin-top: -$small-promo-first/2;
+    .first {
+      font-family: $brand1;
+      font-weight: 700;
+      font-size: $large-promo-first/2;
+      line-height: $large-promo-first/2+1rem;
+      margin-bottom: $space-tiny;
+      display: inline-block;
+      border-bottom: 2px solid #fff;
+      text-shadow: 0 0 20px rgba(0,0,0,.2);
+    }
+    .second {
+      font-family: $brand1;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.4rem;
+      font-size: $large-promo-second/2;
+      text-shadow: 0 0 20px rgba(0,0,0,.2);
+    }
+    @include breakpoint($medium) {
+      .first {
+        font-size: $small-promo-first;
+      }
+      .second {
+        font-size: $small-promo-second;
+      }
+    }
+  }
+}

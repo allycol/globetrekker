@@ -34,33 +34,138 @@ include("config.inc.php"); //include config file
 
 <?php include("includes/off-canvas-nav.php"); ?>
 
-<?php
-  // include("includes/off-canvas-filters.php");
-?>
+<?php include("includes/off-canvas-filters.php"); ?>
 
 <div id="page">
 
   <?php include("includes/header.php"); ?>
 
-  <div class="banner">
+  <!-- <div class="banner">
     <img src="http://placehold.it/2000x600" />
-  </div>
+  </div> -->
 
   <section class="product-listings">
 
     <div class="frame">
 
-      <!-- <ul class="breadcrumb">
-        <li><a href="#">Category</a></li>
-        <li><a href="#">Sub Category</a></li>
-      </ul> -->
+      <hgroup>
 
-      <div class="header">
+        <h1>Men's Waterproof Walking &amp; Hiking Jackets</h1>
 
-        <h1>Pendants</h1>
-        <!-- <h1>Search results for "Focus Mini Ceiling Light" </h1> -->
+        <div class="filters-button">
+          <a href="#off-canvas-filters">Filter results <span class="ico ico-xs ico-filter"></span></a>
+        </div>
 
-        <div class="product-number">24 products</div>
+      </hgroup>
+
+      <?php
+        include("includes/side-filters.php");
+      ?>
+
+      <div class="listings">
+
+        <div class="listing-tools">
+
+          <div class="sort-by-form">
+            <label for="sortBy">Sort by</label>
+            <div class="field">
+              <div class="dropdown">
+                <input name="category_id" value="1675" size="3" type="hidden">
+                <select id="sortBy" name="newsortby">
+                  <option value="priorityasc">Bestsellers</option>
+                  <option value="priceasc">Price (low to high)</option>
+                  <option value="pricedesc">Price (high to low)</option>
+                </select>
+                <span class="ico ico-xs ico-chevron-down"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-number">31 - 60 of <strong>96 products</strong></div>
+
+          <div class="product-count">
+            <ul class="pagination">
+              <li class="prev"><a href="">Prev</a></li>
+              <li><span class="active">1</span></li>
+              <li><a href="">2</a></li>
+              <li><a href="">3</a></li>
+              <li><a href="">4</a></li>
+              <li class="next"><a href="">Next</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="frame">
+          <div class="item">
+            <a href="odk-product.php">
+              <span class="main-pic"><img src="http://www.outdoorkit.co.uk/images/products/SKU_260034-dish-blue-moab-khaki_enlarged.jpg"></span>
+              <ul class="colours">
+                <li><img src="http://www.outdoorkit.co.uk//images/products/212121-tnf-black_tinythumbnail.jpg"></li>
+                <li><img src="http://www.outdoorkit.co.uk//images/products/SKU_260044-grip-green-black-ink-green_tinythumbnail.jpg"></li>
+                <li><img src="http://www.outdoorkit.co.uk//images/products/SKU_260039-sequoia-red-brick-house-red_tinythumbnail.jpg"></li>
+                <li><img src="http://www.outdoorkit.co.uk//images/products/SKU_260034-dish-blue-moab-khaki_tinythumbnail.jpg"></li>
+                <li><img src="http://www.outdoorkit.co.uk//images/products/SKU_260044-grip-green-black-ink-green_tinythumbnail.jpg"></li>
+                <li><img src="http://www.outdoorkit.co.uk//images/products/SKU_260039-sequoia-red-brick-house-red_tinythumbnail.jpg"></li>
+              </ul>
+              The North Face Men's Nuptse 2 Jacket
+              <div class="price">&pound;152.99 <span>(15% off RRP)</span></div>
+              <span class="brand-logo"><img src="http://www.outdoorkit.co.uk//images09/logos/thenorthface_small.png"></span>
+            </a>
+          </div>
+          <div class="item"><a href="odk-product.php"><span class="main-pic"><img src="http://www.outdoorkit.co.uk/images/products/SKU_261383-electric-mango_enlarged.jpg"></span> <ul class="colours">
+            <li><img src="http://www.outdoorkit.co.uk//images/products/212121-tnf-black_tinythumbnail.jpg"></li>
+            <li><img src="http://www.outdoorkit.co.uk//images/products/SKU_260044-grip-green-black-ink-green_tinythumbnail.jpg"></li>
+            <li><img src="http://www.outdoorkit.co.uk//images/products/SKU_260039-sequoia-red-brick-house-red_tinythumbnail.jpg"></li>
+          </ul> Rab Men's Microlight Jacket <div class="price">&pound;143.99 <span>(15% off RRP)</span></div><span class="brand-logo"><img src="http://www.outdoorkit.co.uk//images09/logos/rab_small2.png"></span></a></div>
+          <div class="item"><a href="odk-product.php"><span class="main-pic"><img src="http://www.outdoorkit.co.uk/images/products/SKU_261478-electric-chartreuse_enlarged.jpg"></span> <ul class="colours">
+            <li><img src="http://www.outdoorkit.co.uk//images/products/SKU_260044-grip-green-black-ink-green_tinythumbnail.jpg"></li>
+            <li><img src="http://www.outdoorkit.co.uk//images/products/SKU_260039-sequoia-red-brick-house-red_tinythumbnail.jpg"></li>
+          </ul> Rab Men's Neutrino Endurance Jacket <div class="price">&pound;247.99 <span>(15% off RRP)</span></div><span class="brand-logo"><img src="http://www.outdoorkit.co.uk//images09/logos/mountainequipment_small.png"></span></a></div>
+          <div class="item"><a href="odk-product.php"><span class="main-pic"><img src="http://www.outdoorkit.co.uk/images/products/SKU_260830-shadow-grey_enlarged.jpg"></span> <ul class="colours">
+            <li><img src="http://www.outdoorkit.co.uk//images/products/212121-tnf-black_tinythumbnail.jpg"></li>
+            <li><img src="http://www.outdoorkit.co.uk//images/products/SKU_260039-sequoia-red-brick-house-red_tinythumbnail.jpg"></li>
+            <li><img src="http://www.outdoorkit.co.uk//images/products/SKU_260034-dish-blue-moab-khaki_tinythumbnail.jpg"></li>
+          </ul> Mountain Equipment Men's Classic Lightline Jacket <div class="price">&pound;247.99 <span>(15% off RRP)</span></div><span class="brand-logo"><img src="http://www.outdoorkit.co.uk//images09/logos/thenorthface_small.png"></span></a></div>
+          <div class="item"><a href="odk-product.php"><span class="main-pic"><img src="http://www.outdoorkit.co.uk/images/products/SKU_260704-asphalt-grey-dark-eggplant-purple_enlarged.jpg"></span> <ul class="colours">
+            <li><img src="http://www.outdoorkit.co.uk//images/products/212121-tnf-black_tinythumbnail.jpg"></li>
+            <li><img src="http://www.outdoorkit.co.uk//images/products/SKU_260044-grip-green-black-ink-green_tinythumbnail.jpg"></li>
+            <li><img src="http://www.outdoorkit.co.uk//images/products/SKU_260039-sequoia-red-brick-house-red_tinythumbnail.jpg"></li>
+            <li><img src="http://www.outdoorkit.co.uk//images/products/SKU_260034-dish-blue-moab-khaki_tinythumbnail.jpg"></li>
+            <li><img src="http://www.outdoorkit.co.uk//images/products/SKU_260044-grip-green-black-ink-green_tinythumbnail.jpg"></li>
+            <li><img src="http://www.outdoorkit.co.uk//images/products/SKU_260039-sequoia-red-brick-house-red_tinythumbnail.jpg"></li>
+            <li><img src="http://www.outdoorkit.co.uk//images/products/212121-tnf-black_tinythumbnail.jpg"></li>
+            <li><img src="http://www.outdoorkit.co.uk//images/products/SKU_260044-grip-green-black-ink-green_tinythumbnail.jpg"></li>
+            <li><img src="http://www.outdoorkit.co.uk//images/products/SKU_260039-sequoia-red-brick-house-red_tinythumbnail.jpg"></li>
+          </ul> The North Face Men's La Paz Jacket <div class="price">&pound;247.99 <span>(15% off RRP)</span></div><span class="brand-logo"><img src="http://www.outdoorkit.co.uk//images09/logos/thenorthface_small.png"></span></a></div>
+          <div class="item"><a href="odk-product.php"><span class="main-pic"><img src="http://www.outdoorkit.co.uk/images/products/SKU_261428-electric-zinc_enlarged.jpg"></span> <ul class="colours"><li></li><li></li><li></li></ul> Rab Men's Ascent Jacket <div class="price">&pound;247.99 <span>(15% off RRP)</span></div><span class="brand-logo"><img src="http://www.outdoorkit.co.uk//images09/logos/mountainequipment_small.png"></span></a></div>
+          <div class="item"><a href="odk-product.php"><span class="main-pic"><img src="http://www.outdoorkit.co.uk/images/products/SKU_181739-jelly-bean-cad-yellow_enlarged.jpg"></span> <ul class="colours"><li></li><li></li><li></li></ul> Montane Men's Featherlite Down Jacket <span class="price">&pound;26.95</span><span class="brand-logo"><img src="http://www.outdoorkit.co.uk//images09/logos/rab_small2.png"></span></a></div>
+          <div class="item"><a href="odk-product.php"><span class="main-pic"><img src="http://www.outdoorkit.co.uk/images/products/SKU_258458-graphene-wasabi_enlarged.jpg"></span> <ul class="colours"><li></li><li></li><li></li></ul> Rab Men's Positron Jacket <div class="price">&pound;247.99 <span>(15% off RRP)</span></div><span class="brand-logo"><img src="http://www.outdoorkit.co.uk//images09/logos/rab_small2.png"></span></a></div>
+          <div class="item"><a href="odk-product.php"><span class="main-pic"><img src="http://www.outdoorkit.co.uk/images/products/SKU_260034-dish-blue-moab-khaki_enlarged.jpg"></span> <ul class="colours"><li></li><li></li><li></li></ul> The North Face Men's Nuptse 2 Jacket <div class="price">&pound;247.99 <span>(15% off RRP)</span></div><span class="brand-logo"><img src="http://www.outdoorkit.co.uk//images09/logos/thenorthface_small.png"></span></a></div>
+          <div class="item"><a href="odk-product.php"><span class="main-pic"><img src="http://www.outdoorkit.co.uk/images/products/SKU_261383-electric-mango_enlarged.jpg"></span> <ul class="colours"><li></li><li></li><li></li></ul> Rab Men's Microlight Jacket <div class="price">&pound;247.99 <span>(15% off RRP)</span></div></a></div>
+          <div class="item"><a href="odk-product.php"><span class="main-pic"><img src="http://www.outdoorkit.co.uk/images/products/SKU_261478-electric-chartreuse_enlarged.jpg"></span> <ul class="colours"><li></li><li></li><li></li></ul> Rab Men's Neutrino Endurance Jacket <div class="price">&pound;247.99 <span>(15% off RRP)</span></div></a></div>
+          <div class="item"><a href="odk-product.php"><span class="main-pic"><img src="http://www.outdoorkit.co.uk/images/products/SKU_260830-shadow-grey_enlarged.jpg"></span> <ul class="colours"><li></li><li></li><li></li></ul> Mountain Equipment Men's Classic Lightline Jacket <span class="price">&pound;179.99</span></a></div>
+          <div class="item"><a href="odk-product.php"><span class="main-pic"><img src="http://www.outdoorkit.co.uk/images/products/SKU_260704-asphalt-grey-dark-eggplant-purple_enlarged.jpg"></span> <ul class="colours"><li></li><li></li><li></li></ul> The North Face Men's La Paz Jacket <span class="price">&pound;26.95</span></a></div>
+          <div class="item"><a href="odk-product.php"><span class="main-pic"><img src="http://www.outdoorkit.co.uk/images/products/SKU_261428-electric-zinc_enlarged.jpg"></span> <ul class="colours"><li></li><li></li><li></li></ul> Rab Men's Ascent Jacket <span class="price">&pound;26.95</span></a></div>
+          <div class="item"><a href="odk-product.php"><span class="main-pic"><img src="http://www.outdoorkit.co.uk/images/products/SKU_181739-jelly-bean-cad-yellow_enlarged.jpg"></span> <ul class="colours"><li></li><li></li><li></li></ul> Montane Men's Featherlite Down Jacket <span class="price">&pound;26.95</span></a></div>
+          <div class="item"><a href="odk-product.php"><span class="main-pic"><img src="http://www.outdoorkit.co.uk/images/products/SKU_258458-graphene-wasabi_enlarged.jpg"></span> <ul class="colours"><li></li><li></li><li></li></ul> Rab Men's Positron Jacket <span class="price">&pound;26.95</span></a></div>
+          <div class="item"><a href="odk-product.php"><span class="main-pic"><img src="http://www.outdoorkit.co.uk/images/products/SKU_260034-dish-blue-moab-khaki_enlarged.jpg"></span> <ul class="colours"><li></li><li></li><li></li></ul> The North Face Men's Nuptse 2 Jacket <span class="price">&pound;152.99</span><span class="brand-logo"><img src="http://www.outdoorkit.co.uk//images09/logos/thenorthface_small.png"></span></a></div>
+          <div class="item"><a href="odk-product.php"><span class="main-pic"><img src="http://www.outdoorkit.co.uk/images/products/SKU_261383-electric-mango_enlarged.jpg"></span> <ul class="colours"><li></li><li></li><li></li></ul> Rab Men's Microlight Jacket <span class="price">&pound;143.99</span></a></div>
+          <div class="item"><a href="odk-product.php"><span class="main-pic"><img src="http://www.outdoorkit.co.uk/images/products/SKU_261478-electric-chartreuse_enlarged.jpg"></span> <ul class="colours"><li></li><li></li><li></li></ul> Rab Men's Neutrino Endurance Jacket <span class="price">&pound;247.49</span></a></div>
+          <div class="item"><a href="odk-product.php"><span class="main-pic"><img src="http://www.outdoorkit.co.uk/images/products/SKU_260830-shadow-grey_enlarged.jpg"></span> <ul class="colours"><li></li><li></li><li></li></ul> Mountain Equipment Men's Classic Lightline Jacket <span class="price">&pound;179.99</span></a></div>
+          <div class="item"><a href="odk-product.php"><span class="main-pic"><img src="http://www.outdoorkit.co.uk/images/products/SKU_260704-asphalt-grey-dark-eggplant-purple_enlarged.jpg"></span> <ul class="colours"><li></li><li></li><li></li></ul> The North Face Men's La Paz Jacket <span class="price">&pound;26.95</span></a></div>
+          <div class="item"><a href="odk-product.php"><span class="main-pic"><img src="http://www.outdoorkit.co.uk/images/products/SKU_261428-electric-zinc_enlarged.jpg"></span> <ul class="colours"><li></li><li></li><li></li></ul> Rab Men's Ascent Jacket <span class="price">&pound;26.95</span></a></div>
+          <div class="item"><a href="odk-product.php"><span class="main-pic"><img src="http://www.outdoorkit.co.uk/images/products/SKU_181739-jelly-bean-cad-yellow_enlarged.jpg"></span> <ul class="colours"><li></li><li></li><li></li></ul> Montane Men's Featherlite Down Jacket <span class="price">&pound;26.95</span></a></div>
+          <div class="item"><a href="odk-product.php"><span class="main-pic"><img src="http://www.outdoorkit.co.uk/images/products/SKU_258458-graphene-wasabi_enlarged.jpg"></span> <ul class="colours"><li></li><li></li><li></li></ul> Rab Men's Positron Jacket <span class="price">&pound;26.95</span></a></div>
+          <div class="item"><a href="odk-product.php"><span class="main-pic"><img src="http://www.outdoorkit.co.uk/images/products/SKU_260034-dish-blue-moab-khaki_enlarged.jpg"></span> <ul class="colours"><li></li><li></li><li></li></ul> The North Face Men's Nuptse 2 Jacket <span class="price">&pound;152.99</span><span class="brand-logo"><img src="http://www.outdoorkit.co.uk//images09/logos/thenorthface_small.png"></span></a></div>
+          <div class="item"><a href="odk-product.php"><span class="main-pic"><img src="http://www.outdoorkit.co.uk/images/products/SKU_261383-electric-mango_enlarged.jpg"></span> <ul class="colours"><li></li><li></li><li></li></ul> Rab Men's Microlight Jacket <span class="price">&pound;143.99</span></a></div>
+          <div class="item"><a href="odk-product.php"><span class="main-pic"><img src="http://www.outdoorkit.co.uk/images/products/SKU_261478-electric-chartreuse_enlarged.jpg"></span> <ul class="colours"><li></li><li></li><li></li></ul> Rab Men's Neutrino Endurance Jacket <span class="price">&pound;247.49</span></a></div>
+          <div class="item"><a href="odk-product.php"><span class="main-pic"><img src="http://www.outdoorkit.co.uk/images/products/SKU_260830-shadow-grey_enlarged.jpg"></span> <ul class="colours"><li></li><li></li><li></li></ul> Mountain Equipment Men's Classic Lightline Jacket <span class="price">&pound;179.99</span></a></div>
+          <div class="item"><a href="odk-product.php"><span class="main-pic"><img src="http://www.outdoorkit.co.uk/images/products/SKU_260704-asphalt-grey-dark-eggplant-purple_enlarged.jpg"></span> <ul class="colours"><li></li><li></li><li></li></ul> The North Face Men's La Paz Jacket <span class="price">&pound;26.95</span></a></div>
+          <div class="item"><a href="odk-product.php"><span class="main-pic"><img src="http://www.outdoorkit.co.uk/images/products/SKU_261428-electric-zinc_enlarged.jpg"></span> <ul class="colours"><li></li><li></li><li></li></ul> Rab Men's Ascent Jacket <span class="price">&pound;26.95</span></a></div>
+          <div class="item"><a href="odk-product.php"><span class="main-pic"><img src="http://www.outdoorkit.co.uk/images/products/SKU_181739-jelly-bean-cad-yellow_enlarged.jpg"></span> <ul class="colours"><li></li><li></li><li></li></ul> Montane Men's Featherlite Down Jacket <span class="price">&pound;26.95</span></a></div>
+          <div class="item"><a href="odk-product.php"><span class="main-pic"><img src="http://www.outdoorkit.co.uk/images/products/SKU_258458-graphene-wasabi_enlarged.jpg"></span> <ul class="colours"><li></li><li></li><li></li></ul> Rab Men's Positron Jacket <span class="price">&pound;26.95</span></a></div>
+        </div>
 
         <div class="product-count">
           <ul class="pagination">
@@ -71,70 +176,14 @@ include("config.inc.php"); //include config file
             <li><a href="">4</a></li>
             <li class="next"><a href="">Next</a></li>
           </ul>
+          <div class="product-number">31 - 60 of <strong>96 products</strong></div>
         </div>
 
-        <!-- <a href="#off-canvas-filters" class="filters-button">Filters</a> -->
-
-        <form class="sort-by-form" id="sortbyform" name="sortbyform" action="http://www.outdoorkit.co.uk/productlist.php?category_id=1675&amp;sortby=&amp;" method="get">
-          <label for="sortBy">Sort by</label>
-          <div class="field">
-            <div class="dropdown">
-              <input name="category_id" value="1675" size="3" type="hidden">
-              <select id="sortBy" name="newsortby">
-                <option value="priorityasc">Bestsellers</option>
-                <option value="priceasc">Price (low to high)</option>
-                <option value="pricedesc">Price (high to low)</option>
-              </select>
-              <span class="ico ico-xs ico-chevron-down"></span>
-            </div>
-          </div>
-        </form>
-
-      </div>
-
-      <?php
-        // include("includes/side-filters.php");
-      ?>
-
-      <div class="listings">
-
-        <div class="item"><a href="#"><img src="http://placehold.it/300">Latitude lampshade <span class="price">&pound;26.95</span></a></div>
-        <div class="item"><a href="#"><img src="http://placehold.it/300">Latitude lampshade <span class="price">&pound;26.95</span></a></div>
-        <div class="item"><a href="#"><img src="http://placehold.it/300">Texture lamp <span class="price">&pound;26.95</span></a></div>
-        <div class="item"><a href="#"><img src="http://placehold.it/300">Section wall fixture <span class="price">&pound;26.95</span></a></div>
-        <div class="item"><a href="#"><img src="http://placehold.it/300">Flow wall fixture lamp <span class="price">&pound;26.95</span></a></div>
-        <div class="item"><a href="#"><img src="http://placehold.it/300">Photon ceiling <span class="price">&pound;26.95</span></a></div>
-        <div class="item"><a href="#"><img src="http://placehold.it/300">Latitude lampshade <span class="price">&pound;26.95</span></a></div>
-        <div class="item"><a href="#"><img src="http://placehold.it/300">Texture lamp <span class="price">&pound;26.95</span></a></div>
-        <div class="item"><a href="#"><img src="http://placehold.it/300">Section wall fixture <span class="price">&pound;26.95</span></a></div>
-        <div class="item"><a href="#"><img src="http://placehold.it/300">Flow wall fixture lamp <span class="price">&pound;26.95</span></a></div>
-        <div class="item"><a href="#"><img src="http://placehold.it/300">Photon ceiling <span class="price">&pound;26.95</span></a></div>
-        <div class="item"><a href="#"><img src="http://placehold.it/300">Latitude lampshade <span class="price">&pound;26.95</span></a></div>
-        <div class="item"><a href="#"><img src="http://placehold.it/300">Texture lamp <span class="price">&pound;26.95</span></a></div>
-        <div class="item"><a href="#"><img src="http://placehold.it/300">Section wall fixture <span class="price">&pound;26.95</span></a></div>
-        <div class="item"><a href="#"><img src="http://placehold.it/300">Flow wall fixture lamp <span class="price">&pound;26.95</span></a></div>
-        <div class="item"><a href="#"><img src="http://placehold.it/300">Photon ceiling <span class="price">&pound;26.95</span></a></div>
-        <div class="item"><a href="#"><img src="http://placehold.it/300">Latitude lampshade <span class="price">&pound;26.95</span></a></div>
-        <div class="item"><a href="#"><img src="http://placehold.it/300">Texture lamp <span class="price">&pound;26.95</span></a></div>
-        <div class="item"><a href="#"><img src="http://placehold.it/300">Section wall fixture <span class="price">&pound;26.95</span></a></div>
-        <div class="item"><a href="#"><img src="http://placehold.it/300">Flow wall fixture lamp <span class="price">&pound;26.95</span></a></div>
       </div>
 
     </div><!-- END FRAME -->
 
-    <div class="frame">
-      <div class="product-count">
-      <ul class="pagination">
-        <li class="prev"><a href="">Prev</a></li>
-        <li><span class="active">1</span></li>
-        <li><a href="">2</a></li>
-        <li><a href="">3</a></li>
-        <li><a href="">4</a></li>
-        <li class="next"><a href="">Next</a></li>
-      </ul>
-      <p>31 - 60 of 96 products</p>
-      </div>
-    </div><!-- END FRAME -->
+
 
   </section>
 
@@ -142,7 +191,7 @@ include("config.inc.php"); //include config file
 
 </div>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="build/js/app.js"></script>
 </body>
 </html>

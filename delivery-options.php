@@ -44,23 +44,26 @@ include("config.inc.php"); //include config file
 
         <div class="progress">
           <ul>
-            <li>1. Billing address</li>
-            <li>2. Delivery address</li>
-            <li class="active">3. Delivery options</li>
-            <li>4. Payment</li>
-            <li>5. Order summary</li>
+            <li class="active"><em>1</em><span>Billing address</span></li>
+            <li class="active"><em>2</em><span>Delivery address</span></li>
+            <li class="active"><em>3</em><span>Delivery options</span></li>
+            <li><em>4</em><span>Order summary</span></li>
+            <li><em>5</em></i><span>Payment</span></li>
           </ul>
         </div>
 
         <h1>Delivery options</h1>
 
-        <form name="delivery" action="https://www.outdoorkit.co.uk/delivery_options.php" method="get">
+        <p>Please choose the delivery service and time that best suits you: </p>
+
+        <form name="delivery" class="checkout" action="https://www.outdoorkit.co.uk/delivery_options.php" method="get">
 
           <input id="DefaultTabSelection" name="DefaultTabSelection" value="2" type="hidden">
           <input id="DefaultDaySelection" name="DefaultDaySelection" value="2015-08-04" type="hidden">
           <input id="DefaultTimeSelection" name="DefaultTimeSelection" value="PM" type="hidden">
+          <input id="EconomyAvailable" name="EconomyAvailable" value="True" type="hidden">
 
-          <p>Please choose the delivery service and time that best suits you: </p>
+
 
           <fieldset>
 
@@ -72,6 +75,10 @@ include("config.inc.php"); //include config file
               <li>
                   <input type="radio" name="deliveryoption" value="specificday" id="specDay" class="required" />
                   <label for="specDay">Specific day</label>
+              </li>
+              <li>
+                  <input type="radio" name="deliveryoption" value="economy" id="economyPost" class="required" />
+                  <label for="economyPost">Economy Post</label>
               </li>
             </ul>
 
@@ -93,7 +100,7 @@ include("config.inc.php"); //include config file
                 <input type="hidden" value="2015-07-28" name="nwd_delivery_date">
               </li>
               <li>
-                <p>Please select a date and time for your delivery:
+                <p>Please select a date and time for your delivery:</p>
                   <div class="delivery-times">
                     <div class="dropdown">
                       <select name="sd_delivery_date">
@@ -119,6 +126,9 @@ include("config.inc.php"); //include config file
                     </div>
                   </div>
                 </li>
+                <li>
+                  <p>Some other stuff</p>
+                </li>
               </ul>
 
               <p class="parcelforce">Delivery is via Parcelforce and is fully tracked. See our <a href="/article.php?article_id=4">Delivery Promise</a>.</p>
@@ -130,12 +140,59 @@ include("config.inc.php"); //include config file
             </fieldset>
         </form>
 
+        <div class="checkout-help">
+
+          <h2 class="mini-bag-title">Your basket</h2>
+
+          <div class="mini-bag-item">
+            <div class="pic">
+              <img src="images/SKU_182620-black_main.jpg">
+            </div>
+            <div class="txt">
+              <h3>The North Face Men's Parka 2</h3>
+              <ul>
+                <li>TNF Black - Small</li>
+                <li>In stock</li>
+                <li>Quantity: 1</li>
+              </ul>
+              <div class="price">&pound;269.99</div>
+            </div>
+          </div>
+
+          <div class="mini-bag-item">
+            <div class="pic">
+              <img src="images/SKU_252567-black-pumpkin_main.jpg">
+            </div>
+            <div class="txt">
+              <h3>The North Face Men's Parka 2</h3>
+              <ul>
+                <li>TNF Black - Small</li>
+                <li>In stock</li>
+                <li>Quantity: 1</li>
+              </ul>
+              <div class="price">&pound;269.99</div>
+            </div>
+          </div>
+
+          <div class="sub-total">Sub-total: £391.99</div>
+
+          <div class="security-logo">
+            <!-- <img src="http://placehold.it/350x150?text=Security logo"> -->
+            <img src="images/geotrust.jpg" alt="GeoTrust">
+            <p>Write some stuff about security</p>
+          </div>
+
+          <div class="payment-logos">
+             <h4>Accepted payment methods</h4>
+             <img src="images/payment-icons.png">
+           </div>
+
+        </div>
+
 
 			</div>
 		</section>
 
-
-<?php include("includes/footer.php"); ?>
 
 </div>
 

@@ -42,25 +42,73 @@ include("config.inc.php"); //include config file
 
 			<div class="frame">
 
-      <div class="progress">
-        <ul>
-          <li>1. Billing address</li>
-          <li>2. Delivery address</li>
-          <li>3. Delivery options</li>
-          <li class="active">4. Payment</li>
-          <li>5. Order summary</li>
-        </ul>
-      </div>
+        <div class="progress">
+          <ul>
+            <li class="active"><em>1</em><span>Billing address</span></li>
+            <li class="active"><em>2</em><span>Delivery address</span></li>
+            <li class="active"><em>3</em><span>Delivery options</span></li>
+            <li class="active"><em>4</em><span>Order summary</span></li>
+            <li class="active"><em>5</em></i><span>Payment</span></li>
+          </ul>
+        </div>
 
       <h1>Payment</h1>
 
-      <iframe class="iframe payment" src="card_details_low.html" scrolling="no" frameborder="0"></iframe>
+      <div class="checkout">
+        <iframe width="100%" height="20" scrolling="yes" frameborder="0" src="https://testcheckout.sagepay.com/gateway/service/cardselection?vpstxid={5561E8F5-18F9-D3B7-3A7C-62027193A0D3}"></iframe>
+      </div>
+
+      <div class="checkout-help">
+
+        <h2 class="mini-bag-title">Your basket</h2>
+
+        <div class="mini-bag-item">
+          <div class="pic">
+            <img src="images/SKU_182620-black_main.jpg">
+          </div>
+          <div class="txt">
+            <h3>The North Face Men's McMurdo Parka 2</h3>
+            <ul>
+              <li>TNF Black - Small</li>
+              <li>In stock</li>
+              <li>Quantity: 1</li>
+            </ul>
+            <div class="price">&pound;269.99</div>
+          </div>
+        </div>
+
+        <div class="mini-bag-item">
+          <div class="pic">
+            <img src="images/SKU_252567-black-pumpkin_main.jpg">
+          </div>
+          <div class="txt">
+            <h3>The North Face Men's McMurdo Parka 2</h3>
+            <ul>
+              <li>TNF Black - Small</li>
+              <li>In stock</li>
+              <li>Quantity: 1</li>
+            </ul>
+            <div class="price">&pound;269.99</div>
+          </div>
+        </div>
+
+        <div class="sub-total">Sub-total: £391.99</div>
+
+        <div class="security-logo">
+          <!-- <img src="http://placehold.it/350x150?text=Security logo"> -->
+          <img src="images/geotrust.jpg" alt="GeoTrust">
+        </div>
+
+        <div class="payment-logos">
+           <h4>Accepted payment methods</h4>
+           <img src="images/payment-icons.png">
+         </div>
+
+      </div>
 
 		</div>
 	</section>
 
-
-  <?php include("includes/footer.php"); ?>
 
 </div>
 

@@ -134,7 +134,7 @@
   .swiper-slide {
     width: 50%;
     padding: 5px;
-    font-size: $bigger;
+    @include listingStyles;
     @include breakpoint($medium) {
       padding: 7px;
       width: 25%;
@@ -142,6 +142,29 @@
     @include breakpoint($large) {
       padding: 10px;
       width: 20%;
+    }
+    .price {
+      //font-size: $bigger + 0.2rem;
+      display: block;
+    }
+    .old-ie & {
+      width: 206px;
+    }
+  }
+}
+
+.brands {
+  .swiper-slide {
+    width: 50%;
+    padding: 5px;
+    @include listingStyles;
+    @include breakpoint($medium) {
+      padding: 7px;
+      width: 25%;
+    }
+    @include breakpoint($large) {
+      padding: 10px;
+      width: 16.666%;
     }
     .price {
       //font-size: $bigger + 0.2rem;
@@ -167,7 +190,7 @@
       width: 12.5%;
     }
     .price {
-      //font-size: $bigger + 0.2rem;
+
     }
     .old-ie & {
       width: 129px;
@@ -338,7 +361,7 @@
 }
 .swiper-pagination-bullet-active {
   opacity: 1;
-  background: $brand-red;
+  background: $active-color;
 }
 .swiper-pagination-white .swiper-pagination-bullet-active {
   background: #fff;
