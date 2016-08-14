@@ -64,6 +64,45 @@ include("config.inc.php"); //include config file
           <div class="product-gallery-lrg">
             <a class="large-image" href="images/263034_1_large.jpg"><img src="images/263034_1_medium.jpg"></a>
           </div>
+          <div class="related-items">
+            <h2>Similar items</h3>
+
+              <div class="frame">
+
+                <div class="item">
+                  <a href="odk-product.php">
+                    <span class="main-pic"><img src="http://www.outdoorkit.co.uk/images/products/SKU_260034-dish-blue-moab-khaki_enlarged.jpg"></span>
+                    The North Face Men's Nuptse 2 Jacket
+                    <div class="price">&pound;152.99 <span>(15% off RRP)</span></div>
+                  </a>
+                </div>
+
+                <div class="item">
+                  <a href="odk-product.php">
+                    <span class="main-pic"><img src="http://www.outdoorkit.co.uk/images/products/SKU_261383-electric-mango_enlarged.jpg"></span>
+                    Rab Men's Microlight Jacket
+                    <div class="price">&pound;143.99 <span>(15% off RRP)</span></div>
+                  </a>
+                </div>
+
+                <div class="item">
+                  <a href="odk-product.php">
+                    <span class="main-pic"><img src="http://www.outdoorkit.co.uk/images/products/SKU_261478-electric-chartreuse_enlarged.jpg"></span>
+                    Rab Men's Neutrino Endurance Jacket
+                    <div class="price">&pound;247.99 <span>(15% off RRP)</span></div>
+                  </a>
+                </div>
+
+                <div class="item">
+                  <a href="odk-product.php">
+                    <span class="main-pic"><img src="http://www.outdoorkit.co.uk/images/products/SKU_260830-shadow-grey_enlarged.jpg"></span>
+                    Mountain Equipment Men's Classic Lightline Jacket <div class="price">&pound;247.99 <span>(15% off RRP)</span></div>
+                  </a>
+                </div>
+
+              </div>
+
+          </div>
         </div>
 
         <div class="product-copy">

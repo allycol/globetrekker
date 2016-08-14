@@ -317,19 +317,20 @@ Outdoorkit.bannerSwiper = function() {
 
 Outdoorkit.stickies = function() {
 
-  if(!$(".product-listings").length && !$(".product-details").length) return;
+  // if(!$(".product-listings").length && !$(".product-details").length) return;
+  if(!$(".product-listings").length) return;
 
-  function doProductSticky() {
-    var screenwidth = $(window).width();
-    if(screenwidth >= 768) {
-      // console.log("Get sticky");
-      $(".product-gallery-wrapper").stick_in_parent();
-    }
-    else {
-      // console.log("detach");
-      $(".product-gallery-wrapper").trigger("sticky_kit:detach");
-    }
-  }
+  // function doProductSticky() {
+  //   var screenwidth = $(window).width();
+  //   if(screenwidth >= 768) {
+  //     // console.log("Get sticky");
+  //     $(".product-gallery-wrapper").stick_in_parent();
+  //   }
+  //   else {
+  //     // console.log("detach");
+  //     $(".product-gallery-wrapper").trigger("sticky_kit:detach");
+  //   }
+  // }
 
   function doListingsSticky() {
     var screenwidth = $(window).width();
@@ -347,11 +348,11 @@ Outdoorkit.stickies = function() {
     }
   }
 
-  doProductSticky();
+  // doProductSticky();
   doListingsSticky();
 
   $(window).on("resize", function(){
-    doProductSticky();
+    // doProductSticky();
     doListingsSticky();
   });
 
