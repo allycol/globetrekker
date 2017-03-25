@@ -51,7 +51,7 @@ $icon-size: 32px;
 
 @mixin icon($filename, $insert: before) {
 	&:#{$insert} {
-		@extend %icon;
+		@extend %icon !optional;
 		content: icon-char($filename);
 	}
 }

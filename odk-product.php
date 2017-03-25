@@ -56,16 +56,51 @@ include("config.inc.php"); //include config file
       <div class="frame">
 
         <div class="product-gallery-wrapper">
-          <!-- <ul class="breadcrumb">
-            <li><a href="#">Men</a></li>
-            <li><a href="#">Clothing</a></li>
-            <li><a href="#">Jackets</a></li>
-          </ul> -->
-          <div class="product-gallery-lrg">
-            <a class="large-image" href="images/263034_1_large.jpg"><img src="images/263034_1_medium.jpg"></a>
+
+          <div class="colour-default">
+            <div class="swiper-container product-gallery-lrg">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><a href="images/263034_1_medium.jpg"><img src="images/263034_1_medium.jpg" data-thumb="images/263034_1_thumbnail.jpg"></a></div>
+                <div class="swiper-slide"><a href="images/263034_2_medium.jpg"><img src="images/263034_2_medium.jpg" data-thumb="images/263034_2_thumbnail.jpg"></a></div>
+                <div class="swiper-slide"><a href="images/263034_1_medium.jpg"><img src="images/263034_1_medium.jpg" data-thumb="images/263034_1_thumbnail.jpg"></a></div>
+              </div>
+              <ul class="product-gallery-thumbs"></ul>
+            </div>
           </div>
+
+          <div class="colour-gallery colour1">
+            <div class="swiper-container product-gallery-lrg">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><a href="images/263034_1_medium.jpg"><img src="images/263034_1_medium.jpg" data-thumb="images/263034_1_thumbnail.jpg"></a></div>
+                <div class="swiper-slide"><a href="images/263034_2_medium.jpg"><img src="images/263034_2_medium.jpg" data-thumb="images/263034_2_thumbnail.jpg"></a></div>
+                <div class="swiper-slide"><a href="images/263034_1_medium.jpg"><img src="images/263034_1_medium.jpg" data-thumb="images/263034_1_thumbnail.jpg"></a></div>
+              </div>
+              <ul class="product-gallery-thumbs"></ul>
+            </div>
+          </div>
+
+          <div class="colour-gallery colour2">
+            <div class="swiper-container product-gallery-lrg">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><a href="images/263034_2_medium.jpg"><img src="images/263034_2_medium.jpg" data-thumb="images/263034_2_thumbnail.jpg"></a></div>
+                <div class="swiper-slide"><a href="images/263034_2_medium.jpg"><img src="images/263034_2_medium.jpg" data-thumb="images/263034_2_thumbnail.jpg"></a></div>
+                <div class="swiper-slide"><a href="images/263034_2_medium.jpg"><img src="images/263034_2_medium.jpg" data-thumb="images/263034_2_thumbnail.jpg"></a></div>
+              </div>
+              <ul class="product-gallery-thumbs"></ul>
+            </div>
+          </div>
+
+          <div class="colour-gallery colour3">
+            <div class="swiper-container product-gallery-lrg">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><a href="images/263034_2_medium.jpg"><img src="images/263034_2_medium.jpg" data-thumb="images/263034_2_thumbnail.jpg"></a></div>
+              </div>
+              <ul class="product-gallery-thumbs"></ul>
+            </div>
+          </div>
+
           <div class="related-items">
-            <h2>Similar items</h3>
+            <h2>Related Products</h3>
 
               <div class="frame">
 
@@ -114,14 +149,19 @@ include("config.inc.php"); //include config file
               <div id="selectColor">
                 <h2>Choose a colour</h2>
                 <input id="firstPicture" name="firstPicture" value="2" data-lrg-img="images/263034_2_large.jpg" type="hidden">
-                <ul class="product-gallery-thmbs">
+                <ul class="product-colours">
                   <li>
                     <input type="radio" name="colour" id="colour1" data-colour="Venom Yellow" value="263034" data-availability="Out of stock" />
-                    <label for="colour1"><img src="images/263034_1_thumbnail.jpg" data-med-img="images/263034_1_medium.jpg" data-lrg-img="images/263034_1_large.jpg"></label>
+                    <!-- <label for="colour1"><img src="images/263034_1_thumbnail.jpg" data-med-img="images/263034_1_medium.jpg" data-lrg-img="images/263034_1_large.jpg"></label> -->
+                    <label for="colour1" data-img-gallery="balls"><img src="images/263034_1_thumbnail.jpg" data-img-gallery="images/263034_1_medium.jpg"></label>
                   </li>
                   <li>
                     <input type="radio" name="colour" id="colour2" data-colour="Monster Blue" value="263029" data-availability="In Stock" />
                     <label for="colour2"><img src="images/263034_2_thumbnail.jpg" data-med-img="images/263034_2_medium.jpg" data-lrg-img="images/263034_2_large.jpg"></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="colour" id="colour3" data-colour="Monster Blue" value="263045" data-availability="In Stock" />
+                    <label for="colour3"><img src="images/263034_2_thumbnail.jpg" data-med-img="images/263034_2_medium.jpg" data-lrg-img="images/263034_2_large.jpg"></label>
                   </li>
                 </ul>
                 <p class="selected-colour"></p>

@@ -65,36 +65,62 @@
 
   .product-gallery-lrg {
     padding-top: $space-small;
-    // .large-image {
-    //   position: absolute;
-    //   left: 0; top: 0; right: 0; bottom: 0;
-    //   z-index: 9;
-    // }
     img {
       width: 100%;
     }
     @include breakpoint($medium) {
       padding-top: $space-larger;
     }
+    .product-gallery-thumbs {
+      @include container;
+      margin: auto; padding: 0 0 $space-large 0;
+      text-align: center;
+      // display: none;
+      // @include breakpoint($medium) {
+      //   display: block;
+      // }
+      li {
+        max-width: 45px;
+        @include breakpoint($medium) {
+          max-width: 60px;
+        }
+        display: inline-block;
+        list-style: none;
+        margin: 0; padding: 0;
+        cursor: pointer;
+        // border: 2px solid #fff;
+        &.swiper-pagination-bullet-active {
+          /// border: 2px solid $line-colour;
+        }
+      }
+    }
   }
+
+
 
   .related-items {
     display: none;
 
     @include breakpoint($medium) {
       display: block;
-      @include pad(30px);
+      padding-top: $space-huge;
+      @include pad(50px);
+      @include breakpoint($large) {
+        @include pad(120px);
+      }
       h2 {
         text-align: center;
-        margin-bottom: $space-larger;
+        margin: 0 0 $space-larger 0;
+        padding-top: $space-larger;
+        border-top: 1px solid $line-colour;
       }
       // COPIED FROM LISTINGS.SCSS
       // SHOULD TURN THIS INTO AN INCLUDE TO AVOID DUPLICATION
       .item {
         @include gallery(6 of 12); // 2
-        @include breakpoint($large) {
-          @include gallery(4 of 12); // 3
-        }
+        // @include breakpoint($large) {
+        //   @include gallery(4 of 12); // 3
+        // }
         // @include pad(30px);
         // border: 1px solid red;
         @include listingStyles;
@@ -156,7 +182,7 @@
       }
     }
 
-    .product-gallery-thmbs {
+    .product-colours {
       list-style: none;
       margin: 0;
       padding: 0;
@@ -506,8 +532,6 @@
 		/* styling */
 		cursor: pointer;
 		background: #333;
-		/* IE8 "hack" for nested featherlights */
-		background: rgba(0, 0, 0, 0);
 
 	}
 
@@ -612,5 +636,136 @@
 
 		padding: 10px 10px 0;
 		border-bottom: 10px solid transparent;
+	}
+}
+
+/**
+ * Featherlight Gallery – an extension for the ultra slim jQuery lightbox
+ * Version 1.5.0 - http://noelboss.github.io/featherlight/
+ *
+ * Copyright 2016, Noël Raoul Bossart (http://www.noelboss.com)
+ * MIT Licensed.
+**/
+@media all {
+	.featherlight-next,
+	.featherlight-previous {
+		display: block;
+		position: absolute;
+		top: 25px;
+		right: 25px;
+		bottom: 0;
+		left: 80%;
+		cursor: pointer;
+		/* preventing text selection */
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+    color: rgba(0,0,0,0.25);
+    -webkit-transition: color 300ms ease-out;
+    -moz-transition: color 300ms ease-out;
+    -ms-transition: color 300ms ease-out;
+    -o-transition: color 300ms ease-out;
+    transition: color 300ms ease-out;
+		/* IE9 hack, otherwise navigation doesn't appear */
+		background: rgba(0,0,0,0);
+	}
+
+	.featherlight-previous {
+		left: 25px;
+		right: 80%;
+	}
+
+	.featherlight-next:hover,
+	.featherlight-previous:hover {
+		background: rgba(255,255,255,0.25);
+    color: rgba(0,0,0,1);
+	}
+
+
+	.featherlight-next span,
+	.featherlight-previous span {
+		display: none;
+		position: absolute;
+
+		top: 50%;
+		left: 5%;
+		// width: 82%;
+
+		/* center horizontally */
+		text-align: center;
+
+		font-size: 80px;
+		line-height: 80px;
+
+		/* center vertically */
+		margin-top: -40px;
+
+		text-shadow: 0px 0px 5px #fff;
+		// color: #000;
+		font-style: normal;
+		font-weight: normal;
+
+    // border: 1px solid red;
+    @include iconbase;
+	}
+
+	.featherlight-next span {
+		right: 5%;
+		left: auto;
+    &:before {
+      @include icon-chevron-right;
+    }
+	}
+
+  .featherlight-previous span {
+    &:before {
+      @include icon-chevron-left;
+    }
+  }
+
+	.featherlight-next:hover span,
+	.featherlight-previous:hover span {
+		display: inline-block;
+	}
+
+	/* Hide navigation while loading */
+	.featherlight-loading .featherlight-previous, .featherlight-loading .featherlight-next {
+		display:none;
+	}
+}
+
+/* Always display arrows on touch devices */
+@media only screen and (max-device-width: 1024px){
+	.featherlight-next:hover,
+	.featherlight-previous:hover {
+		background: none;
+	}
+	.featherlight-next span,
+	.featherlight-previous span {
+		display: block;
+	}
+}
+
+/* handling phones and small screens */
+@media only screen and (max-width: 1024px) {
+	.featherlight-next,
+	.featherlight-previous {
+		top: 10px;
+		right: 10px;
+		left: 85%;
+	}
+
+	.featherlight-previous {
+		left: 10px;
+		right: 85%;
+	}
+
+	.featherlight-next span,
+	.featherlight-previous span {
+		margin-top: -30px;
+		font-size: 40px;
 	}
 }

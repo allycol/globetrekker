@@ -231,35 +231,7 @@ Outdoorkit.productSwipers = function() {
 
 Outdoorkit.gallerySwiper = function() {
 
-  // Get values of the default main pic
-  // var defaultPicOrder = ($('#firstPicture').val())-1;
-  // var defaultLargePic = $('#firstPicture').attr('data-lrg-img');
-  //
-  // // Set the large pic
-  // $('.large-image').attr('href', defaultLargePic);
-  //
-  // var galleryLrg = new Swiper ('.product-gallery-lrg', {
-  //   slidesPerView: 1,
-  //   effect: 'fade',
-  //   initialSlide: defaultPicOrder
-  //   // nextButton: '.product-next',
-  //   // prevButton: '.product-prev'
-  // });
-
-  function switchMainPic(obj) {
-		var medImageURL = obj.find('img').attr("data-med-img");
-		$(".product-gallery-lrg img").attr("src", medImageURL);
-    $largePic = obj.find('img').attr('data-lrg-img');
-    $('.large-image').attr('href', $largePic);
-	}
-
   var isNotMobile = ($(window).width()) > 768;
-
-  $(".product-gallery-thmbs li").bind('click', function(){
-    var $this = $(this);
-    switchMainPic($this);
-    $this.addClass('active').siblings().removeClass('active');
-  });
 
   function disablePageScrolling(){
     $('body').css('overflow', 'hidden');
@@ -271,11 +243,67 @@ Outdoorkit.gallerySwiper = function() {
     $('html').css('overflow', 'auto');
   }
 
-  if(isNotMobile) $('.large-image').featherlight({
-    loading: 'Loading image',
-    afterOpen: disablePageScrolling,
-    afterClose: enablePageScrolling
+  $(".product-gallery-lrg").each(function(index, element){
+    var $this = $(this);
+
+    // Hide the lone thumb is there is only one gallery pic
+    var numberpics = ($this.find('.swiper-slide').length);
+    if (numberpics < 2) {
+      $this.find('.product-gallery-thumbs').hide();
+    }
+
+    var galleryTop = new Swiper(this, {
+      pagination: '.product-gallery-thumbs',
+      paginationClickable: true,
+      bulletClass: 'gallery-thumb',
+      paginationBulletRender: function (index, className) {
+        var slide = $this.find('.swiper-slide img')[index];
+        return '<li class="' + className + '"><img src="' + $(slide).attr('data-thumb') + '"/></li>';
+      },
+      preloadImages: false,
+      lazyLoading: true
+    });
+
+    if(isNotMobile) {
+      $this.find('a').featherlightGallery({
+        loading: 'Loading image',
+        previousIcon: '',
+        nextIcon: '',
+        afterOpen: disablePageScrolling,
+        afterClose: enablePageScrolling
+      });
+    }
   });
+
+  function switchMainPic(obj) {
+		// var medImageURL = obj.find('img').attr("data-med-img");     // Get the name of selected MEDIUM image
+		// $(".product-gallery-lrg img").attr("src", medImageURL);     // Put this in the src of large image
+    // $largePic = obj.find('img').attr('data-lrg-img');           // Get the name of selected LARGE image
+    // $('.large-image').attr('href', $largePic);                  // Put this in the href of LARGE image anchor
+
+    var galleryName = obj.find('label').attr("for");     // Get the name of the gallery
+    $(".colour-gallery").hide(); // Hide all product galleries
+    $(".colour-default").hide(); // Hide all product galleries
+    $('.' + galleryName).show(); // Show the gallery which has the same name
+	}
+
+  $(".colour-gallery").hide();
+
+  $(".product-colours li").bind('click', function(){
+    var $this = $(this);
+    switchMainPic($this);
+    $this.addClass('active').siblings().removeClass('active');
+  });
+
+
+
+  // if(isNotMobile) {
+  //   $('.product-gallery-lrg a').featherlightGallery({
+  //     loading: 'Loading image',
+  //     afterOpen: disablePageScrolling,
+  //     afterClose: enablePageScrolling
+  //   });
+  // }
 
 };
 
@@ -393,7 +421,7 @@ Outdoorkit.productSelect = function() {
 			$('span.avail').text('');
 
 			$('.sizes').hide();
-			$('.sizes').eq($(".product-gallery-thmbs input").index(obj)).fadeIn(400);
+			$('.sizes').eq($(".product-colours input").index(obj)).fadeIn(400);
 
       $('.availability').hide();
 
@@ -424,7 +452,7 @@ Outdoorkit.productSelect = function() {
 	// }
 
   // COLOURS
-	$(".product-gallery-thmbs").find('input').click(function() {
+	$(".product-colours").find('input').click(function() {
 
     $('.colour-not-selected-error').hide();
     $('#selectColor').css('border-color', '#fff');
@@ -496,16 +524,16 @@ Outdoorkit.productSelect = function() {
 
   function checkColourSelected(e){
 
-    // var colourSelected = $('.product-gallery-thmbs').find('input:checked').length;
-    // var colourInstock = ($('.product-gallery-thmbs').find('input:checked').parent().hasClass('nostock').length);
+    // var colourSelected = $('.product-colours').find('input:checked').length;
+    // var colourInstock = ($('.product-colours').find('input:checked').parent().hasClass('nostock').length);
 
-    if ($('.product-gallery-thmbs').find('input:checked').length) {
+    if ($('.product-colours').find('input:checked').length) {
       var colourSelected = true;
     } else {
       var colourSelected = false;
     }
 
-    var isAvailable = $('.product-gallery-thmbs').find('input:checked').attr('data-availability');
+    var isAvailable = $('.product-colours').find('input:checked').attr('data-availability');
 
     if (!(isAvailable == 'Out of stock')) {
       var colourInstock = true;
@@ -558,7 +586,7 @@ Outdoorkit.productSelect = function() {
 
   function validateShoppingCart(e){
     // Check colours exist
-    if ($('.product-gallery-thmbs').length) {
+    if ($('.product-colours').length) {
       checkColourSelected(e);
     }
     // if not check sizes exist
